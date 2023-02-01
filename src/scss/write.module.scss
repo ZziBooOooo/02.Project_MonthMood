@@ -1,0 +1,271 @@
+.writeFullDiv {
+  width: 100%;
+  height: 100vh;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .logoBox {
+    /*     font-size: 20px;
+    font-weight: 700;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 20px;
+    background: linear-gradient(30deg, #da63ec, #783db6);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent; */
+    p {
+      color: #b380e9;
+      font-weight: 700;
+      min-width: 100px;
+      cursor: pointer;
+      text-align: center;
+      font-size: 22px;
+      background-image: linear-gradient(140deg, #8429fc 0%, #f764de 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 20px;
+    }
+  }
+  .writeBox {
+    width: 80%;
+    max-width: 1200px;
+    height: 70vh;
+    background: linear-gradient(#0200037a, #131313f8);
+    border-radius: 24px;
+    display: flex;
+    justify-content: center;
+    padding: 60px;
+    position: relative;
+    .leftBox {
+      width: 55%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
+      justify-content: center;
+
+      .title {
+        font-size: 38px;
+        font-weight: 700;
+        width: 90%;
+        color: rgb(240, 240, 240);
+      }
+      .btnAndSelect {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 50px;
+        font-weight: 500;
+        select {
+          width: 130px;
+          padding: 5px 10px;
+          height: 40px;
+          border-radius: 20px;
+          border: 2px solid #aa60d4;
+          font-family: "Nanumgothic";
+          background: url("../assets/imgs/arrow.png") no-repeat 90% 50%;
+          background-size: 18px 18px;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          cursor: pointer;
+          font-weight: 500;
+          color: rgb(240, 240, 240);
+          option {
+            color: rgb(156, 77, 221);
+            // background-color: rgba(0, 0, 0, 0.822);
+            &:nth-child(even) {
+              color: rgb(226, 99, 173);
+            }
+          }
+
+          &:focus {
+            outline: none !important;
+          }
+        }
+      }
+      .refresh {
+        margin-left: 15px;
+        color: rgba(68, 68, 68, 0.705);
+        width: 19px;
+        // filter: grayscale(80%);
+        // opacity: 0.5;
+        cursor: pointer;
+        transition: 0.3s;
+        &:hover {
+          opacity: 1;
+        }
+      }
+      .gifBox {
+        display: flex;
+        width: 90%;
+        height: 65%;
+        margin-top: 0px;
+        flex-wrap: wrap;
+        // justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+
+        p {
+          width: 26%;
+          max-width: 130px;
+          min-width: 85px;
+          margin-right: 25px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          img {
+            border-radius: 12px;
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .nullBox {
+      width: 90%;
+      height: 65%;
+      margin-top: 0px;
+      align-items: center;
+      margin-bottom: 20px;
+
+      .selectText {
+        font-weight: 700;
+        font-size: 34px;
+        width: 90%;
+        margin-top: 120px;
+        color: #8931e7;
+      }
+      .selectText2 {
+        color: #cfcfcf;
+        font-weight: 500;
+        font-size: 20px;
+      }
+    }
+    .rightBox {
+      width: 40%;
+      height: 80%;
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .rightCardBox {
+        // background-color: rgba(243, 243, 243, 0.945);
+        background: linear-gradient(70deg, #ede8f1f6, #bca7d1);
+        height: 95%;
+        padding: 20px;
+        border-radius: 20px;
+        width: 90%;
+        box-shadow: 2px 3px 8px rgb(26, 22, 29);
+        position: relative;
+        p {
+          max-width: 400px;
+          margin: 0 auto;
+          color: rgb(36, 36, 36);
+          font-weight: 700;
+        }
+      }
+
+      .fullGifBox {
+        width: 100%;
+        max-width: 350px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+
+        img {
+          width: 100%;
+          border-radius: 20px;
+          max-width: 350px;
+          max-height: 290px;
+        }
+      }
+      .fullTextBox {
+        font-size: 18px;
+        font-weight: 700;
+        margin: 30px auto;
+        color: white;
+        width: 70%;
+        text-align: center;
+        // transform: translateX(20px);
+
+        .selectText {
+          font-size: 14px;
+          color: rgb(144, 71, 218);
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          margin: 20px;
+          font-weight: 700;
+        }
+      }
+    }
+    button {
+      border: solid 3px transparent;
+      background-image: linear-gradient(
+          rgba(255, 255, 255, 0),
+          rgba(255, 255, 255, 0)
+        ),
+        linear-gradient(101deg, #da63ec, #783db6);
+      background-origin: border-box;
+      background-clip: content-box, border-box;
+      box-shadow: 2px 1000px 1px rgba(49, 49, 49, 0.986) inset;
+      border-radius: 20px;
+      padding: 3px 15px;
+      width: 110px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin: 50px 80px;
+      height: 40px;
+      transition: 0.5s;
+      span {
+        font-weight: 700;
+        background: linear-gradient(101deg, #da63ec, #783db6);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        transition: 0.5s;
+      }
+
+      &:hover {
+        background: linear-gradient(101deg, #da63ec, #783db6);
+        box-shadow: 2px 1000px 1px rgba(240, 104, 104, 0) inset;
+        background-origin: initial;
+        border: solid 1px rgb(19, 19, 19);
+      }
+
+      &:hover span {
+        color: white;
+      }
+    }
+  }
+}
+.start {
+  opacity: 0;
+}
+
+.end {
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.start2 {
+  opacity: 0;
+}
+
+.end2 {
+  opacity: 1;
+  transition: 0.8s;
+}

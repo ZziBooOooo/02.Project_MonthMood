@@ -1,0 +1,159 @@
+.loginFullDiv {
+  width: 100%;
+  height: 100vh;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loginFullDiv .loginBox {
+  width: 80%;
+  max-width: 1200px;
+  height: 70vh;
+  background: linear-gradient(rgba(2, 0, 3, 0.4784313725), rgba(19, 19, 19, 0.9725490196));
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  box-shadow: 2px 5px 8px rgb(14, 14, 14);
+}
+.loginFullDiv .loginBox .leftBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 45%;
+  height: 100%;
+}
+.loginFullDiv .loginBox .leftBox .iconBox {
+  display: flex;
+}
+.loginFullDiv .loginBox .leftBox .iconBox p {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+}
+.loginFullDiv .loginBox .leftBox .iconBox p img {
+  max-width: 100%;
+}
+.loginFullDiv .loginBox .leftBox .iconBox p:nth-of-type(1) {
+  background: linear-gradient(200deg, rgb(248, 229, 165), rgb(245, 125, 13));
+}
+.loginFullDiv .loginBox .leftBox .iconBox p:nth-of-type(1) img {
+  width: 50px;
+}
+.loginFullDiv .loginBox .leftBox .iconBox p:nth-of-type(2) {
+  background: linear-gradient(15deg, rgb(252, 176, 245), rgb(129, 53, 216));
+}
+.loginFullDiv .loginBox .leftBox .iconBox p:nth-of-type(2) img {
+  width: 50px;
+}
+.loginFullDiv .loginBox .leftBox .iconBox p:nth-of-type(3) {
+  background: linear-gradient(rgb(219, 231, 162), rgb(108, 165, 94));
+}
+.loginFullDiv .loginBox .leftBox .iconBox p:nth-of-type(3) img {
+  width: 50px;
+}
+.loginFullDiv .loginBox .leftBox .textBox p {
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 30px;
+}
+.loginFullDiv .loginBox .leftBox .textBox p:nth-of-type(2) {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgb(211, 211, 211);
+  margin-top: 10px;
+}
+.loginFullDiv .loginBox .rightBox {
+  width: 45%;
+  height: 100%;
+  border-radius: 0 20px 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.loginFullDiv .loginBox .rightBox .loginTitle {
+  font-size: 36px;
+  font-weight: 700;
+}
+.loginFullDiv .loginBox .rightBox .loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  width: 70%;
+}
+.loginFullDiv .loginBox .rightBox .loginForm p {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  max-width: 295px;
+}
+.loginFullDiv .loginBox .rightBox .loginForm p label {
+  margin-bottom: 5px;
+}
+.loginFullDiv .loginBox .rightBox .loginForm input {
+  background-color: #1d1d1d;
+  border: none;
+  border: 0;
+  border-radius: 8px;
+  outline: none;
+  height: 40px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  width: 100%;
+}
+.loginFullDiv .loginBox .rightBox .loginForm input:focus {
+  border: solid 2px transparent;
+  background-image: linear-gradient(#1d1d1d, #1d1d1d), linear-gradient(to right, #c42ddb, #7f20e2);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+.loginFullDiv .loginBox .rightBox .loginForm button {
+  width: 120px;
+  background: linear-gradient(90deg, #c42ddb, #7f20e2);
+  font-size: 18px;
+  padding: 5px 10px;
+  border-radius: 30px;
+}
+.loginFullDiv .loginBox .rightBox .loginForm .showText {
+  font-size: 14px;
+  color: #cd42e2;
+  margin: 0;
+  transform: translateY(-10px);
+}
+.loginFullDiv .loginBox .rightBox .loginForm .hideText {
+  font-size: 14px;
+  opacity: 0;
+  margin: 0;
+  transform: translateY(-10px);
+}
+.loginFullDiv .loginBox .rightBox .signUpBox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 75%;
+  font-size: 14px;
+  margin-top: 15px;
+}
+.loginFullDiv .loginBox .rightBox .signUpBox p {
+  color: rgb(148, 147, 147);
+  max-width: 155px;
+}
+.loginFullDiv .loginBox .rightBox .signUpBox button {
+  font-size: 12px;
+  width: 60px;
+  height: 30px;
+  background: none;
+  margin: 0;
+  padding: 0;
+}/*# sourceMappingURL=login.module.css.map */

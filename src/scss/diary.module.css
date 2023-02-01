@@ -1,0 +1,288 @@
+.FullDiv {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.FullDiv .diaryBox {
+  width: 80%;
+  max-width: 1600px;
+  margin-top: 300px;
+  height: 150vh;
+  background: linear-gradient(rgba(2, 0, 3, 0.4784313725), rgba(19, 19, 19, 0.9725490196));
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px;
+  position: relative;
+}
+.FullDiv .diaryBox .diaryTopBox {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+}
+.FullDiv .diaryBox .diaryTopBox select {
+  width: 150px;
+  padding: 5px 10px;
+  height: 40px;
+  border-radius: 20px;
+  border: 2px solid #aa60d4;
+  font-family: "Nanumgothic";
+  background: url("../assets/imgs/arrow.png") no-repeat 90% 50%;
+  background-size: 18px 18px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  font-weight: 500;
+  color: rgb(240, 240, 240);
+}
+.FullDiv .diaryBox .diaryTopBox select:focus {
+  outline: none !important;
+}
+.FullDiv .diaryBox .diaryTopBox button {
+  width: 120px;
+  color: white;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.FullDiv .diaryBox .diaryTopBox button p {
+  margin-left: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(101deg, #cf72dd, #6f27bb);
+}
+.FullDiv .diaryBox .diaryTopBox button p svg {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.FullDiv .diaryBox .diaryContentBox {
+  margin-top: 120px;
+  width: 99%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.FullDiv .diaryBox .diaryContentBox .contentBox {
+  width: 25%;
+  min-width: 140px;
+  max-width: 180px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 10px;
+  margin-bottom: 40px;
+}
+.FullDiv .diaryBox .diaryContentBox .contentBox .imgBox {
+  width: 90%;
+  min-width: 140px;
+  position: relative;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.FullDiv .diaryBox .diaryContentBox .contentBox .imgBox img {
+  width: 100%;
+  height: 150px;
+  border-radius: 8px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.FullDiv .diaryBox .diaryContentBox .contentBox .imgBox .hoverBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.651);
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  opacity: 0;
+  transition: 0.3s;
+}
+.FullDiv .diaryBox .diaryContentBox .contentBox .imgBox .hoverBox:hover {
+  opacity: 1;
+}
+.FullDiv .diaryBox .diaryContentBox .contentBox .imgBox .hoverBox .closeBtn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 25px;
+  height: 25px;
+  color: rgb(250, 250, 250);
+  opacity: 0.5;
+  transition: 0.3s;
+}
+.FullDiv .diaryBox .diaryContentBox .contentBox .imgBox .hoverBox .closeBtn:hover {
+  opacity: 1;
+}
+.FullDiv .diaryBox .diaryContentBox .contentBox .imgBox .hoverBox .title {
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  /*               height: 110px;
+  overflow-y: scroll; */
+}
+.FullDiv .diaryBox .diaryContentBox .contentBox .textBox {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-top: 10px;
+  color: rgb(233, 233, 233);
+  font-weight: bold;
+}
+.FullDiv .diaryBox .diaryContentBox .contentBox .textBox .mood {
+  color: rgb(159, 53, 247);
+}
+.FullDiv .modalBox {
+  width: 60%;
+  max-width: 1000px;
+  height: 60vh;
+  background-color: #151515;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 150px;
+  border-radius: 16px;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  visibility: hidden;
+}
+.FullDiv .modalBox.show {
+  visibility: visible;
+}
+.FullDiv .modalBox .closeBtn {
+  position: absolute;
+  right: 0;
+  margin: 10px;
+}
+.FullDiv .modalBox .closeBtn p {
+  width: 24px;
+  height: 24px;
+  color: rgb(126, 126, 126);
+  transition: 0.3s;
+}
+.FullDiv .modalBox .closeBtn p svg {
+  width: 20px;
+  height: 20px;
+}
+.FullDiv .modalBox .closeBtn p:hover {
+  color: white;
+}
+.FullDiv .modalBox .siteDesimgBox {
+  width: 90%;
+  height: 45%;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  transform: translateY(-30px);
+}
+.FullDiv .modalBox .siteDesimgBox p {
+  overflow: hidden;
+  padding: 3px;
+}
+.FullDiv .modalBox .siteDesimgBox p img {
+  box-shadow: 2px 2px 5px rgba(59, 59, 59, 0.377);
+  max-width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 15px solid white;
+}
+.FullDiv .modalBox .siteDesimgBox .gifBox1 {
+  width: 15.3846153846vw;
+  height: 15.3846153846vw;
+  transform: translate(55px, -40px);
+  z-index: 1;
+}
+.FullDiv .modalBox .siteDesimgBox .gifBox2 {
+  width: 11.7647058824vw;
+  height: 11.7647058824vw;
+  transform: translate(0px, 30px);
+}
+.FullDiv .modalBox .siteDesimgBox .gifBox3 {
+  width: 16.6666666667vw;
+  height: 16.6666666667vw;
+  transform: translate(-65px, -80px);
+}
+.FullDiv .modalBox .TitleBox {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 5px;
+}
+.FullDiv .modalBox .TitleBox .moodTitle {
+  font-size: 48px;
+  font-weight: bold;
+}
+.FullDiv .modalBox .TitleBox .titleDes {
+  font-size: 22px;
+  color: gainsboro;
+  transform: translateY(-10px);
+}
+.FullDiv .modalBox hr {
+  width: 80%;
+  height: 2px;
+  background-color: rgba(46, 46, 46, 0.76);
+  border: 0;
+}
+.FullDiv .modalBox .moodBox {
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 45px;
+}
+.FullDiv .modalBox .moodBox .moodContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.FullDiv .modalBox .moodBox .moodContent .moodTitle {
+  font-size: 22px;
+}
+.FullDiv .modalBox .moodBox .moodContent .moodCount {
+  margin-top: 5px;
+  margin: 5px;
+  color: rgb(173, 173, 173);
+}
+
+.test {
+  color: white;
+}
+
+.fullModalBox {
+  /*   position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.596);
+  z-index: 10; */
+}/*# sourceMappingURL=diary.module.css.map */

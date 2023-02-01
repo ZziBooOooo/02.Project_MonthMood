@@ -1,7 +1,37 @@
 .FullContentBox {
-  width: 80%;
+  width: 100%;
   max-width: 1600px;
   padding-bottom: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.opa_zero {
+  opacity: 0;
+}
+
+.animation {
+  -webkit-animation-name: opacity;
+          animation-name: opacity;
+  -webkit-animation-duration: 3000ms;
+          animation-duration: 3000ms;
+}
+@-webkit-keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .menubar {
@@ -11,15 +41,16 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 25px;
-  position: fixed;
-  top: 0;
+  /*   position: fixed;
+  top: 0; */
+  z-index: 1000;
 }
 .menubar .leftMenubar {
   width: 60px;
 }
 .menubar .leftMenubar p {
   color: #b380e9;
-  font-weight: 700;
+  font-weight: 900;
   min-width: 100px;
   cursor: pointer;
   text-align: center;
@@ -37,6 +68,27 @@
   margin: 0 35px;
   cursor: pointer;
   font-weight: 500;
+  position: relative;
+  font-size: 18px;
+  transition: 0.3s;
+}
+.menubar .middleMenubar p:before {
+  transition: 0.3s;
+  display: block;
+  content: "";
+  width: 0%;
+  height: 20px;
+  border-radius: 4px;
+  background: linear-gradient(140deg, #8429fc 0%, #f764de 100%);
+  position: absolute;
+  transform: rotate(-3deg) translateX(-6px) translateY(2px);
+  z-index: -1;
+}
+.menubar .middleMenubar p:hover {
+  transform: scale(1.05);
+}
+.menubar .middleMenubar p:hover:before {
+  width: 120%;
 }
 .menubar .rightMenubar {
   background-color: transparent;
@@ -69,7 +121,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 90vh;
+  position: relative;
 }
 .mainTitleBox p {
   color: rgb(240, 240, 240);
@@ -140,6 +193,73 @@
 .mainTitleBox button:active {
   transform: scale(0.99) translateY(2.5px);
 }
+.mainTitleBox .scroll {
+  width: 60px;
+  height: 60px;
+  border: 3px solid rgb(240, 240, 240);
+  border-radius: 50%;
+  position: absolute;
+  -webkit-animation: down 2s infinite;
+          animation: down 2s infinite;
+  bottom: 5%;
+  cursor: pointer;
+  transition: 0.5s;
+  background-color: transparent;
+  overflow: hidden;
+}
+.mainTitleBox .scroll::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 18px;
+  width: 18px;
+  height: 18px;
+  border-left: 3px solid rgb(240, 240, 240);
+  border-bottom: 3px solid rgb(240, 240, 240);
+  transform: rotate(-45deg);
+}
+.mainTitleBox .scroll::after {
+  position: absolute;
+  display: block;
+  content: "";
+  background: linear-gradient(#6c00fa, #eb66d4);
+  height: 50px;
+  width: 50px;
+  top: -80%;
+  left: -85%;
+  transition: 0.8s;
+  border-radius: 50%;
+  z-index: -1;
+}
+.mainTitleBox .scroll:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 8px rgba(243, 132, 237, 0.959), 0 0 20px rgba(160, 92, 250, 0.911);
+}
+.mainTitleBox .scroll:hover::after {
+  transform: scale(7, 7);
+}
+@-webkit-keyframes down {
+  0%, 100%, 20%, 50%, 80% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+@keyframes down {
+  0%, 100%, 20%, 50%, 80% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
 
 .siteDesBox {
   background-color: rgba(36, 36, 36, 0.466);
@@ -150,6 +270,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 30px 20px;
+  margin-top: 100px;
   color: white;
   max-width: 1600px;
 }
@@ -247,50 +368,51 @@
   transform: translate(-60px, -120px);
 }
 
-.howUseBox {
-  color: white;
+.howUseFullBox {
   display: flex;
   align-items: center;
   flex-direction: column;
   margin-top: 150px;
+  width: 80%;
 }
-.howUseBox .howUseTitle {
+.howUseFullBox .howUseTitle {
   font-size: 70px;
   font-weight: 700;
+  color: white;
+  margin-bottom: 150px;
 }
-.howUseBox .howUseTitle span {
+.howUseFullBox .howUseTitle span {
   color: rgb(245, 63, 148);
 }
-.howUseBox .howUseContentBox {
+.howUseFullBox .howUseContentBox {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
 }
-.howUseBox .howUseContentBox .howUseBox {
+.howUseFullBox .howUseContentBox .howUseBox {
   width: 30%;
   height: 45vh;
   background-color: rgb(240, 240, 240);
-  margin-top: 150px;
   border-radius: 18px;
   padding: 20px 20px;
   transition: 0.3s;
 }
-.howUseBox .howUseContentBox .howUseBox:hover:nth-child(1) {
+.howUseFullBox .howUseContentBox .howUseBox:hover:nth-child(1) {
   transform: rotate(3deg) translateY(-15px);
 }
-.howUseBox .howUseContentBox .howUseBox:hover:nth-child(2) {
+.howUseFullBox .howUseContentBox .howUseBox:hover:nth-child(2) {
   transform: translateY(-5px);
 }
-.howUseBox .howUseContentBox .howUseBox:hover:nth-child(3) {
+.howUseFullBox .howUseContentBox .howUseBox:hover:nth-child(3) {
   transform: rotate(-3deg) translateY(-15px);
 }
-.howUseBox .howUseContentBox .howUseBox .howUseImgBox {
+.howUseFullBox .howUseContentBox .howUseBox .howUseImgBox {
   position: relative;
   width: 100%;
   height: 250px;
 }
-.howUseBox .howUseContentBox .howUseBox .howUseImgBox img {
+.howUseFullBox .howUseContentBox .howUseBox .howUseImgBox img {
   width: 100%;
   height: 250px;
   -o-object-fit: cover;
@@ -298,8 +420,9 @@
   border-radius: 12px;
   position: absolute;
   top: 0;
+  box-shadow: 1px 3px 5px rgba(88, 88, 88, 0.432);
 }
-.howUseBox .howUseContentBox .howUseBox .howUseImgBox img:nth-of-type(2) {
+.howUseFullBox .howUseContentBox .howUseBox .howUseImgBox img:nth-of-type(2) {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -307,17 +430,17 @@
   height: 80px;
   filter: invert(100);
 }
-.howUseBox .howUseContentBox .howUseBox p {
+.howUseFullBox .howUseContentBox .howUseBox p {
   color: rgb(34, 34, 34);
   text-align: center;
 }
-.howUseBox .howUseContentBox .howUseBox p:nth-of-type(1) {
+.howUseFullBox .howUseContentBox .howUseBox p:nth-of-type(1) {
   font-size: 32px;
   font-weight: 700;
   margin-top: 10px;
 }
-.howUseBox .howUseContentBox .howUseBox p:nth-of-type(2) {
-  width: 80%;
+.howUseFullBox .howUseContentBox .howUseBox p:nth-of-type(2) {
+  width: 100%;
   font-weight: 600;
   margin-top: 5px;
 }
@@ -334,6 +457,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  bottom: 0;
 }
 .FooterBox .footerContent {
   display: flex;

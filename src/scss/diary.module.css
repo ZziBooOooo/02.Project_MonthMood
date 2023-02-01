@@ -8,7 +8,7 @@
 .FullDiv .diaryBox {
   width: 80%;
   max-width: 1600px;
-  margin-top: 300px;
+  margin-top: 200px;
   height: 150vh;
   background: linear-gradient(rgba(2, 0, 3, 0.4784313725), rgba(19, 19, 19, 0.9725490196));
   border-radius: 24px;
@@ -83,6 +83,13 @@
   justify-content: center;
   margin: 0px 10px;
   margin-bottom: 40px;
+  transition: 0.3s;
+}
+.FullDiv .diaryBox .diaryContentBox .contentBox:hover {
+  transform: translateY(-5px);
+}
+.FullDiv .diaryBox .diaryContentBox .contentBox:hover .mood {
+  color: #cf72dd !important;
 }
 .FullDiv .diaryBox .diaryContentBox .contentBox .imgBox {
   width: 90%;
@@ -127,6 +134,10 @@
 }
 .FullDiv .diaryBox .diaryContentBox .contentBox .imgBox .hoverBox .closeBtn:hover {
   opacity: 1;
+  transform: scale(1.1);
+}
+.FullDiv .diaryBox .diaryContentBox .contentBox .imgBox .hoverBox .closeBtn:active {
+  transform: translateY(3px);
 }
 .FullDiv .diaryBox .diaryContentBox .contentBox .imgBox .hoverBox .title {
   width: 80%;
@@ -176,17 +187,17 @@
 .FullDiv .modalBox .closeBtn {
   position: absolute;
   right: 0;
-  margin: 10px;
+  margin: 15px;
 }
 .FullDiv .modalBox .closeBtn p {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   color: rgb(126, 126, 126);
   transition: 0.3s;
 }
 .FullDiv .modalBox .closeBtn p svg {
-  width: 20px;
-  height: 20px;
+  width: 26px;
+  height: 26px;
 }
 .FullDiv .modalBox .closeBtn p:hover {
   color: white;
@@ -278,11 +289,56 @@
   color: white;
 }
 
-.fullModalBox {
-  /*   position: absolute;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  background-color: rgba(255, 255, 255, 0.596);
-  z-index: 10; */
+.opa_zero {
+  opacity: 0;
+}
+
+.animation {
+  -webkit-animation-name: opacity;
+          animation-name: opacity;
+  -webkit-animation-duration: 1000ms;
+          animation-duration: 1000ms;
+}
+@-webkit-keyframes opacity {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(15px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes opacity {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(15px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animation2 {
+  -webkit-animation-name: opacity2;
+          animation-name: opacity2;
+  -webkit-animation-duration: 1500ms;
+          animation-duration: 1500ms;
+}
+@-webkit-keyframes opacity2 {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes opacity2 {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+  }
 }/*# sourceMappingURL=diary.module.css.map */

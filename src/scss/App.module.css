@@ -2,6 +2,8 @@
   background-color: #131215;
   width: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   background-image: url("../assets/imgs/bg3.png");
   background-repeat: no-repeat;

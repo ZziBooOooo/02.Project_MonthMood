@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Header from "../components/Header";
 import { useNavigate } from "react-router-dom";
 import style from "../scss/diary.module.scss";
 import Diary_Modal from "./Diary_Modal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import useIntersectionObsever from "./useIntersectionObsever";
 
 const Diary = () => {
   const [mmData, setMMData] = useState("");
@@ -13,6 +14,10 @@ const Diary = () => {
   const [positiveImg, setPositiveImg] = useState("");
   let navigate = useNavigate();
   let localData = JSON.parse(window.localStorage.getItem("moodData"));
+  const diaryBoxRef = useRef();
+  const diaryContentBoxRef = useRef();
+  const isInViewport = useIntersectionObsever(diaryBoxRef);
+  const isInViewport2 = useIntersectionObsever(diaryContentBoxRef);
 
   // 월 선택전 처음 접속시 실행
   useEffect(() => {
@@ -48,19 +53,33 @@ const Diary = () => {
 
   function showModal() {
     setIsShowModal(true);
+    let diaryBoxRefTop = diaryBoxRef.current.offsetTop - 100;
+
+    window.scrollTo({
+      top: diaryBoxRefTop,
+      behavior: "smooth",
+    });
   }
   return (
     <>
       <div className={`${style.fullModalBox}`}></div>
       <Header />
       <div className={`${style.FullDiv} ${style.bgOpacity}`}>
-        <div className={`${style.diaryBox}`}>
+        {/* <div ref={diaryBoxRef} className={`${style.diaryBox}`}> */}
+        <div
+          ref={diaryBoxRef}
+          className={
+            isInViewport
+              ? `${style.diaryBox}  ${style.animation2}`
+              : `${style.diaryBox} ${style.opa_zero}`
+          }
+        >
           <div className={`${style.diaryTopBox}`}>
             <select
               name="mood"
               id="moodselect"
               onChange={changeMonth}
-              defaultValue="2023-01"
+              defaultValue="2023-02"
             >
               <option value="01">2023-01</option>
               <option value="02">2023-02</option>

@@ -6,6 +6,35 @@
   align-items: center;
   justify-content: center;
 }
+.loginFullDiv .opa_zero {
+  opacity: 0;
+}
+.loginFullDiv .animation {
+  -webkit-animation-name: opacity;
+          animation-name: opacity;
+  -webkit-animation-duration: 1500ms;
+          animation-duration: 1500ms;
+}
+@-webkit-keyframes opacity {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes opacity {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
 .loginFullDiv .loginBox {
   width: 80%;
   max-width: 1200px;

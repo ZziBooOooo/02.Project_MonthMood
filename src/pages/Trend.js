@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Header from "../components/Header";
 import style from "../scss/trend.module.scss";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import useIntersectionObsever from "./useIntersectionObsever";
 
 const GifDiv = styled.div`
-  width: 30%;
+  width: 80%;
   max-width: 300px;
   height: 400px;
   background: ${(props) =>
@@ -27,7 +28,10 @@ const Trend = () => {
   const [loading, setLoading] = useState(true);
   const [fetching, setFetching] = useState(false);
   const [test, setTest] = useState(1);
-  let [fadeOn, setFadeOn] = useState("");
+
+  const gifCardRef = useRef();
+  const fullDivRef = useRef();
+  const isInViewport = useIntersectionObsever(gifCardRef);
 
   let boxColor = [
     "#FAC642",
@@ -68,13 +72,9 @@ const Trend = () => {
 
   useEffect(() => {
     axiosData();
-    setTimeout(() => {
-      setFadeOn("endOpacity");
-    }, 300);
-
-    return () => setFadeOn("");
+    setTimeout(() => {}, 300);
   }, []);
-
+  console.log(trendData);
   const axiosMoreData = async (n) => {
     // 추가 데이터를 로드하는 상태로 전환
     setFetching(true);
@@ -87,12 +87,12 @@ const Trend = () => {
         }&rating=pg-13`
       )
       .then((response) => {
-        console.log(fadeOn);
         const fetchedData = response.data.data;
         // 기존 데이터 배열과 새로 받아온 데이터 배열을 합쳐 새 배열을 만들고 state에 저장한다.
         const mergedData = trendData.concat(...fetchedData);
         setTrendData(mergedData);
         addColor(fetchedData);
+        console.log(gifCardRef);
       });
     // 추가 데이터 로드 끝
     setFetching(false);
@@ -119,10 +119,19 @@ const Trend = () => {
     };
   });
 
+  function scrollTop() {
+    let fullDivRefTop = fullDivRef.current.offsetTop;
+
+    window.scrollTo({
+      top: fullDivRef,
+      behavior: "smooth",
+    });
+  }
+
   return (
     <>
       <Header />
-      <div className={`${style.writeFullDiv}`}>
+      <div ref={fullDivRef} className={`${style.writeFullDiv}`}>
         <div className={`${style.trendBox}`}>
           <div className={`${style.trendContentBox}`}>
             <p className={`${style.trendTitle}`}>Trending 🔥</p>
@@ -130,35 +139,46 @@ const Trend = () => {
               {trendData &&
                 trendData.map((item, key) => {
                   return (
-                    <GifDiv
-                      color={item.color}
+                    <div
                       key={key}
+                      ref={gifCardRef}
                       className={
-                        Number(key - 1) % 3 === 0
-                          ? `${style.startOpacity} ${style.on} ${style[fadeOn]}`
-                          : `${style.startOpacity} ${style[fadeOn]}`
+                        isInViewport
+                          ? `${style.gifWrapBox} ${style.animation}`
+                          : `${style.gifWrapBox} ${style.opa_zero}`
                       }
                     >
-                      <div className={`${style.gifBox}`}>
-                        <img
-                          src={item.images.fixed_height_downsampled.url}
-                          alt="imageUrl"
-                        ></img>
-                        <p>{item.title}</p>
-                      </div>
-                      <a
-                        href={item.images.fixed_height_downsampled.url}
-                        className={`${style.btnBox}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <GifDiv
+                        color={item.color}
+                        className={
+                          Number(key - 1) % 3 === 0 ? ` ${style.on} ` : ``
+                        }
                       >
-                        <button>Save</button>
-                      </a>
-                    </GifDiv>
+                        <div className={`${style.gifBox}`}>
+                          <img
+                            src={item.images.fixed_height_downsampled.url}
+                            alt="imageUrl"
+                          ></img>
+                          <p>{item.title}</p>
+                        </div>
+                        <a
+                          href={item.images.fixed_height_downsampled.url}
+                          download
+                          className={`${style.btnBox}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <button>Save</button>
+                        </a>
+                      </GifDiv>
+                    </div>
                   );
                 })}
             </div>
           </div>
+        </div>
+        <div className={`${style.scrollBox}`}>
+          <div className={`${style.scroll}`} onClick={scrollTop}></div>
         </div>
       </div>
     </>

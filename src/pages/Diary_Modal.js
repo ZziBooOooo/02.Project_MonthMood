@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import style from "../scss/diary.module.scss";
 import giphy from "../assets/imgs/giphy.gif";
 import b from "../assets/imgs/b.gif";
@@ -12,6 +12,7 @@ import n3 from "../assets/imgs/n3.gif";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import useIntersectionObsever from "./useIntersectionObsever";
 
 const Diary_Modal = ({
   isShowModal,
@@ -31,6 +32,8 @@ const Diary_Modal = ({
   let month = ("0" + (currentDate.getMonth() + 1)).slice(-2);
   let currentMonthData =
     localData && localData.filter((item) => item.date.slice(5, 7) == month);
+  const diaryBoxRef = useRef();
+  const isInViewport = useIntersectionObsever(diaryBoxRef);
 
   useEffect(() => {
     setHappyCount(
@@ -83,8 +86,8 @@ const Diary_Modal = ({
     }
   }, [isShowModal]);
 
-  console.log(monthMood);
-  console.log(positiveImg);
+  /*   console.log(monthMood);
+  console.log(positiveImg); */
 
   function getMaxValue(array) {
     // 1. 출연 빈도 구하기
@@ -110,8 +113,11 @@ const Diary_Modal = ({
   return (
     // <div className={`${style.modalBox} ${style.show}`}>
     <div
+      ref={diaryBoxRef}
       className={
-        isShowModal ? `${style.modalBox} ${style.show}` : `${style.modalBox} `
+        isShowModal && isInViewport
+          ? `${style.modalBox} ${style.show} ${style.animation}`
+          : `${style.modalBox} ${style.opa_zero}`
       }
     >
       <button className={`${style.closeBtn}`} onClick={closeModal}>

@@ -1,14 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
 import style from "../scss/login.module.scss";
 import pencil from "../assets/imgs/pencil.png";
 import thinking from "../assets/imgs/thinking.png";
 import novel from "../assets/imgs/novel.png";
+import useIntersectionObsever from "./useIntersectionObsever";
 
 const Login = () => {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
   const [validShow, setValidShow] = useState(false);
+  const loginBoxRef = useRef();
+
+  const isInViewport = useIntersectionObsever(loginBoxRef);
 
   function checkUser() {
     if (id && password && id.length >= 5 && password.length >= 5) {
@@ -44,7 +48,15 @@ const Login = () => {
   let navigate = useNavigate();
   return (
     <div className={`${style.loginFullDiv}`}>
-      <div className={`${style.loginBox}`}>
+      {/* <div ref={loginBoxRef} className={`${style.loginBox}`}> */}
+      <div
+        ref={loginBoxRef}
+        className={
+          isInViewport
+            ? `${style.loginBox} ${style.animation}`
+            : `${style.loginBox} ${style.opa_zero}`
+        }
+      >
         <div className={`${style.leftBox}`}>
           <div className={`${style.iconBox}`}>
             <p>

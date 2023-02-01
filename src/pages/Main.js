@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -13,21 +13,43 @@ import h from "../assets/imgs/h.jpg";
 import write from "../assets/imgs/write.png";
 import choose from "../assets/imgs/choose.png";
 import complete from "../assets/imgs/complete.png";
-
-import { createContext, useEffect, useState } from "react";
-import { ContextGifData } from "./../App";
+import useIntersectionObsever from "./useIntersectionObsever";
 
 const Main = () => {
   let navigate = useNavigate();
-  let { happyData, excitedData, sadData, upsetData, angryData, loveData } =
-    useContext(ContextGifData);
+  const desRef = useRef();
+  const scrollBtn = useRef();
+  const titleRef = useRef();
+  const cardRef = useRef();
+
+  const isInViewport1 = useIntersectionObsever(desRef);
+  const isInViewport2 = useIntersectionObsever(titleRef);
+  const isInViewport3 = useIntersectionObsever(cardRef);
+
+  function scrollDown() {
+    let desBoxTop = desRef.current.offsetTop;
+    let scrollBtnTop = scrollBtn.current.offsetTop;
+    let minusTop = (desBoxTop - scrollBtnTop) / 2;
+    window.scrollTo({
+      top: desBoxTop - minusTop,
+      behavior: "smooth",
+    });
+  }
 
   // console.log(happyData);
   return (
     <>
       <div className={`${style.FullContentBox}`}>
         <Header />
-        <div className={`${style.mainTitleBox}`}>
+        {/*         <div
+          ref={ref2}
+          className={
+            isInViewport2
+              ? `${style.animation} ${style.mainTitleBox}`
+              : `${style.opa_zero} ${style.mainTitleBox}`
+          }
+        > */}
+        <div className={` ${style.mainTitleBox}`}>
           <p>HOW YOU FEEL DURING</p>
           <p> THE MONTH</p>
           <button
@@ -40,9 +62,23 @@ const Main = () => {
               <p className={`${style.goTxt}`}> Let's Go!</p>
             </div>
           </button>
+
+          <div
+            className={`${style.scroll}`}
+            onClick={scrollDown}
+            ref={scrollBtn}
+          ></div>
         </div>
 
-        <div className={`${style.siteDesBox}`}>
+        {/* <div className={`${style.siteDesBox}`} ref={desRef}> */}
+        <div
+          className={
+            isInViewport1
+              ? `${style.siteDesBox} ${style.animation}`
+              : `${style.siteDesBox} ${style.opa_zero}`
+          }
+          ref={desRef}
+        >
           <div className={`${style.siteDes_pBox}`}>
             <div>
               <p>What is </p>
@@ -70,11 +106,27 @@ const Main = () => {
           </div>
         </div>
 
-        <div className={`${style.howUseBox}`}>
-          <p className={`${style.howUseTitle}`}>
+        <div className={`${style.howUseFullBox}`}>
+          {/* <p ref={useTitleRef} className={`${style.howUseTitle}`}> */}
+          <p
+            ref={titleRef}
+            className={
+              isInViewport2
+                ? `${style.howUseTitle} ${style.animation}`
+                : `${style.howUseTitle} ${style.opa_zero}`
+            }
+          >
             How to <span>use?</span>
           </p>
-          <div className={`${style.howUseContentBox}`}>
+          {/* <div className={`${style.howUseContentBox}`}> */}
+          <div
+            ref={cardRef}
+            className={
+              isInViewport3
+                ? `${style.howUseContentBox} ${style.animation}`
+                : `${style.howUseContentBox} ${style.opa_zero}`
+            }
+          >
             <div className={`${style.howUseBox}`}>
               <div className={`${style.howUseImgBox}`}>
                 <img src={e}></img>

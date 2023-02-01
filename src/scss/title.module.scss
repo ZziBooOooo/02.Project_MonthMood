@@ -1,4 +1,4 @@
-.writeFullDiv {
+.titleFullDiv {
   width: 100%;
   height: 100vh;
   padding: 0;
@@ -7,25 +7,24 @@
   justify-content: center;
   .logoBox {
     p {
-      p {
-        color: #b380e9;
-        font-weight: 700;
-        min-width: 100px;
-        cursor: pointer;
-        text-align: center;
-        font-size: 22px;
-        background-image: linear-gradient(140deg, #8429fc 0%, #f764de 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        position: absolute;
-        top: 0;
-        left: 0;
-        margin: 20px;
-      }
+      color: #b380e9;
+      font-weight: 700;
+      min-width: 100px;
+      cursor: pointer;
+      text-align: center;
+      font-size: 22px;
+      background-image: linear-gradient(140deg, #8429fc 0%, #f764de 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 20px;
     }
   }
-  .writeBox {
+
+  .titleBox {
     width: 80%;
     max-width: 1200px;
     height: 70vh;
@@ -119,7 +118,7 @@
         linear-gradient(101deg, #da63ec, #783db6);
       background-origin: border-box;
       background-clip: content-box, border-box;
-      box-shadow: 2px 1000px 1px rgba(49, 49, 49, 0.986) inset;
+      box-shadow: 2px 1000px 1px rgba(29, 29, 29, 0.986) inset;
       border-radius: 20px;
       padding: 3px 15px;
       width: 110px;
@@ -128,7 +127,7 @@
       right: 0;
       margin: 50px 80px;
       height: 40px;
-      transition: 0.5s;
+      transition: 0.3s;
       span {
         font-weight: 700;
         background: linear-gradient(101deg, #da63ec, #783db6);
@@ -149,6 +148,9 @@
       &:hover span {
         color: white;
       }
+      &:active {
+        transform: translateY(2.5px);
+      }
     }
     .alertMsg {
       margin-top: 10px;
@@ -159,6 +161,25 @@
         opacity: 1;
         color: rgb(214, 96, 250);
       }
+    }
+  }
+}
+
+.opa_zero {
+  opacity: 0;
+}
+.animation {
+  animation-name: opacity;
+  animation-duration: 1500ms;
+
+  @keyframes opacity {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0px);
     }
   }
 }

@@ -34,6 +34,35 @@
   left: 0;
   margin: 20px;
 }
+.writeFullDiv .opa_zero {
+  opacity: 0;
+}
+.writeFullDiv .animation {
+  -webkit-animation-name: opacity;
+          animation-name: opacity;
+  -webkit-animation-duration: 1500ms;
+          animation-duration: 1500ms;
+}
+@-webkit-keyframes opacity {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes opacity {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
 .writeFullDiv .writeBox {
   width: 80%;
   max-width: 1200px;
@@ -56,8 +85,22 @@
 .writeFullDiv .writeBox .leftBox .title {
   font-size: 38px;
   font-weight: 700;
-  width: 90%;
+  width: 100%;
   color: rgb(240, 240, 240);
+}
+.writeFullDiv .writeBox .leftBox .refresh {
+  margin-left: 15px;
+  color: rgba(68, 68, 68, 0.705);
+  width: 22px;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.writeFullDiv .writeBox .leftBox .refresh:hover {
+  opacity: 1;
+}
+.writeFullDiv .writeBox .leftBox .refresh:active {
+  transform: translateY(5px);
 }
 .writeFullDiv .writeBox .leftBox .btnAndSelect {
   display: flex;
@@ -65,6 +108,7 @@
   align-items: center;
   margin-top: 50px;
   font-weight: 500;
+  width: 85%;
 }
 .writeFullDiv .writeBox .leftBox .btnAndSelect select {
   width: 130px;
@@ -91,19 +135,9 @@
 .writeFullDiv .writeBox .leftBox .btnAndSelect select:focus {
   outline: none !important;
 }
-.writeFullDiv .writeBox .leftBox .refresh {
-  margin-left: 15px;
-  color: rgba(68, 68, 68, 0.705);
-  width: 19px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.writeFullDiv .writeBox .leftBox .refresh:hover {
-  opacity: 1;
-}
 .writeFullDiv .writeBox .leftBox .gifBox {
   display: flex;
-  width: 90%;
+  width: 100%;
   height: 65%;
   margin-top: 0px;
   flex-wrap: wrap;
@@ -111,9 +145,9 @@
   margin-bottom: 20px;
 }
 .writeFullDiv .writeBox .leftBox .gifBox p {
-  width: 26%;
-  max-width: 130px;
-  min-width: 85px;
+  width: 27%;
+  max-width: 150px;
+  min-width: 100px;
   margin-right: 25px;
   display: flex;
   align-items: center;
@@ -155,7 +189,7 @@
   align-items: center;
 }
 .writeFullDiv .writeBox .rightBox .rightCardBox {
-  background: linear-gradient(70deg, rgba(237, 232, 241, 0.9647058824), #bca7d1);
+  background-color: rgb(247, 247, 247);
   height: 95%;
   padding: 20px;
   border-radius: 20px;
@@ -179,9 +213,14 @@
 }
 .writeFullDiv .writeBox .rightBox .fullGifBox img {
   width: 100%;
+  min-height: 150px;
   border-radius: 20px;
   max-width: 350px;
-  max-height: 290px;
+  min-height: 200px;
+  max-height: 260px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  box-shadow: 2px 3px 6px rgba(63, 63, 63, 0.411);
 }
 .writeFullDiv .writeBox .rightBox .fullTextBox {
   font-size: 18px;
@@ -193,7 +232,7 @@
 }
 .writeFullDiv .writeBox .rightBox .fullTextBox .selectText {
   font-size: 14px;
-  color: rgb(144, 71, 218);
+  color: rgb(174, 105, 243);
   position: absolute;
   right: 0;
   bottom: 0;
@@ -205,7 +244,7 @@
   background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(101deg, #da63ec, #783db6);
   background-origin: border-box;
   background-clip: content-box, border-box;
-  box-shadow: 2px 1000px 1px rgba(49, 49, 49, 0.986) inset;
+  box-shadow: 2px 1000px 1px rgba(29, 29, 29, 0.986) inset;
   border-radius: 20px;
   padding: 3px 15px;
   width: 110px;
@@ -232,6 +271,9 @@
 }
 .writeFullDiv .writeBox button:hover span {
   color: white;
+}
+.writeFullDiv .writeBox button:active {
+  transform: translateY(2.5px);
 }
 
 .start {

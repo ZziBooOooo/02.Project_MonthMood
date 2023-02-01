@@ -1,11 +1,11 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState, useEffect, useRef } from "react";
 import style from "../scss/write.module.scss";
 import choose from "../assets/imgs/choose.png";
 import refresh from "../assets/imgs/refresh.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
-
 import { ContextGifData } from "./../App";
+import useIntersectionObsever from "./useIntersectionObsever";
 
 const Write = () => {
   let [selectValue, setSelectValue] = useState("");
@@ -27,6 +27,8 @@ const Write = () => {
     randomData,
   } = useContext(ContextGifData);
   // console.log(excitedData);
+  const writeBoxRef = useRef();
+  const isInViewport = useIntersectionObsever(writeBoxRef);
 
   function handleSelect(e) {
     setShowSelect(true);
@@ -225,7 +227,15 @@ const Write = () => {
           <br /> MOOD
         </p>
       </div>
-      <div className={`${style.writeBox}`}>
+      {/* <div ref={writeBoxRef}className={`${style.writeBox}`}> */}
+      <div
+        ref={writeBoxRef}
+        className={
+          isInViewport
+            ? `${style.writeBox} ${style.animation}`
+            : `${style.writeBox} ${style.opa_zero}`
+        }
+      >
         <div className={`${style.leftBox}`}>
           <p className={`${style.title}`}>Choose Today's Mood</p>
           <div className={`${style.btnAndSelect}`}>

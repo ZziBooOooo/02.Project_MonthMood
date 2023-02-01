@@ -18,7 +18,7 @@
 .writeFullDiv .trendBox {
   width: 80%;
   max-width: 1600px;
-  margin-top: 300px;
+  margin-top: 200px;
   background: linear-gradient(rgba(2, 0, 3, 0.4784313725), rgba(19, 19, 19, 0.9725490196));
   border-radius: 24px;
   display: flex;
@@ -51,6 +51,15 @@
 }
 .writeFullDiv .trendBox .trendContentBox .gifContentBox .on:hover {
   transform: translateY(95px);
+}
+.writeFullDiv .trendBox .trendContentBox .gifContentBox .gifWrapBox {
+  width: 30%;
+  transition: 0.3s;
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+.writeFullDiv .trendBox .trendContentBox .gifContentBox .gifWrapBox:hover {
+  transform: translateY(-5px);
 }
 .writeFullDiv .trendBox .trendContentBox .gifContentBox .gifBox {
   padding: 30px 10px;
@@ -96,7 +105,6 @@
 }
 
 .startOpacity {
-  opacity: 0;
   transform: translateY(15px);
 }
 .startOpacity:hover {
@@ -107,4 +115,100 @@
   opacity: 1;
   transition: all 0.6s;
   transform: translateY(0px);
+}
+
+.animation {
+  /*   animation-name: opacity;
+  animation-duration: 3000ms;
+
+  @keyframes opacity {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  } */
+}
+
+.opa_zero {
+  -webkit-animation-name: opacity;
+          animation-name: opacity;
+  -webkit-animation-duration: 1500ms;
+          animation-duration: 1500ms;
+}
+@-webkit-keyframes opacity {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes opacity {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scrollBox {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.scroll {
+  width: 60px;
+  height: 60px;
+  border: 3px solid rgb(240, 240, 240);
+  border-radius: 50%;
+  position: fixed;
+  -webkit-animation: down 2s infinite;
+          animation: down 2s infinite;
+  right: 0%;
+  bottom: 0%;
+  margin: 3%;
+  cursor: pointer;
+  transition: 0.5s;
+  background-color: transparent;
+  overflow: hidden;
+}
+.scroll::before {
+  content: "";
+  position: absolute;
+  top: 22px;
+  left: 18px;
+  width: 18px;
+  height: 18px;
+  border-left: 3px solid rgb(240, 240, 240);
+  border-bottom: 3px solid rgb(240, 240, 240);
+  transform: rotate(135deg);
+}
+.scroll::after {
+  position: absolute;
+  display: block;
+  content: "";
+  background: linear-gradient(#6c00fa, #eb66d4);
+  height: 50px;
+  width: 50px;
+  top: -80%;
+  left: -85%;
+  transition: 0.8s;
+  border-radius: 50%;
+  z-index: -1;
+}
+.scroll:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 8px rgba(243, 132, 237, 0.959), 0 0 20px rgba(160, 92, 250, 0.911);
+}
+.scroll:hover::after {
+  transform: scale(7, 7);
 }/*# sourceMappingURL=trend.module.css.map */

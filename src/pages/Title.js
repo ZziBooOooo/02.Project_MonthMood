@@ -1,13 +1,16 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState, useEffect, useRef } from "react";
 import style from "../scss/title.module.scss";
 import Header from "../components/Header";
 import { useNavigate } from "react-router-dom";
+import useIntersectionObsever from "./useIntersectionObsever";
 
 const Title = () => {
   let navigate = useNavigate();
   const [isComplete, setIsComplete] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [alertOn, setAlertOn] = useState(false);
+  const titleBoxRef = useRef();
+  const isInViewport = useIntersectionObsever(titleBoxRef);
 
   useEffect(() => {
     if (inputValue) {
@@ -38,7 +41,7 @@ const Title = () => {
     }
   }
   return (
-    <div className={`${style.writeFullDiv}`}>
+    <div className={`${style.titleFullDiv}`}>
       <div className={`${style.logoBox}`}>
         <p
           onClick={() => {
@@ -49,7 +52,14 @@ const Title = () => {
           <br /> MOOD
         </p>
       </div>
-      <div className={`${style.writeBox}`}>
+      <div
+        ref={titleBoxRef}
+        className={
+          isInViewport
+            ? `${style.titleBox} ${style.animation}`
+            : `${style.titleBox} ${style.opa_zero}`
+        }
+      >
         <p className={`${style.title}`}>Write Today's Title</p>
 
         <form

@@ -1,4 +1,4 @@
-.writeFullDiv {
+.titleFullDiv {
   width: 100%;
   height: 100vh;
   padding: 0;
@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
 }
-.writeFullDiv .logoBox p p {
+.titleFullDiv .logoBox p {
   color: #b380e9;
   font-weight: 700;
   min-width: 100px;
@@ -22,7 +22,7 @@
   left: 0;
   margin: 20px;
 }
-.writeFullDiv .writeBox {
+.titleFullDiv .titleBox {
   width: 80%;
   max-width: 1200px;
   height: 70vh;
@@ -34,12 +34,12 @@
   padding: 60px;
   position: relative;
 }
-.writeFullDiv .writeBox .title {
+.titleFullDiv .titleBox .title {
   font-size: 38px;
   font-weight: 700;
   color: rgb(241, 241, 241);
 }
-.writeFullDiv .writeBox .form {
+.titleFullDiv .titleBox .form {
   width: 60%;
   position: relative;
   height: 65px;
@@ -47,7 +47,7 @@
   font-size: 22px;
   margin-top: 180px;
 }
-.writeFullDiv .writeBox .form input {
+.titleFullDiv .titleBox .form input {
   width: 100%;
   height: 100%;
   color: #fff;
@@ -55,7 +55,7 @@
   border: none;
   background-color: transparent;
 }
-.writeFullDiv .writeBox .form label {
+.titleFullDiv .titleBox .form label {
   position: absolute;
   bottom: 0px;
   left: 0px;
@@ -65,7 +65,7 @@
   border-bottom: 3px solid #bf9ce7;
   color: white;
 }
-.writeFullDiv .writeBox .form label::after {
+.titleFullDiv .titleBox .form label::after {
   content: "";
   position: absolute;
   bottom: -1px;
@@ -76,40 +76,40 @@
   transform: translateX(-100%);
   transition: all 0.3s ease;
 }
-.writeFullDiv .writeBox .content_name {
+.titleFullDiv .titleBox .content_name {
   position: absolute;
   bottom: 0px;
   left: 0px;
   padding-bottom: 5px;
   transition: all 0.3s ease;
 }
-.writeFullDiv .writeBox .form input:focus {
+.titleFullDiv .titleBox .form input:focus {
   outline: none;
 }
-.writeFullDiv .writeBox .form input:focus + .label_name .content_name,
-.writeFullDiv .writeBox .form input:valid + .label_name .content_name {
+.titleFullDiv .titleBox .form input:focus + .label_name .content_name,
+.titleFullDiv .titleBox .form input:valid + .label_name .content_name {
   transform: translateY(-150%);
   font-size: 14px;
   left: 0px;
   color: #e58afc;
 }
-.writeFullDiv .writeBox .form input:focus + .label_name::after,
-.writeFullDiv .writeBox .form input:valid + .label_name::after {
+.titleFullDiv .titleBox .form input:focus + .label_name::after,
+.titleFullDiv .titleBox .form input:valid + .label_name::after {
   transform: translateX(0%);
 }
-.writeFullDiv .writeBox .formBox {
+.titleFullDiv .titleBox .formBox {
   width: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 200px;
 }
-.writeFullDiv .writeBox button {
+.titleFullDiv .titleBox button {
   border: solid 3px transparent;
   background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(101deg, #da63ec, #783db6);
   background-origin: border-box;
   background-clip: content-box, border-box;
-  box-shadow: 2px 1000px 1px rgba(49, 49, 49, 0.986) inset;
+  box-shadow: 2px 1000px 1px rgba(29, 29, 29, 0.986) inset;
   border-radius: 20px;
   padding: 3px 15px;
   width: 110px;
@@ -118,9 +118,9 @@
   right: 0;
   margin: 50px 80px;
   height: 40px;
-  transition: 0.5s;
+  transition: 0.3s;
 }
-.writeFullDiv .writeBox button span {
+.titleFullDiv .titleBox button span {
   font-weight: 700;
   background: linear-gradient(101deg, #da63ec, #783db6);
   background-clip: text;
@@ -129,22 +129,56 @@
   transition: 0.5s;
   color: white;
 }
-.writeFullDiv .writeBox button:hover {
+.titleFullDiv .titleBox button:hover {
   background: linear-gradient(101deg, #da63ec, #783db6);
   box-shadow: 2px 1000px 1px rgba(240, 104, 104, 0) inset;
   background-origin: initial;
   border: solid 1px rgb(19, 19, 19);
 }
-.writeFullDiv .writeBox button:hover span {
+.titleFullDiv .titleBox button:hover span {
   color: white;
 }
-.writeFullDiv .writeBox .alertMsg {
+.titleFullDiv .titleBox button:active {
+  transform: translateY(2.5px);
+}
+.titleFullDiv .titleBox .alertMsg {
   margin-top: 10px;
   color: rgb(214, 96, 250);
   width: 60%;
   opacity: 0;
 }
-.writeFullDiv .writeBox .alertMsg.on {
+.titleFullDiv .titleBox .alertMsg.on {
   opacity: 1;
   color: rgb(214, 96, 250);
+}
+
+.opa_zero {
+  opacity: 0;
+}
+
+.animation {
+  -webkit-animation-name: opacity;
+          animation-name: opacity;
+  -webkit-animation-duration: 1500ms;
+          animation-duration: 1500ms;
+}
+@-webkit-keyframes opacity {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes opacity {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }/*# sourceMappingURL=title.module.css.map */

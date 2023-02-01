@@ -17,8 +17,16 @@ const Header = () => {
     window.localStorage.setItem("login_Success", false);
     setIsLogin(false);
   }
+  function goTREND() {
+    console.log(islogin);
+    if (islogin) {
+      navigate("/trend");
+    } else {
+      navigate("/login");
+    }
+  }
   function goGOMM() {
-    // console.log(islogin);
+    console.log(islogin);
     if (islogin) {
       navigate("/write");
     } else {
@@ -52,13 +60,7 @@ const Header = () => {
         >
           HOME
         </p>
-        <p
-          onClick={() => {
-            navigate("/trend");
-          }}
-        >
-          TREND
-        </p>
+        <p onClick={goTREND}>TREND</p>
         <p onClick={goGOMM}>GOMM</p>
         <p onClick={goDIARY}>DIARY</p>
       </div>

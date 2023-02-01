@@ -257,7 +257,7 @@
       box-shadow: 2px 1000px 1px rgba(29, 29, 29, 0.986) inset;
       border-radius: 20px;
       padding: 3px 15px;
-      width: 110px;
+      width: 120px;
       position: absolute;
       bottom: 0;
       right: 0;
@@ -266,6 +266,7 @@
       transition: 0.5s;
       span {
         font-weight: 700;
+        // font-weight: 900;
         background: linear-gradient(101deg, #da63ec, #783db6);
         background-clip: text;
         -webkit-background-clip: text;

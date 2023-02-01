@@ -141,28 +141,125 @@ const Diary_Modal = ({
       <hr />
       <div className={`${style.moodBox}`}>
         <div className={`${style.moodContent}`}>
-          <p className={`${style.moodTitle}`}>Happy</p>
-          <p className={`${style.moodCount}`}>{HappyCount}</p>
+          <p
+            className={
+              monthMood == "Happy"
+                ? `${style.moodTitle} ${style.mostValueColor}`
+                : `${style.moodTitle}`
+            }
+          >
+            Happy
+          </p>
+
+          <p
+            className={
+              monthMood == "Happy"
+                ? `${style.moodCount} ${style.mostValueColor}`
+                : `${style.moodCount}`
+            }
+          >
+            {HappyCount}
+          </p>
         </div>
         <div className={`${style.moodContent}`}>
-          <p className={`${style.moodTitle}`}>Excited</p>
-          <p className={`${style.moodCount}`}>{ExcitedCount}</p>
+          <p
+            className={
+              monthMood == "Excited"
+                ? `${style.moodTitle} ${style.mostValueColor}`
+                : `${style.moodTitle}`
+            }
+          >
+            Excited
+          </p>
+          <p
+            className={
+              monthMood == "Excited"
+                ? `${style.moodCount} ${style.mostValueColor}`
+                : `${style.moodCount}`
+            }
+          >
+            {ExcitedCount}
+          </p>
         </div>
         <div className={`${style.moodContent}`}>
-          <p className={`${style.moodTitle}`}>Sad</p>
-          <p className={`${style.moodCount}`}>{SadCount}</p>
+          <p
+            className={
+              monthMood == "Sad"
+                ? `${style.moodTitle} ${style.mostValueColor}`
+                : `${style.moodTitle}`
+            }
+          >
+            Sad
+          </p>
+          <p
+            className={
+              monthMood == "Sad"
+                ? `${style.moodCount} ${style.mostValueColor}`
+                : `${style.moodCount}`
+            }
+          >
+            {SadCount}
+          </p>
         </div>
         <div className={`${style.moodContent}`}>
-          <p className={`${style.moodTitle}`}>Upset</p>
-          <p className={`${style.moodCount}`}>{UpsetCount}</p>
+          <p
+            className={
+              monthMood == "Upset"
+                ? `${style.moodTitle} ${style.mostValueColor}`
+                : `${style.moodTitle}`
+            }
+          >
+            Upset
+          </p>
+          <p
+            className={
+              monthMood == "Upset"
+                ? `${style.moodCount} ${style.mostValueColor}`
+                : `${style.moodCount}`
+            }
+          >
+            {UpsetCount}
+          </p>
         </div>
         <div className={`${style.moodContent}`}>
-          <p className={`${style.moodTitle}`}>Angry</p>
-          <p className={`${style.moodCount}`}>{AngryCount}</p>
+          <p
+            className={
+              monthMood == "Angry"
+                ? `${style.moodTitle} ${style.mostValueColor2}`
+                : `${style.moodTitle}`
+            }
+          >
+            Angry
+          </p>
+          <p
+            className={
+              monthMood == "Angry"
+                ? `${style.moodCount} ${style.mostValueColor2}`
+                : `${style.moodCount}`
+            }
+          >
+            {AngryCount}
+          </p>
         </div>
         <div className={`${style.moodContent}`}>
-          <p className={`${style.moodTitle}`}>Love</p>
-          <p className={`${style.moodCount}`}>{LoveCount}</p>
+          <p
+            className={
+              monthMood == "Love"
+                ? `${style.moodTitle} ${style.mostValueColor}`
+                : `${style.moodTitle}`
+            }
+          >
+            Love
+          </p>
+          <p
+            className={
+              monthMood == "Love"
+                ? `${style.moodCount} ${style.mostValueColor}`
+                : `${style.moodCount}`
+            }
+          >
+            {LoveCount}
+          </p>
         </div>
       </div>
     </div>

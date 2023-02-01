@@ -273,6 +273,7 @@
   margin-top: 100px;
   color: white;
   max-width: 1600px;
+  min-height: 640px;
 }
 .siteDesBox .siteDes_pBox {
   display: flex;
@@ -392,7 +393,7 @@
 }
 .howUseFullBox .howUseContentBox .howUseBox {
   width: 30%;
-  height: 45vh;
+  min-height: 380px;
   background-color: rgb(240, 240, 240);
   border-radius: 18px;
   padding: 20px 20px;
@@ -429,6 +430,7 @@
   width: 80px;
   height: 80px;
   filter: invert(100);
+  box-shadow: 0px 0px 0px white;
 }
 .howUseFullBox .howUseContentBox .howUseBox p {
   color: rgb(34, 34, 34);

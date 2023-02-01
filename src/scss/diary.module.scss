@@ -44,6 +44,11 @@
         &:focus {
           outline: none !important;
         }
+
+        option {
+          color: rgb(252, 252, 252);
+          background-color: rgb(21, 21, 21);
+        }
       }
       button {
         width: 120px;
@@ -207,6 +212,7 @@
       position: absolute;
       right: 0;
       margin: 15px;
+      z-index: 1000;
       p {
         width: 28px;
         height: 28px;
@@ -276,6 +282,7 @@
         font-size: 48px;
         font-weight: bold;
       }
+
       .titleDes {
         font-size: 22px;
         color: gainsboro;
@@ -307,6 +314,14 @@
           margin-top: 5px;
           margin: 5px;
           color: rgb(173, 173, 173);
+        }
+        .mostValueColor {
+          font-weight: bold;
+          color: #f4bd4e !important ;
+        }
+        .mostValueColor2 {
+          font-weight: bold;
+          color: #f46a4e !important ;
         }
       }
     }

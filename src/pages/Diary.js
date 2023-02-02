@@ -20,9 +20,17 @@ const Diary = () => {
   const isInViewport2 = useIntersectionObsever(diaryContentBoxRef);
 
   // 월 선택전 처음 접속시 실행
+  // 처음 렌더링 된후 useEffect가 실행되는데
+  // 이때는 브라우저가 html요소들을 가지고있기 때문에 쿼리셀렉터를 사용할 수는 있따.
+  // 하지만 추천하는 방식은 아니다
   useEffect(() => {
     let currentDate = new Date();
     let month = ("0" + (currentDate.getMonth() + 1)).slice(-2);
+
+    let el = document.querySelector("select");
+    let selectMonth = month.slice(-1);
+    el.children[selectMonth - 1].selected = true;
+
     setCurrentMonth(month);
     setMMData(
       localData && localData.filter((item) => item.date.slice(5, 7) == month)

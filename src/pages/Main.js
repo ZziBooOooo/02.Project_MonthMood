@@ -1,5 +1,6 @@
 import React, { useContext, useRef } from "react";
 import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
+
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import style from "../scss/Main.module.scss";
@@ -14,17 +15,18 @@ import write from "../assets/imgs/write.png";
 import choose from "../assets/imgs/choose.png";
 import complete from "../assets/imgs/complete.png";
 import useIntersectionObsever from "./useIntersectionObsever";
-
+import AnimatedCursor from "react-animated-cursor";
 const Main = () => {
   let navigate = useNavigate();
   const desRef = useRef();
   const scrollBtn = useRef();
   const titleRef = useRef();
   const cardRef = useRef();
-
+  const titleBoxRef = useRef();
   const isInViewport1 = useIntersectionObsever(desRef);
   const isInViewport2 = useIntersectionObsever(titleRef);
   const isInViewport3 = useIntersectionObsever(cardRef);
+  const isInViewport4 = useIntersectionObsever(titleBoxRef);
 
   function scrollDown() {
     let desBoxTop = desRef.current.offsetTop;
@@ -41,17 +43,36 @@ const Main = () => {
     <>
       <div className={`${style.FullContentBox}`}>
         <Header />
-        {/*         <div
-          ref={ref2}
+
+        <div
+          // ref={titleBoxRef} className={` ${style.mainTitleBox}`}>
+          ref={titleBoxRef}
           className={
-            isInViewport2
-              ? `${style.animation} ${style.mainTitleBox}`
-              : `${style.opa_zero} ${style.mainTitleBox}`
+            isInViewport4
+              ? `${style.mainTitleBox} ${style.animation2}`
+              : `${style.mainTitleBox} ${style.opa_zero}`
           }
-        > */}
-        <div className={` ${style.mainTitleBox}`}>
-          <p>HOW YOU FEEL DURING</p>
-          <p> THE MONTH</p>
+        >
+          {/* <p className={`${style.mainTitle}`}>HOW YOU FEEL DURING</p> */}
+          <p
+            className={
+              isInViewport4
+                ? `${style.mainTitle} ${style.animation2}`
+                : `${style.mainTitle} ${style.opa_zero}`
+            }
+          >
+            HOW YOU FEEL DURING
+          </p>
+          <p
+            className={
+              isInViewport4
+                ? `${style.mainTitle} ${style.animation2}`
+                : `${style.mainTitle} ${style.opa_zero}`
+            }
+          >
+            {" "}
+            THE MONTH
+          </p>
           <button
             onClick={() => {
               navigate("/write");
@@ -84,7 +105,6 @@ const Main = () => {
               <p>What is </p>
               <p>Month Mood?</p>
             </div>
-
             <p className={`${style.siteDes_p2Box}`}>
               MonthMood is a diary to record my mood for a month. Have a healthy
               mind while managing your mood.
@@ -92,16 +112,16 @@ const Main = () => {
           </div>
           <div className={`${style.siteDesimgBox}`}>
             <p className={`${style.gifBox1}`}>
-              <img src={giphy}></img>
+              <img className={`${style.gif}`} src={giphy}></img>
             </p>
             <p className={`${style.gifBox2}`}>
-              <img src={b}></img>
+              <img className={`${style.gif1}`} src={b}></img>
             </p>
             <p className={`${style.gifBox3}`}>
-              <img src={c}></img>
+              <img className={`${style.gif2}`} src={c}></img>
             </p>
             <p className={`${style.gifBox4}`}>
-              <img src={d}></img>
+              <img className={`${style.gif3}`} src={d}></img>
             </p>
           </div>
         </div>

@@ -38,16 +38,18 @@
   }
   .animation {
     animation-name: opacity;
-    animation-duration: 1500ms;
+    animation-duration: 700ms;
 
     @keyframes opacity {
-      from {
+      0% {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
         opacity: 0;
-        transform: translateY(15px);
       }
-      to {
+      100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
         opacity: 1;
-        transform: translateX(0px);
       }
     }
   }

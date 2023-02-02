@@ -19,9 +19,30 @@ const Footer = () => {
           <p>Keep a journal and be a positive person</p>
         </div>
         <div className={`${style.footerIconBox}`}>
-          <FontAwesomeIcon icon={faInstagram} />
+          {/*           <FontAwesomeIcon icon={faInstagram} />
           <FontAwesomeIcon icon={faTwitter} />
-          <FontAwesomeIcon icon={faFacebook} />
+          <FontAwesomeIcon icon={faFacebook} /> */}
+          <ul className={`${style.wrapper}`}>
+            {/* <li class="icon facebook"> */}
+            <li className={`${style.icon} ${style.facebook}`}>
+              <span className={`${style.tooltip}`}>Facebook</span>
+              <span>
+                <FontAwesomeIcon icon={faFacebook} />
+              </span>
+            </li>
+            <li className={`${style.icon} ${style.twitter}`}>
+              <span className={`${style.tooltip}`}>Twitter</span>
+              <span>
+                <FontAwesomeIcon icon={faTwitter} />
+              </span>
+            </li>
+            <li className={`${style.icon} ${style.instagram}`}>
+              <span className={`${style.tooltip}`}>Instagram</span>
+              <span>
+                <FontAwesomeIcon icon={faInstagram} />
+              </span>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

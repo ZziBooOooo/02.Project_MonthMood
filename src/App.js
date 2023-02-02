@@ -6,6 +6,7 @@ import Write from "./pages/Write";
 import Title from "./pages/Title";
 import Diary from "./pages/Diary";
 import Trend from "./pages/Trend";
+import AnimatedCursor from "react-animated-cursor";
 
 import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import { createContext, useEffect, useState } from "react";
@@ -22,6 +23,7 @@ function App() {
   const [loveData, setLoveData] = useState([]);
   const [randomData, setRandomData] = useState([]);
   const [trendData, setTrendData] = useState([]);
+  const [test, setTest] = useState("");
 
   /* 노트북 기준 화면 -> 세로 사이즈 다시 적용 */
 
@@ -127,9 +129,33 @@ function App() {
         loveData,
         randomData,
         trendData,
+        test,
+        setTest,
       }}
     >
       <div className={`${style.App}`}>
+        <AnimatedCursor
+          innerSize={20}
+          outerSize={12}
+          color="227, 205, 247"
+          outerAlpha={0.2}
+          innerScale={1}
+          outerScale={5}
+          trailingSpeed={7}
+          clickables={[
+            "a",
+            'input[type="text"]',
+            'input[type="email"]',
+            'input[type="number"]',
+            'input[type="submit"]',
+            'input[type="image"]',
+            "label[for]",
+            "select",
+            "textarea",
+            "button",
+            ".link",
+          ]}
+        />
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/login" element={<Login />} />

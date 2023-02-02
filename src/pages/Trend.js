@@ -31,7 +31,9 @@ const Trend = () => {
 
   const gifCardRef = useRef();
   const fullDivRef = useRef();
+  const gifRef = useRef();
   const isInViewport = useIntersectionObsever(gifCardRef);
+  // const isInViewport = useIntersectionObsever(gifRef);
 
   let boxColor = [
     "#FAC642",
@@ -74,7 +76,7 @@ const Trend = () => {
     axiosData();
     setTimeout(() => {}, 300);
   }, []);
-  console.log(trendData);
+  // console.log(trendData);
   const axiosMoreData = async (n) => {
     // 추가 데이터를 로드하는 상태로 전환
     setFetching(true);
@@ -156,8 +158,14 @@ const Trend = () => {
                       >
                         <div className={`${style.gifBox}`}>
                           <img
+                            ref={gifRef}
                             src={item.images.fixed_height_downsampled.url}
                             alt="imageUrl"
+                            className={
+                              isInViewport
+                                ? `${style.gifWrapBox} ${style.animation}`
+                                : `${style.gifWrapBox} ${style.opa_zero2}`
+                            }
                           ></img>
                           <p>{item.title}</p>
                         </div>

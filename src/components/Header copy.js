@@ -26,7 +26,7 @@ const Header = () => {
   console.log(currentMenu);
   function goTREND() {
     navigate("/trend");
-    setTest("TREND");
+    setCurrentMenu("TREND");
     console.log(currentMenu);
   }
   function goGOMM() {
@@ -44,15 +44,20 @@ const Header = () => {
     } else {
       navigate("/login");
     }
-    setTest("DIARY");
+    setCurrentMenu("DIARY");
   }
-
+  const menulist = [
+    ["HOME"],
+    ["TREND", goTREND],
+    ["GOMM", { goGOMM }],
+    ["DIARY", { goDIARY }],
+  ];
+  console.log(menulist);
   return (
     <div className={`${style.menubar}`}>
       <div className={`${style.leftMenubar}`}>
         <p
           onClick={() => {
-            setTest("");
             navigate("/");
           }}
         >
@@ -89,7 +94,7 @@ const Header = () => {
         </p>
 
         <p
-          className={test == "DIARY" ? `${style.currentMenu}` : null}
+          className={currentMenu == "DIARY" ? `${style.currentMenu}` : null}
           onClick={goDIARY}
         >
           DIARY

@@ -185,7 +185,7 @@ const Diary_Modal = ({
           <p
             className={
               monthMood == "Sad"
-                ? `${style.moodTitle} ${style.mostValueColor}`
+                ? `${style.moodTitle} ${style.mostValueColor2}`
                 : `${style.moodTitle}`
             }
           >
@@ -194,7 +194,7 @@ const Diary_Modal = ({
           <p
             className={
               monthMood == "Sad"
-                ? `${style.moodCount} ${style.mostValueColor}`
+                ? `${style.moodCount} ${style.mostValueColor2}`
                 : `${style.moodCount}`
             }
           >
@@ -205,7 +205,7 @@ const Diary_Modal = ({
           <p
             className={
               monthMood == "Upset"
-                ? `${style.moodTitle} ${style.mostValueColor}`
+                ? `${style.moodTitle} ${style.mostValueColor2}`
                 : `${style.moodTitle}`
             }
           >
@@ -214,7 +214,7 @@ const Diary_Modal = ({
           <p
             className={
               monthMood == "Upset"
-                ? `${style.moodCount} ${style.mostValueColor}`
+                ? `${style.moodCount} ${style.mostValueColor2}`
                 : `${style.moodCount}`
             }
           >
@@ -225,7 +225,7 @@ const Diary_Modal = ({
           <p
             className={
               monthMood == "Angry"
-                ? `${style.moodTitle} ${style.mostValueColor2}`
+                ? `${style.moodTitle} ${style.mostValueColor3}`
                 : `${style.moodTitle}`
             }
           >
@@ -234,7 +234,7 @@ const Diary_Modal = ({
           <p
             className={
               monthMood == "Angry"
-                ? `${style.moodCount} ${style.mostValueColor2}`
+                ? `${style.moodCount} ${style.mostValueColor3}`
                 : `${style.moodCount}`
             }
           >
@@ -245,7 +245,7 @@ const Diary_Modal = ({
           <p
             className={
               monthMood == "Love"
-                ? `${style.moodTitle} ${style.mostValueColor}`
+                ? `${style.moodTitle} ${style.mostValueColor4}`
                 : `${style.moodTitle}`
             }
           >
@@ -254,7 +254,7 @@ const Diary_Modal = ({
           <p
             className={
               monthMood == "Love"
-                ? `${style.moodCount} ${style.mostValueColor}`
+                ? `${style.moodCount} ${style.mostValueColor4}`
                 : `${style.moodCount}`
             }
           >

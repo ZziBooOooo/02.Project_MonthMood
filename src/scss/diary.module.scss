@@ -39,7 +39,7 @@
         -moz-appearance: none;
         appearance: none;
         cursor: pointer;
-        font-weight: 500;
+        font-weight: 700;
         color: rgb(240, 240, 240);
         &:focus {
           outline: none !important;
@@ -309,19 +309,46 @@
 
         .moodTitle {
           font-size: 22px;
+          font-weight: 900;
         }
         .moodCount {
           margin-top: 5px;
           margin: 5px;
           color: rgb(173, 173, 173);
+          font-weight: 900;
         }
         .mostValueColor {
-          font-weight: bold;
-          color: #f4bd4e !important ;
+          // font-weight: bold;
+          // color: #f46a4e !important ;
+          background-image: linear-gradient(320deg, #24c9b3 0%, #f7c964 100%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
         }
         .mostValueColor2 {
-          font-weight: bold;
-          color: #f46a4e !important ;
+          // font-weight: bold;
+          // color: #f4bd4e !important ;
+          background-image: linear-gradient(320deg, #ab6bff 0%, #53a7f7 100%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        .mostValueColor3 {
+          // font-weight: bold;
+          // color: #f46a4e !important ;
+          background-image: linear-gradient(320deg, #fc4929 0%, #f7c964 100%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+        .mostValueColor4 {
+          // font-weight: bold;
+          // color: #f46a4e !important ;
+          background-image: linear-gradient(320deg, #f54899 0%, #f3839f 100%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
         }
       }
     }
@@ -337,15 +364,16 @@
 }
 .animation {
   animation-name: opacity;
-  animation-duration: 1000ms;
+  animation-duration: 300ms;
 
   @keyframes opacity {
     from {
       opacity: 0;
-      transform: translateX(-50%) translateY(15px);
+      transform: translateX(-50%) scale(0.9);
     }
     to {
       opacity: 1;
+      transform: translateX(-50%) scale(1);
       // transform: translateX(-50%);
     }
   }

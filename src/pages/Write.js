@@ -166,7 +166,7 @@ const Write = () => {
     let day = ("0" + today.getDate()).slice(-2);
     let date = year + "-" + month + "-" + day;
     let localData = JSON.parse(window.localStorage.getItem("moodData"));
-    console.log(localData);
+    // console.log(localData);
     if (localData) {
       let count = localData.length;
       setLastClick({ gifId, count, date, selectValue, item });
@@ -291,7 +291,7 @@ const Write = () => {
               <p className={`${style.fullGifBox} `}>
                 {/* <img src={fullGif[0].images.downsized_medium.url}></img> */}
                 <img
-                  src={fullGif[0].images.preview_webp.url}
+                  src={fullGif[0].images.fixed_height.url}
                   className={`${style.start2} ${style[fade2]}`}
                 ></img>
               </p>

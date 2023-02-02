@@ -102,9 +102,16 @@ const Diary = () => {
               <option value="11">2023-11</option>
               <option value="12">2023-12</option>
             </select>
-            <button onClick={showModal}>
-              MY MM
+            {/*             <button onClick={showModal}>
               <p>{<FontAwesomeIcon icon={faHeart} />}</p>
+            </button> */}
+            <button className={`${style.wrapper}`} onClick={showModal}>
+              <div className={`${style.icon} ${style.instagram}`}>
+                <span className={`${style.tooltip}`}>Click Me!</span>
+                <span className={`${style.heartSvg}`}>
+                  <FontAwesomeIcon icon={faHeart} />
+                </span>
+              </div>
             </button>
           </div>
 

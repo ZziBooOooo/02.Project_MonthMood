@@ -4,6 +4,12 @@ import Logo from "../assets/imgs/MM.png";
 import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
 import { ContextGifData } from "./../App";
 
+/* 
+*** 현재메뉴 활성화 로직
+스테이트 변경함수와 다른 일을 실행할 때 스테이트변경함수는 먼저 적혀있어도 나중에 실행됨
+ -> context를 사용해서 스테이트변경을 하면 동시에 렌더링됨 ?_?
+*/
+
 const Header = () => {
   const { test, setTest } = useContext(ContextGifData);
   let navigate = useNavigate();
@@ -36,7 +42,7 @@ const Header = () => {
     } else {
       navigate("/login");
     }
-    setCurrentMenu("");
+    setTest("");
   }
   function goDIARY() {
     if (islogin) {

@@ -25,7 +25,8 @@
     .diaryTopBox {
       width: 95%;
       display: flex;
-      justify-content: space-between;
+      // justify-content: space-between;
+      align-items: center;
       select {
         width: 150px;
         padding: 5px 10px;
@@ -51,14 +52,15 @@
         }
       }
       button {
-        width: 120px;
-        color: white;
+        // width: 120px;
+        // color: white;
         font-size: 18px;
         display: flex;
         align-items: center;
         justify-content: flex-end;
+        margin-left: 10px;
         p {
-          margin-left: 10px;
+          /*           margin-left: 10px;
           width: 32px;
           height: 32px;
           border-radius: 50%;
@@ -66,13 +68,129 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          background: linear-gradient(101deg, #cf72dd, #6f27bb);
+          background: linear-gradient(101deg, #e782c5, #8735df); */
           svg {
             text-align: center;
             margin: 0;
             padding: 0;
           }
         }
+      }
+      .wrapper {
+        display: flex;
+        list-style: none;
+        width: 40px;
+        height: 40px;
+      }
+      @keyframes floating {
+        0% {
+          transform: translate(-5px, 0px);
+        }
+        50% {
+          transform: translate(-5px, 4px);
+        }
+        100% {
+          transform: translate(-5px, -0px);
+        }
+      }
+      .wrapper .icon {
+        position: relative;
+        // background: linear-gradient(101deg, #e782c5, #a056f0);
+        background: linear-gradient(101deg, #eeeced, #f8f8f8);
+        border-radius: 50%;
+        // padding: 15px;
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        // box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        // transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transition: 0.5s;
+        box-shadow: rgba(0, 0, 0, 0.329) -3px -3px 2px inset;
+        .heartSvg {
+          // color: white;
+          color: rgb(188, 124, 248);
+          width: 18px;
+          height: 18px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        &:hover {
+          transform: translateY(-2.5px) scale(1.02);
+          background: linear-gradient(101deg, #e782c5, #a056f0);
+          // background: linear-gradient(101deg, #eeeced, #f8f8f8);
+
+          svg {
+            // color: rgb(188, 124, 248);
+            color: white;
+          }
+        }
+      }
+
+      .wrapper .tooltip {
+        position: absolute;
+        top: 0;
+        font-size: 14px;
+        background: linear-gradient(101deg, #eeeced, #f8f8f8);
+        box-shadow: rgba(0, 0, 0, 0.329) -3px -3px 2px inset;
+        color: #ffffff;
+        padding: 5px 8px;
+        border-radius: 5px;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        min-width: 20px;
+        text-align: center;
+        min-width: 200%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 90px;
+        margin-left: 10px;
+        animation: 2s floating ease-in-out infinite;
+      }
+
+      .wrapper .tooltip::before {
+        position: absolute;
+        content: "";
+        height: 8px;
+        width: 8px;
+        background: #f9f4ff;
+        bottom: -3px;
+        left: 50%;
+        transform: translate(-50%) rotate(45deg);
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+
+      .wrapper .tooltip {
+        top: -42px;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+
+      .wrapper span,
+      .wrapper .tooltip {
+        text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+      }
+
+      .wrapper .tooltip {
+        min-width: 200%;
+        text-align: center;
+      }
+
+      .wrapper,
+      .wrapper .tooltip,
+      .wrapper .tooltip::before {
+        // background: linear-gradient(101deg, #e782c5, #8735df);
+        color: #444444;
+        font-weight: 900;
       }
     }
     .diaryContentBox {

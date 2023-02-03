@@ -1,19 +1,27 @@
+.fullBox {
+  width: 100%;
+  // min-height: 100vh;
+  display: flex;
+  max-width: 1600px;
+  padding-bottom: 200px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .FullDiv {
   width: 100%;
   padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  &.bgOpacity {
-    // background-color: rgba(0, 0, 0, 0.995);
-  }
+  // background-color: #151515;
 
   .diaryBox {
     width: 80%;
     max-width: 1600px;
     margin-top: 200px;
-    height: 150vh;
+    min-height: 80vh;
     background: linear-gradient(#0200037a, #131313f8);
     border-radius: 24px;
     display: flex;
@@ -25,8 +33,55 @@
     .diaryTopBox {
       width: 95%;
       display: flex;
-      // justify-content: space-between;
+      justify-content: space-between;
       align-items: center;
+      .diaryTopBox_left {
+        min-width: 200px;
+        display: flex;
+      }
+      .diaryTopBox_right {
+        min-width: 190px;
+        position: relative;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        transition: 0.3s;
+        &:hover {
+          transform: scale(1.05) translate(-3px);
+        }
+
+        input {
+          background-color: transparent;
+          color: white;
+          font-size: 18px;
+          border: 0;
+          border-bottom: 2px solid white;
+          outline: none;
+          padding: 0px 0px 0px 8px;
+          width: 100%;
+          position: absolute;
+          transition: 0.5s;
+          opacity: 0;
+          cursor: none;
+          font-weight: 700;
+
+          &:focus {
+            opacity: 1;
+          }
+        }
+
+        svg {
+          position: absolute;
+          color: white;
+          right: 0;
+          top: 50%;
+          transform: translateY(-65%);
+          width: 20px;
+          height: 20px;
+          cursor: none;
+          transition: 0.3s;
+        }
+      }
       select {
         width: 150px;
         padding: 5px 10px;
@@ -137,7 +192,7 @@
         top: 0;
         font-size: 14px;
         background: linear-gradient(101deg, #eeeced, #f8f8f8);
-        box-shadow: rgba(0, 0, 0, 0.329) -3px -3px 2px inset;
+        box-shadow: rgba(0, 0, 0, 0.329) -5px -5px 5px inset;
         color: #ffffff;
         padding: 5px 8px;
         border-radius: 5px;
@@ -162,6 +217,7 @@
         height: 8px;
         width: 8px;
         background: #f9f4ff;
+        box-shadow: rgba(0, 0, 0, 0.329) -3px -3px 5px inset;
         bottom: -3px;
         left: 50%;
         transform: translate(-50%) rotate(45deg);
@@ -173,6 +229,7 @@
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
+        box-shadow: rgba(0, 0, 0, 0.329) -3px -3px 5px inset;
       }
 
       .wrapper span,
@@ -198,12 +255,12 @@
       width: 99%;
       // background-color: rgba(252, 220, 225, 0.178);
       display: flex;
-      justify-content: space-between;
+      // justify-content: space-between;
       flex-wrap: wrap;
       .contentBox {
         width: 25%;
         min-width: 140px;
-        max-width: 180px;
+        max-width: 160px;
         // min-height: 100px;
         // height: 200px;
         // background-color: rgb(202, 175, 191);
@@ -212,7 +269,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin: 0px 10px;
+        margin: 0px 15px;
         margin-bottom: 40px;
         transition: 0.3s;
         &:hover {
@@ -222,7 +279,7 @@
           }
         }
         .imgBox {
-          width: 90%;
+          width: 100%;
           min-width: 140px;
           // height: 120px;
           position: relative;
@@ -307,7 +364,8 @@
   .modalBox {
     width: 60%;
     max-width: 1000px;
-    height: 60vh;
+    height: 50vh;
+
     background-color: #151515;
     position: absolute;
     top: 0;
@@ -321,6 +379,7 @@
     flex-direction: column;
     // justify-content: center;
     align-items: center;
+    justify-content: center;
     visibility: hidden;
 
     &.show {
@@ -329,6 +388,7 @@
     .closeBtn {
       position: absolute;
       right: 0;
+      top: 0;
       margin: 15px;
       z-index: 1000;
       p {
@@ -355,12 +415,14 @@
       justify-content: space-between;
       align-items: center;
       position: relative;
-      transform: translateY(-30px);
+      transform: translate(-15px, -30px);
       // background-color: pink;
 
       p {
         overflow: hidden;
         padding: 3px;
+        display: flex;
+        justify-content: center;
 
         img {
           box-shadow: 2px 2px 5px rgba(59, 59, 59, 0.377);
@@ -376,16 +438,22 @@
         height: calc(100vw / 6.5);
         transform: translate(55px, -40px);
         z-index: 1;
+        max-width: 250px;
+        max-height: 250px;
       }
       .gifBox2 {
         width: calc((100vw / 8.5));
         height: calc((100vw / 8.5));
         transform: translate(0px, 30px);
+        max-width: 220px;
+        max-height: 220px;
       }
       .gifBox3 {
         width: calc(100vw / 6);
         height: calc(100vw / 6);
         transform: translate(-65px, -80px);
+        max-width: 300px;
+        max-height: 300px;
       }
     }
     .TitleBox {
@@ -438,7 +506,7 @@
         .mostValueColor {
           // font-weight: bold;
           // color: #f46a4e !important ;
-          background-image: linear-gradient(320deg, #24c9b3 0%, #f7c964 100%);
+          background-image: linear-gradient(320deg, #316ab6 0%, #8ddff8 100%);
           background-clip: text;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;

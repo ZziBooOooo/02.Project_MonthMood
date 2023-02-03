@@ -23,9 +23,9 @@ const Login = () => {
       if (password == localValue[0].password) {
         console.log("로그인성공");
         window.localStorage.setItem("login_Success", true);
-        setTimeout(() => {
+        /*         setTimeout(() => {
           navigate("/");
-        }, 1000);
+        }, 1000); */
       } else {
         console.log("로그인실패");
         setValidShow(true);
@@ -130,6 +130,7 @@ const Login = () => {
             </div>
           </form>
         </div>
+        <div className={`${style.accountModal}`}></div>
       </div>
     </div>
   );

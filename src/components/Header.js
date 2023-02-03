@@ -19,9 +19,6 @@ const Header = () => {
   const [currentMenu, setCurrentMenu] = useState("");
 
   useEffect(() => {
-    console.log(1);
-  }, [currentMenu]);
-  useEffect(() => {
     let isLoginSuccess = window.localStorage.getItem("login_Success");
     setIsLogin(isLoginSuccess);
   }, []);
@@ -29,7 +26,7 @@ const Header = () => {
     window.localStorage.setItem("login_Success", false);
     setIsLogin(false);
   }
-  console.log(currentMenu);
+  // console.log(currentMenu);
   function goTREND() {
     navigate("/trend");
     setTest("TREND");

@@ -5,6 +5,7 @@ import style from "../scss/diary.module.scss";
 import Diary_Modal from "./Diary_Modal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import useIntersectionObsever from "./useIntersectionObsever";
 
 const Diary = () => {
@@ -12,6 +13,7 @@ const Diary = () => {
   const [currentMonth, setCurrentMonth] = useState("");
   const [isShowModal, setIsShowModal] = useState(false);
   const [positiveImg, setPositiveImg] = useState("");
+  const [searchDatas, setSearchDatas] = useState([]);
   let navigate = useNavigate();
   let localData = JSON.parse(window.localStorage.getItem("moodData"));
   const diaryBoxRef = useRef();
@@ -68,8 +70,24 @@ const Diary = () => {
       behavior: "smooth",
     });
   }
+  function searchData(e) {
+    let searchWord = e.target.value;
+    let searchResult = [];
+
+    searchDatas.map((item) => {
+      if (item.title.includes(searchWord)) {
+        searchResult.push(item);
+      }
+      setMMData(searchResult);
+    });
+  }
+
+  function getData() {
+    let localData = JSON.parse(window.localStorage.getItem("moodData"));
+    setSearchDatas(localData);
+  }
   return (
-    <>
+    <div className={`${style.fullBox}`}>
       <div className={`${style.fullModalBox}`}></div>
       <Header />
       <div className={`${style.FullDiv} ${style.bgOpacity}`}>
@@ -83,36 +101,46 @@ const Diary = () => {
           }
         >
           <div className={`${style.diaryTopBox}`}>
-            <select
-              name="mood"
-              id="moodselect"
-              onChange={changeMonth}
-              defaultValue="2023-02"
-            >
-              <option value="01">2023-01</option>
-              <option value="02">2023-02</option>
-              <option value="03">2023-03</option>
-              <option value="04">2023-04</option>
-              <option value="05">2023-05</option>
-              <option value="06">2023-06</option>
-              <option value="07">2023-07</option>
-              <option value="08">2023-08</option>
-              <option value="09">2023-09</option>
-              <option value="10">2023-10</option>
-              <option value="11">2023-11</option>
-              <option value="12">2023-12</option>
-            </select>
-            {/*             <button onClick={showModal}>
+            <div className={`${style.diaryTopBox_left}`}>
+              <select
+                name="mood"
+                id="moodselect"
+                onChange={changeMonth}
+                defaultValue="2023-02"
+              >
+                <option value="01">2023-01</option>
+                <option value="02">2023-02</option>
+                <option value="03">2023-03</option>
+                <option value="04">2023-04</option>
+                <option value="05">2023-05</option>
+                <option value="06">2023-06</option>
+                <option value="07">2023-07</option>
+                <option value="08">2023-08</option>
+                <option value="09">2023-09</option>
+                <option value="10">2023-10</option>
+                <option value="11">2023-11</option>
+                <option value="12">2023-12</option>
+              </select>
+              {/*             <button onClick={showModal}>
               <p>{<FontAwesomeIcon icon={faHeart} />}</p>
             </button> */}
-            <button className={`${style.wrapper}`} onClick={showModal}>
-              <div className={`${style.icon} ${style.instagram}`}>
-                <span className={`${style.tooltip}`}>Click Me!</span>
-                <span className={`${style.heartSvg}`}>
-                  <FontAwesomeIcon icon={faHeart} />
-                </span>
-              </div>
-            </button>
+              <button className={`${style.wrapper}`} onClick={showModal}>
+                <div className={`${style.icon} ${style.instagram}`}>
+                  <span className={`${style.tooltip}`}>Click Me!</span>
+                  <span className={`${style.heartSvg}`}>
+                    <FontAwesomeIcon icon={faHeart} />
+                  </span>
+                </div>
+              </button>
+            </div>
+            <div className={`${style.diaryTopBox_right}`}>
+              <FontAwesomeIcon icon={faSearch} />
+              <input
+                onChange={searchData}
+                onClick={getData}
+                placeholder="Search Title!"
+              />
+            </div>
           </div>
 
           <div className={`${style.diaryContentBox}`}>
@@ -164,7 +192,7 @@ const Diary = () => {
           />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -22,8 +22,9 @@ function App() {
   const [angryData, setAngryData] = useState([]);
   const [loveData, setLoveData] = useState([]);
   const [randomData, setRandomData] = useState([]);
-  const [trendData, setTrendData] = useState([]);
+  const [trendData1, setTrendData1] = useState([]);
   const [test, setTest] = useState("");
+  const [dark, setDark] = useState(true);
 
   /* 노트북 기준 화면 -> 세로 사이즈 다시 적용 */
 
@@ -110,7 +111,7 @@ function App() {
         `https://api.giphy.com/v1/gifs/trending?api_key=DWM8KhnNr7CqIgyFFGFvTV03fooZYde2&limit=30&rating=pg`
       )
       .then((result) => {
-        setTrendData([...trendData, ...result.data.data]);
+        setTrendData1([...trendData1, ...result.data.data]);
         // console.log(result);
       })
       .catch(() => {
@@ -118,6 +119,10 @@ function App() {
       });
   }, []);
 
+  // console.log(trendData1)
+
+  let a = "227, 205, 247";
+  let b = "207, 305, 207";
   return (
     <ContextGifData.Provider
       value={{
@@ -128,7 +133,7 @@ function App() {
         angryData,
         loveData,
         randomData,
-        trendData,
+        trendData1,
         test,
         setTest,
       }}
@@ -137,7 +142,7 @@ function App() {
         <AnimatedCursor
           innerSize={20}
           outerSize={12}
-          color="227, 205, 247"
+          color={a}
           outerAlpha={0.2}
           innerScale={1}
           outerScale={5}

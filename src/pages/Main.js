@@ -15,7 +15,7 @@ import write from "../assets/imgs/write.png";
 import choose from "../assets/imgs/choose.png";
 import complete from "../assets/imgs/complete.png";
 import useIntersectionObsever from "./useIntersectionObsever";
-import AnimatedCursor from "react-animated-cursor";
+
 const Main = () => {
   let navigate = useNavigate();
   const desRef = useRef();

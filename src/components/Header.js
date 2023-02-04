@@ -3,6 +3,7 @@ import style from "../scss/Main.module.scss";
 import Logo from "../assets/imgs/MM.png";
 import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
 import { ContextGifData } from "./../App";
+import { UserInfoContextStore } from "../pages/UserInfoContext";
 
 /* 
 *** 현재메뉴 활성화 로직
@@ -12,11 +13,14 @@ import { ContextGifData } from "./../App";
 
 const Header = () => {
   const { test, setTest } = useContext(ContextGifData);
+  const UserInfo = useContext(UserInfoContextStore);
+
   let navigate = useNavigate();
   let isLoginSuccess = window.localStorage.getItem("login_Success");
   // console.log(isLoginSuccess);
   const [islogin, setIsLogin] = useState(false);
   const [currentMenu, setCurrentMenu] = useState("");
+  const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
     let isLoginSuccess = window.localStorage.getItem("login_Success");
@@ -49,6 +53,24 @@ const Header = () => {
     }
     setTest("DIARY");
   }
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.setAttribute("data-theme", "dark");
+    } else {
+      document.documentElement.setAttribute("data-theme", "light");
+    }
+  }, []);
+
+  const onClick = (e) => {
+    console.log(isDark);
+    if (isDark) {
+      document.documentElement.setAttribute("data-theme", "light");
+    } else {
+      document.documentElement.setAttribute("data-theme", "dark");
+    }
+    setIsDark(!isDark);
+    console.log(isDark);
+  };
 
   return (
     <div className={`${style.menubar}`}>
@@ -98,20 +120,25 @@ const Header = () => {
           DIARY
         </p>
       </div>
-      {islogin ? (
-        <button className={`${style.rightMenubar}`} onClick={clickLogOut}>
-          LOGOUT
-        </button>
-      ) : (
-        <button
-          className={`${style.rightMenubar}`}
-          onClick={() => {
-            navigate("/login");
-          }}
-        >
-          LOGIN
-        </button>
-      )}
+      <div className={`${style.rightFullMenubar}`}>
+        {islogin ? (
+          <button className={`${style.rightMenubar}`} onClick={clickLogOut}>
+            LOGOUT
+          </button>
+        ) : (
+          <button
+            className={`${style.rightMenubar}`}
+            onClick={() => {
+              navigate("/login");
+            }}
+          >
+            LOGIN
+          </button>
+        )}
+        <div className={`${style.toggle}`}>
+          <button htmlFor="switch" onClick={onClick}></button>
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,0 +1,28 @@
+html[data-theme=light] {
+  --darkToggleColor-btn: #fce8fc;
+  --bgimg: url("../assets/imgs/bg9.png");
+  --box-shadow: 2px 2px 5px rgba(129, 104, 131, 0.377);
+  --box-shadow2: 3px 3px 5px rgba(119, 90, 119, 0.562);
+  --gradient: linear-gradient(90deg, #f789ed, #c697f8);
+  --moreGradient: linear-gradient(90deg, #fff2fe, #f0e6fd);
+  --border: #fff2fe;
+  --border2: #fff2fe;
+  --textColor: rgb(255, 255, 255);
+  --textColor2: #af70f3;
+  --textColor3: #f370b2;
+  --boxColor: rgba(253, 253, 253, 0.4);
+}
+
+html[data-theme=dark] {
+  --darkToggleColor-btn: #f3f3f3;
+  --bgimg: url("../assets/imgs/bg3.png");
+  --box-shadow: -2px -2px 5px rgba(117, 89, 109, 0.377) inset;
+  --box-shadow2: 2px 2px 5px rgba(0, 0, 0, 0.377);
+  --gradient: linear-gradient(50deg, #ff6fcf, #8d33ee);
+  --moreGradient: linear-gradient(90deg, #ff6fcf, #8d33ee);
+  --border: #8d33ee;
+  --border2: #f3f3f3;
+  --textColor: rgb(240, 240, 240);
+  --textColor2: rgb(240, 240, 240);
+  --boxColor: rgba(36, 36, 36, 0.47);
+}/*# sourceMappingURL=color.css.map */

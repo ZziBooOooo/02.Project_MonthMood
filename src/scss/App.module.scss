@@ -1,13 +1,14 @@
 .App {
   background-color: #131215;
   width: 100%;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  // justify-content: center;
-  background-image: url("../assets/imgs/bg3.png");
+  background-image: var(--bgimg);
+
   // background-color: white;
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   position: relative;
+  // background-size: cover;
 }

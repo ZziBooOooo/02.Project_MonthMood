@@ -1,11 +1,11 @@
 .App {
   background-color: #131215;
   width: 100%;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  background-image: url("../assets/imgs/bg3.png");
-  background-repeat: no-repeat;
+  background-image: var(--bgimg);
+  background-repeat: repeat-y;
   position: relative;
 }/*# sourceMappingURL=App.module.css.map */

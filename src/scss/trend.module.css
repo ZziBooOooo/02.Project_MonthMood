@@ -9,15 +9,15 @@
 } */
 .writeFullDiv {
   width: 100%;
+  max-width: 1600px;
   height: 100%;
   padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("../assets/imgs/bg3.png");
 }
 .writeFullDiv .trendBox {
-  width: 80%;
+  width: 90%;
   max-width: 1600px;
   margin-top: 200px;
   background: linear-gradient(rgba(2, 0, 3, 0.4784313725), rgba(19, 19, 19, 0.9725490196));
@@ -57,6 +57,8 @@
   width: 30%;
   transition: 0.3s;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
 }
 .writeFullDiv .trendBox .trendContentBox .gifContentBox .gifWrapBox:hover {
   transform: translateY(-5px);
@@ -167,49 +169,48 @@
 }
 
 .scroll {
-  width: 60px;
-  height: 60px;
-  border: 3px solid rgb(240, 240, 240);
+  width: 56px;
+  height: 56px;
+  border: 4px solid var(--border);
   border-radius: 50%;
   position: fixed;
-  -webkit-animation: down 2s infinite;
-          animation: down 2s infinite;
   right: 0%;
   bottom: 0%;
-  margin: 3%;
+  margin: 2%;
   cursor: pointer;
-  transition: 0.5s;
+  transition: 0.2s;
   background-color: transparent;
   overflow: hidden;
+  box-shadow: var(--box-shadow2);
 }
 .scroll::before {
   content: "";
   position: absolute;
-  top: 22px;
-  left: 18px;
+  top: 19px;
+  left: 15px;
   width: 18px;
   height: 18px;
   border-left: 3px solid rgb(240, 240, 240);
   border-bottom: 3px solid rgb(240, 240, 240);
   transform: rotate(135deg);
+  z-index: 2000;
 }
 .scroll::after {
   position: absolute;
   display: block;
   content: "";
-  background: linear-gradient(#6c00fa, #eb66d4);
-  height: 50px;
-  width: 50px;
-  top: -80%;
-  left: -85%;
+  background: var(--gradient);
+  height: 40px;
+  width: 40px;
+  top: -65%;
+  left: -65%;
   transition: 0.8s;
   border-radius: 50%;
-  z-index: -1;
+  z-index: 1000;
 }
 .scroll:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 8px rgba(243, 132, 237, 0.959), 0 0 20px rgba(160, 92, 250, 0.911);
 }
 .scroll:hover::after {
-  transform: scale(7, 7);
+  transform: scale(5, 5);
 }/*# sourceMappingURL=trend.module.css.map */

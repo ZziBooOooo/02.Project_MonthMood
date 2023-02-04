@@ -1,10 +1,11 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useContext } from "react";
 import Header from "../components/Header";
 import style from "../scss/trend.module.scss";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import useIntersectionObsever from "./useIntersectionObsever";
+import { ContextGifData } from "./../App";
 
 const GifDiv = styled.div`
   width: 80%;
@@ -18,11 +19,11 @@ const GifDiv = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 0px 10px;
-  margin-bottom: 8%;
+  margin-bottom: 10%;
 `;
 
 const Trend = () => {
-  // let { trendData } = useContext(ContextGifData);
+  let { trendData1 } = useContext(ContextGifData);
   let navigate = useNavigate();
   const [trendData, setTrendData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -51,13 +52,14 @@ const Trend = () => {
     });
   }
 
-  let arr1 = trendData && trendData.slice(0, 6);
-  addColor(arr1);
+  /* let arr1 = trendData1 && trendData1.slice(0, 6);
+  addColor(arr1); */
 
   const axiosData = async () => {
     setLoading(true);
 
-    await axios
+    // 여기서 초기 데이터받으면 새로고침이 일어난다..
+    /* await axios
       .get(
         `https://api.giphy.com/v1/gifs/trending?api_key=DWM8KhnNr7CqIgyFFGFvTV03fooZYde2&limit=6&offset=0&rating=pg-13`
       )
@@ -68,7 +70,11 @@ const Trend = () => {
       })
       .catch(() => {
         console.log("요청 실패");
-      });
+      }); */
+    console.log(trendData1);
+    let arr1 = trendData1 && trendData1.slice(0, 6);
+    addColor(arr1);
+    setTrendData([...arr1]);
     setLoading(false);
   };
 
@@ -76,7 +82,7 @@ const Trend = () => {
     axiosData();
     setTimeout(() => {}, 300);
   }, []);
-  // console.log(trendData);
+
   const axiosMoreData = async (n) => {
     // 추가 데이터를 로드하는 상태로 전환
     setFetching(true);
@@ -94,7 +100,7 @@ const Trend = () => {
         const mergedData = trendData.concat(...fetchedData);
         setTrendData(mergedData);
         addColor(fetchedData);
-        console.log(gifCardRef);
+        // console.log(gifCardRef);
       });
     // 추가 데이터 로드 끝
     setFetching(false);
@@ -185,9 +191,8 @@ const Trend = () => {
             </div>
           </div>
         </div>
-        <div className={`${style.scrollBox}`}>
-          <div className={`${style.scroll}`} onClick={scrollTop}></div>
-        </div>
+
+        <div className={`${style.scroll}`} onClick={scrollTop}></div>
       </div>
     </>
   );

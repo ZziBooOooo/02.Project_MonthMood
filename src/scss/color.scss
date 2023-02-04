@@ -1,0 +1,49 @@
+$lightBtn-color-1: #fce8fc;
+$darkBtn-color-2: #f3f3f3;
+$lightColor: rgb(255, 255, 255);
+$darkColor: rgb(240, 240, 240);
+$light-box-shadow: 2px 2px 5px rgba(129, 104, 131, 0.377);
+$light-box-shadow2: 3px 3px 5px rgba(119, 90, 119, 0.562);
+$dark-box-shadow: -2px -2px 5px rgba(117, 89, 109, 0.377) inset;
+$dark-box-shadow2: 2px 2px 5px rgba(0, 0, 0, 0.377);
+$darkGd1: #ff6fcf;
+$darkGd2: #8d33ee;
+$lightGd1: #f789ed;
+$lightGd2: #c697f8;
+$lightColor2: #af70f3;
+$lightColor3: #f370b2;
+$morelight1: #fff2fe;
+$morelight2: #f0e6fd;
+$lightOpaColor: rgba(253, 253, 253, 0.4);
+$darkOpaColor: rgba(36, 36, 36, 0.47);
+
+//themes.scss
+
+html[data-theme="light"] {
+  --darkToggleColor-btn: #{$lightBtn-color-1};
+  --bgimg: #{url("../assets/imgs/bg9.png")};
+  --box-shadow: #{$light-box-shadow};
+  --box-shadow2: #{$light-box-shadow2};
+  --gradient: #{linear-gradient(90deg, $lightGd1, $lightGd2)};
+  --moreGradient: #{linear-gradient(90deg, $morelight1, $morelight2)};
+  --border: #{$morelight1};
+  --border2: #{$morelight1};
+  --textColor: #{$lightColor};
+  --textColor2: #{$lightColor2};
+  --textColor3: #{$lightColor3};
+  --boxColor: #{$lightOpaColor};
+}
+
+html[data-theme="dark"] {
+  --darkToggleColor-btn: #{$darkBtn-color-2};
+  --bgimg: #{url("../assets/imgs/bg3.png")};
+  --box-shadow: #{$dark-box-shadow};
+  --box-shadow2: #{$dark-box-shadow2};
+  --gradient: #{linear-gradient(50deg, $darkGd1, $darkGd2)};
+  --moreGradient: #{linear-gradient(90deg, $darkGd1, $darkGd2)};
+  --border: #{$darkGd2};
+  --border2: #{$darkBtn-color-2};
+  --textColor: #{$darkColor};
+  --textColor2: #{$darkColor};
+  --boxColor: #{$darkOpaColor};
+}

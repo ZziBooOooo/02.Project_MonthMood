@@ -1,3 +1,49 @@
+html[data-theme=light] {
+  --darkToggleColor-btn: #fce8fc;
+  --bgimg: url("../assets/imgs/bg9.png");
+  --box-shadow: 2px 2px 5px rgba(129, 104, 131, 0.377);
+  --box-shadow2: 3px 3px 5px rgba(119, 90, 119, 0.562);
+  --gradient: linear-gradient(90deg, #f789ed, #c697f8);
+  --moreGradient: linear-gradient(90deg, #fff2fe, #f0e6fd);
+  --border: #fff2fe;
+  --border2: #fff2fe;
+  --textColor: rgb(255, 255, 255);
+  --textColor2: #af70f3;
+  --textColor3: #f370b2;
+  --boxColor: rgba(253, 253, 253, 0.4);
+}
+
+html[data-theme=dark] {
+  --darkToggleColor-btn: #f3f3f3;
+  --bgimg: url("../assets/imgs/bg3.png");
+  --box-shadow: -2px -2px 5px rgba(117, 89, 109, 0.377) inset;
+  --box-shadow2: 2px 2px 5px rgba(0, 0, 0, 0.377);
+  --gradient: linear-gradient(50deg, #ff6fcf, #8d33ee);
+  --moreGradient: linear-gradient(90deg, #ff6fcf, #8d33ee);
+  --border: #8d33ee;
+  --border2: #f3f3f3;
+  --textColor: rgb(240, 240, 240);
+  --textColor2: rgb(240, 240, 240);
+  --boxColor: rgba(36, 36, 36, 0.47);
+}
+
+.toggle {
+  width: 34px;
+  height: 34px;
+}
+.toggle button {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  margin-left: 20px;
+  background-color: var(--darkToggleColor-btn);
+  box-shadow: var(--box-shadow);
+  transition: 0.3s;
+}
+.toggle button:hover {
+  transform: scale(1.03) translateY(-3px);
+}
+
 .FullContentBox {
   width: 100%;
   max-width: 1600px;
@@ -77,7 +123,7 @@
 }
 
 .menubar {
-  width: 80%;
+  width: 90%;
   max-width: 1600px;
   display: flex;
   justify-content: space-between;
@@ -96,14 +142,14 @@
   min-width: 100px;
   text-align: center;
   font-size: 22px;
-  background-image: linear-gradient(140deg, #8429fc 0%, #f764de 100%);
+  background-image: var(--moreGradient);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .menubar .middleMenubar {
   display: flex;
-  color: rgb(240, 240, 240);
+  color: var(--textColor);
 }
 .menubar .middleMenubar p {
   margin: 0 35px;
@@ -119,7 +165,7 @@
   left: 0;
   width: 100%;
   height: 3px;
-  background: linear-gradient(140deg, #7c1ff7 0%, #eb66d4 100%);
+  background: var(--moreGradient);
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.5s;
@@ -139,20 +185,25 @@
 .menubar .middleMenubar p.currentMenu:after {
   transform: scaleX(1);
 }
-.menubar .rightMenubar {
+.menubar .rightFullMenubar {
+  display: flex;
+  align-items: center;
+}
+.menubar .rightFullMenubar .rightMenubar {
   background-color: transparent;
   color: white;
-  border: 2px solid rgb(177, 177, 177);
+  border: 2px solid var(--border2);
   border-radius: 8px;
   padding: 5px 20px;
   position: relative;
   overflow: hidden;
+  transition: 0.3s;
 }
-.menubar .rightMenubar:before {
+.menubar .rightFullMenubar .rightMenubar:before {
   position: absolute;
   display: block;
   content: "";
-  background: linear-gradient(140deg, #7c1ff7 0%, #eb66d4 100%);
+  background: var(--gradient);
   height: 40px;
   width: 0%;
   top: 0;
@@ -160,7 +211,10 @@
   z-index: -1;
   transition: 0.5s;
 }
-.menubar .rightMenubar:hover:before {
+.menubar .rightFullMenubar .rightMenubar:hover {
+  transform: scale(1.03) translateY(-1px);
+}
+.menubar .rightFullMenubar .rightMenubar:hover:before {
   width: 100%;
 }
 
@@ -215,10 +269,9 @@
   padding: 8px 20px;
   border-radius: 30px;
   width: 200px;
-  background: linear-gradient(90deg, #c42ddb, #7f20e2);
-  border: 3px solid #f3f3f3;
+  border: 4px solid #f3f3f3;
   background: transparent;
-  box-shadow: 1px 3px 8px rgb(25, 10, 36);
+  box-shadow: var(--box-shadow);
   transition: 0.5s;
   font-weight: bold;
   position: relative;
@@ -229,7 +282,7 @@
   position: absolute;
   display: block;
   content: "";
-  background: linear-gradient(50deg, #7c1ff7, #eb66d4);
+  background: var(--gradient);
   height: 50px;
   width: 50px;
   top: -40%;
@@ -253,8 +306,8 @@
   margin-top: 13px;
 }
 .mainTitleBox button:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 8px rgba(187, 102, 236, 0.959), 0 0 16px rgba(247, 121, 219, 0.911);
+  transform: scale(1.01);
+  box-shadow: 0 0 6px rgba(181, 121, 250, 0.959), 0 0 16px rgba(252, 148, 229, 0.911);
 }
 .mainTitleBox button:hover::before {
   transform: scale(10, 5);
@@ -277,6 +330,7 @@
   transition: 0.5s;
   background-color: transparent;
   overflow: hidden;
+  box-shadow: var(--box-shadow);
 }
 .mainTitleBox .scroll::before {
   content: "";
@@ -293,7 +347,7 @@
   position: absolute;
   display: block;
   content: "";
-  background: linear-gradient(#6c00fa, #eb66d4);
+  background: var(--gradient);
   height: 50px;
   width: 50px;
   top: -80%;
@@ -304,7 +358,7 @@
 }
 .mainTitleBox .scroll:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 8px rgba(243, 132, 237, 0.959), 0 0 20px rgba(160, 92, 250, 0.911);
+  box-shadow: 0 0 6px rgba(181, 121, 250, 0.959), 0 0 16px rgba(252, 148, 229, 0.911);
 }
 .mainTitleBox .scroll:hover::after {
   transform: scale(7, 7);
@@ -333,7 +387,7 @@
 }
 
 .siteDesBox {
-  background-color: rgba(36, 36, 36, 0.466);
+  background-color: var(--boxColor);
   border-radius: 20px;
   height: 75vh;
   display: flex;
@@ -345,6 +399,7 @@
   color: white;
   max-width: 1600px;
   min-height: 640px;
+  width: 90%;
 }
 .siteDesBox .siteDes_pBox {
   display: flex;
@@ -364,7 +419,7 @@
   margin: 0;
 }
 .siteDesBox .siteDes_pBox div p:nth-of-type(2) {
-  color: #7f20e2;
+  color: var(--textColor2);
 }
 .siteDesBox .siteDes_pBox .siteDes_p2Box {
   width: 30%;
@@ -554,7 +609,7 @@
   margin-bottom: 150px;
 }
 .howUseFullBox .howUseTitle span {
-  color: rgb(245, 63, 148);
+  color: var(--textColor3);
 }
 .howUseFullBox .howUseContentBox {
   display: flex;
@@ -566,6 +621,7 @@
   width: 30%;
   max-width: 330px;
   background-color: rgb(240, 240, 240);
+  box-shadow: 2px 3px 5px rgba(115, 106, 117, 0.432);
   border-radius: 18px;
   padding: 30px 20px;
   transition: 0.3s;

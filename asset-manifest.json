@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Project_MonthMood/static/css/main.d2f90735.css",
-    "main.js": "/Project_MonthMood/static/js/main.345356cc.js",
+    "main.css": "/Project_MonthMood/static/css/main.956480d4.css",
+    "main.js": "/Project_MonthMood/static/js/main.c12d39bb.js",
     "static/js/787.a3b17466.chunk.js": "/Project_MonthMood/static/js/787.a3b17466.chunk.js",
     "static/media/giphy.gif": "/Project_MonthMood/static/media/giphy.0f96b227eb9100272ef3.gif",
     "static/media/light3.gif": "/Project_MonthMood/static/media/light3.20cad46fc7870c5bd110.gif",
@@ -25,19 +25,21 @@
     "static/media/arrow.png": "/Project_MonthMood/static/media/arrow.c73c0d11f1dde015c272.png",
     "static/media/novel.png": "/Project_MonthMood/static/media/novel.1245a651984210888c20.png",
     "static/media/thinking.png": "/Project_MonthMood/static/media/thinking.fc98a4e221861393a00c.png",
+    "static/media/moon.png": "/Project_MonthMood/static/media/moon.d1af3f1224515705ad15.png",
     "static/media/h.jpg": "/Project_MonthMood/static/media/h.d19e0b408b2c5ff1b7eb.jpg",
+    "static/media/sun.png": "/Project_MonthMood/static/media/sun.7c58241755498e5f4e23.png",
     "static/media/light6.jpg": "/Project_MonthMood/static/media/light6.54b6174530fd00f18831.jpg",
     "static/media/f.png": "/Project_MonthMood/static/media/f.733c2bdc79abcec4c108.png",
     "static/media/complete.png": "/Project_MonthMood/static/media/complete.3aaec5c2568ed4647327.png",
     "static/media/pencil.png": "/Project_MonthMood/static/media/pencil.fa0b89cea5bb5eff96d6.png",
     "static/media/light7.jpg": "/Project_MonthMood/static/media/light7.7d318bdd4793f4dae7d8.jpg",
     "index.html": "/Project_MonthMood/index.html",
-    "main.d2f90735.css.map": "/Project_MonthMood/static/css/main.d2f90735.css.map",
-    "main.345356cc.js.map": "/Project_MonthMood/static/js/main.345356cc.js.map",
+    "main.956480d4.css.map": "/Project_MonthMood/static/css/main.956480d4.css.map",
+    "main.c12d39bb.js.map": "/Project_MonthMood/static/js/main.c12d39bb.js.map",
     "787.a3b17466.chunk.js.map": "/Project_MonthMood/static/js/787.a3b17466.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d2f90735.css",
-    "static/js/main.345356cc.js"
+    "static/css/main.956480d4.css",
+    "static/js/main.c12d39bb.js"
   ]
 }

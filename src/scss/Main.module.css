@@ -3,7 +3,7 @@ html[data-theme=light] {
   --bgimg: url("../assets/imgs/bg9.png");
   --box-shadow: 2px 2px 5px rgba(129, 104, 131, 0.377);
   --box-shadow2: 3px 3px 5px rgba(119, 90, 119, 0.562);
-  --gradient: linear-gradient(90deg, #f789ed, #c697f8);
+  --gradient: linear-gradient(90deg, #f391d2, #c697f8);
   --moreGradient: linear-gradient(90deg, #fff2fe, #f0e6fd);
   --border: #fff2fe;
   --border2: #fff2fe;
@@ -11,6 +11,12 @@ html[data-theme=light] {
   --textColor2: #af70f3;
   --textColor3: #f370b2;
   --boxColor: rgba(253, 253, 253, 0.4);
+  --boxColorGradient: linear-gradient(180deg, rgba(233, 233, 233, 0.368627451), rgba(250, 250, 250, 0.6352941176));
+  --textColor4: #af70f3;
+  --textColor5: #c697f8;
+  --btnColor: rgba(250, 250, 250, 0.6352941176);
+  --selectbgColor: rgb(255, 255, 255);
+  --selectColor: #202020;
 }
 
 html[data-theme=dark] {
@@ -25,6 +31,12 @@ html[data-theme=dark] {
   --textColor: rgb(240, 240, 240);
   --textColor2: rgb(240, 240, 240);
   --boxColor: rgba(36, 36, 36, 0.47);
+  --boxColorGradient: linear-gradient(180deg, rgba(2, 0, 3, 0.4784313725), rgba(19, 19, 19, 0.9725490196));
+  --textColor4: #8d33ee;
+  --textColor5: rgb(255, 255, 255);
+  --btnColor: rgba(19, 19, 19, 0.9725490196);
+  --selectbgColor: #202020;
+  --selectColor: rgb(255, 255, 255);
 }
 
 .toggle {

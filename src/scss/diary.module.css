@@ -20,7 +20,7 @@
   max-width: 1600px;
   margin-top: 200px;
   min-height: 80vh;
-  background: linear-gradient(rgba(2, 0, 3, 0.4784313725), rgba(19, 19, 19, 0.9725490196));
+  background: var(--boxColorGradient);
   border-radius: 24px;
   display: flex;
   flex-direction: column;
@@ -98,8 +98,8 @@
   outline: none !important;
 }
 .FullDiv .diaryBox .diaryTopBox select option {
-  color: rgb(252, 252, 252);
-  background-color: rgb(21, 21, 21);
+  color: var(--selectColor);
+  background-color: var(--selectbgColor);
 }
 .FullDiv .diaryBox .diaryTopBox button {
   font-size: 18px;
@@ -165,7 +165,7 @@
   flex-direction: column;
   cursor: pointer;
   transition: 0.5s;
-  box-shadow: rgba(0, 0, 0, 0.329) -3px -3px 2px inset;
+  box-shadow: rgba(71, 71, 71, 0.329) -3px -3px 2px inset;
 }
 .FullDiv .diaryBox .diaryTopBox .wrapper .icon .heartSvg {
   color: rgb(188, 124, 248);
@@ -177,7 +177,7 @@
 }
 .FullDiv .diaryBox .diaryTopBox .wrapper .icon:hover {
   transform: translateY(-2.5px) scale(1.02);
-  background: linear-gradient(101deg, #e782c5, #a056f0);
+  background: var(--gradient);
 }
 .FullDiv .diaryBox .diaryTopBox .wrapper .icon:hover svg {
   color: white;
@@ -187,7 +187,7 @@
   top: 0;
   font-size: 14px;
   background: linear-gradient(101deg, #eeeced, #f8f8f8);
-  box-shadow: rgba(0, 0, 0, 0.329) -5px -5px 5px inset;
+  box-shadow: rgba(54, 54, 54, 0.329) -5px -5px 5px inset;
   color: #ffffff;
   padding: 5px 8px;
   border-radius: 5px;
@@ -212,7 +212,7 @@
   height: 8px;
   width: 8px;
   background: #f9f4ff;
-  box-shadow: rgba(0, 0, 0, 0.329) -3px -3px 5px inset;
+  box-shadow: rgba(41, 41, 41, 0.329) -3px -3px 5px inset;
   bottom: -3px;
   left: 50%;
   transform: translate(-50%) rotate(45deg);
@@ -223,11 +223,11 @@
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  box-shadow: rgba(0, 0, 0, 0.329) -3px -3px 5px inset;
+  box-shadow: rgba(44, 44, 44, 0.329) -3px -3px 5px inset;
 }
 .FullDiv .diaryBox .diaryTopBox .wrapper span,
 .FullDiv .diaryBox .diaryTopBox .wrapper .tooltip {
-  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  text-shadow: 0px -1px 0px rgba(14, 14, 14, 0.1);
 }
 .FullDiv .diaryBox .diaryTopBox .wrapper .tooltip {
   min-width: 200%;
@@ -326,16 +326,16 @@
   overflow-y: scroll; */
 }
 .FullDiv .diaryBox .diaryContentBox .contentBox .textBox {
-  width: 80%;
+  width: 95%;
   display: flex;
   justify-content: space-between;
   font-size: 14px;
   margin-top: 10px;
-  color: rgb(233, 233, 233);
+  color: rgb(248, 248, 248);
   font-weight: bold;
 }
 .FullDiv .diaryBox .diaryContentBox .contentBox .textBox .mood {
-  color: rgb(159, 53, 247);
+  color: var(--textColor4);
 }
 .FullDiv .modalBox {
   width: 60%;

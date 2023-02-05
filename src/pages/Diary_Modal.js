@@ -12,7 +12,7 @@ import n3 from "../assets/imgs/n3.gif";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import useIntersectionObsever from "./useIntersectionObsever";
+import useIntersectionObsever from "./UseIntersectionObsever";
 
 const Diary_Modal = ({
   isShowModal,

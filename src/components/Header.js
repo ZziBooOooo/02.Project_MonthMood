@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import style from "../scss/Main.module.scss";
-import Logo from "../assets/imgs/MM.png";
 import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
-import { ContextGifData } from "./../App";
-import { UserInfoContextStore } from "../pages/UserInfoContext";
+import { gifDataContext } from "../stores/GifContext";
+import { darkStateContext } from "../stores/DarkContext";
 
 /* 
 *** 현재메뉴 활성화 로직
@@ -12,15 +11,14 @@ import { UserInfoContextStore } from "../pages/UserInfoContext";
 */
 
 const Header = () => {
-  const { test, setTest } = useContext(ContextGifData);
-  const UserInfo = useContext(UserInfoContextStore);
+  // const { test, setTest } = useContext(ContextGifData);
+  const { currentMenu, setCurrentMenu } = useContext(gifDataContext);
+  const { isDark, setIsDark } = useContext(darkStateContext);
 
   let navigate = useNavigate();
   let isLoginSuccess = window.localStorage.getItem("login_Success");
   // console.log(isLoginSuccess);
   const [islogin, setIsLogin] = useState(false);
-  const [currentMenu, setCurrentMenu] = useState("");
-  const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
     let isLoginSuccess = window.localStorage.getItem("login_Success");
@@ -33,7 +31,7 @@ const Header = () => {
   // console.log(currentMenu);
   function goTREND() {
     navigate("/trend");
-    setTest("TREND");
+    setCurrentMenu("TREND");
     console.log(currentMenu);
   }
   function goGOMM() {
@@ -43,7 +41,7 @@ const Header = () => {
     } else {
       navigate("/login");
     }
-    setTest("");
+    setCurrentMenu("");
   }
   function goDIARY() {
     if (islogin) {
@@ -51,33 +49,40 @@ const Header = () => {
     } else {
       navigate("/login");
     }
-    setTest("DIARY");
+    setCurrentMenu("DIARY");
   }
+
   useEffect(() => {
-    if (isDark) {
+    let localDark = JSON.parse(window.localStorage.getItem("localDark"));
+    // console.log(localDark);
+    if (localDark || localDark == null) {
+      // console.log("다크모드");
       document.documentElement.setAttribute("data-theme", "dark");
-    } else {
+      setIsDark(true);
+    } else if (!localDark) {
+      // console.log("라이트모드");
       document.documentElement.setAttribute("data-theme", "light");
+      setIsDark(false);
     }
   }, []);
 
-  const onClick = (e) => {
-    console.log(isDark);
+  function onClick() {
     if (isDark) {
       document.documentElement.setAttribute("data-theme", "light");
+      window.localStorage.setItem("localDark", JSON.stringify(false));
     } else {
       document.documentElement.setAttribute("data-theme", "dark");
+      window.localStorage.setItem("localDark", JSON.stringify(true));
     }
     setIsDark(!isDark);
-    console.log(isDark);
-  };
+  }
 
   return (
     <div className={`${style.menubar}`}>
       <div className={`${style.leftMenubar}`}>
         <p
           onClick={() => {
-            setTest("");
+            setCurrentMenu("");
             navigate("/");
           }}
         >
@@ -87,9 +92,9 @@ const Header = () => {
       <div className={`${style.middleMenubar}`}>
         {}
         <p
-          className={test == "HOME" ? `${style.currentMenu}` : null}
+          className={currentMenu == "HOME" ? `${style.currentMenu}` : null}
           onClick={() => {
-            setTest("HOME");
+            setCurrentMenu("HOME");
             navigate("/");
           }}
         >
@@ -97,9 +102,9 @@ const Header = () => {
         </p>
 
         <p
-          className={test == "TREND" ? `${style.currentMenu}` : null}
+          className={currentMenu == "TREND" ? `${style.currentMenu}` : null}
           onClick={() => {
-            setTest("TREND");
+            setCurrentMenu("TREND");
             goTREND();
           }}
         >
@@ -114,7 +119,7 @@ const Header = () => {
         </p>
 
         <p
-          className={test == "DIARY" ? `${style.currentMenu}` : null}
+          className={currentMenu == "DIARY" ? `${style.currentMenu}` : null}
           onClick={goDIARY}
         >
           DIARY

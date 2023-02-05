@@ -4,8 +4,8 @@ import choose from "../assets/imgs/choose.png";
 import refresh from "../assets/imgs/refresh.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
-import { ContextGifData } from "./../App";
-import useIntersectionObsever from "./useIntersectionObsever";
+import { gifDataContext } from "../stores/GifContext";
+import useIntersectionObsever from "./UseIntersectionObsever";
 
 const Write = () => {
   let [selectValue, setSelectValue] = useState("");
@@ -25,7 +25,7 @@ const Write = () => {
     angryData,
     loveData,
     randomData,
-  } = useContext(ContextGifData);
+  } = useContext(gifDataContext);
   // console.log(excitedData);
   const writeBoxRef = useRef();
   const isInViewport = useIntersectionObsever(writeBoxRef);

@@ -6,7 +6,7 @@ import Diary_Modal from "./Diary_Modal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import useIntersectionObsever from "./useIntersectionObsever";
+import useIntersectionObsever from "./UseIntersectionObsever";
 
 const Diary = () => {
   const [mmData, setMMData] = useState("");
@@ -75,7 +75,7 @@ const Diary = () => {
     let searchResult = [];
 
     searchDatas.map((item) => {
-      if (item.title.includes(searchWord)) {
+      if (item.title && item.title.includes(searchWord)) {
         searchResult.push(item);
       }
       setMMData(searchResult);

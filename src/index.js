@@ -4,14 +4,17 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import "./scss/common.css";
-import UserInfoContext from "./pages/UserInfoContext";
+import GifDataContext from "./stores/GifContext";
+import DarkContext from "./stores/DarkContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter basename={process.env.PUBLIC_URL}>
-    <UserInfoContext>
-      <App />
-    </UserInfoContext>
+    <DarkContext>
+      <GifDataContext>
+        <App />
+      </GifDataContext>
+    </DarkContext>
   </BrowserRouter>
 );
 

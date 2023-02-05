@@ -3,18 +3,23 @@ import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { darkStateContext } from "../stores/DarkContext";
 import style from "../scss/Main.module.scss";
 import giphy from "../assets/imgs/giphy.gif";
 import b from "../assets/imgs/b.gif";
 import c from "../assets/imgs/c.gif";
 import d from "../assets/imgs/d.gif";
+import light1 from "../assets/imgs/light1.gif";
+import light2 from "../assets/imgs/light2.gif";
+import light3 from "../assets/imgs/light3.gif";
+import light4 from "../assets/imgs/light4.gif";
 import e from "../assets/imgs/e.jpg";
 import f from "../assets/imgs/f.png";
 import h from "../assets/imgs/h.jpg";
 import write from "../assets/imgs/write.png";
 import choose from "../assets/imgs/choose.png";
 import complete from "../assets/imgs/complete.png";
-import useIntersectionObsever from "./useIntersectionObsever";
+import useIntersectionObsever from "./UseIntersectionObsever";
 
 const Main = () => {
   let navigate = useNavigate();
@@ -27,16 +32,20 @@ const Main = () => {
   const isInViewport2 = useIntersectionObsever(titleRef);
   const isInViewport3 = useIntersectionObsever(cardRef);
   const isInViewport4 = useIntersectionObsever(titleBoxRef);
+  const { isDark, setIsDark } = useContext(darkStateContext);
 
   function scrollDown() {
     let desBoxTop = desRef.current.offsetTop;
     let scrollBtnTop = scrollBtn.current.offsetTop;
     let minusTop = (desBoxTop - scrollBtnTop) / 2;
+
     window.scrollTo({
       top: desBoxTop - minusTop,
       behavior: "smooth",
     });
   }
+
+  console.log(isDark);
 
   // console.log(happyData);
   return (
@@ -112,16 +121,29 @@ const Main = () => {
           </div>
           <div className={`${style.siteDesimgBox}`}>
             <p className={`${style.gifBox1}`}>
-              <img className={`${style.gif}`} src={giphy}></img>
+              {/* <img className={`${style.gif}`} src={giphy}></img> */}
+              <img
+                className={`${style.gif}`}
+                src={isDark ? `${giphy}` : `${light1}`}
+              ></img>
             </p>
             <p className={`${style.gifBox2}`}>
-              <img className={`${style.gif1}`} src={b}></img>
+              <img
+                className={`${style.gif1}`}
+                src={isDark ? `${b}` : `${light2}`}
+              ></img>
             </p>
             <p className={`${style.gifBox3}`}>
-              <img className={`${style.gif2}`} src={c}></img>
+              <img
+                className={`${style.gif2}`}
+                src={isDark ? `${c}` : `${light3}`}
+              ></img>
             </p>
             <p className={`${style.gifBox4}`}>
-              <img className={`${style.gif3}`} src={d}></img>
+              <img
+                className={`${style.gif3}`}
+                src={isDark ? `${d}` : `${light4}`}
+              ></img>
             </p>
           </div>
         </div>

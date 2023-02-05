@@ -8,14 +8,19 @@ $dark-box-shadow: -2px -2px 5px rgba(117, 89, 109, 0.377) inset;
 $dark-box-shadow2: 2px 2px 5px rgba(0, 0, 0, 0.377);
 $darkGd1: #ff6fcf;
 $darkGd2: #8d33ee;
-$lightGd1: #f789ed;
+$lightGd1: #f391d2;
 $lightGd2: #c697f8;
 $lightColor2: #af70f3;
 $lightColor3: #f370b2;
 $morelight1: #fff2fe;
 $morelight2: #f0e6fd;
 $lightOpaColor: rgba(253, 253, 253, 0.4);
+$lightOpaColor2: #e9e9e95e;
+$lightOpaColor3: #fafafaa2;
 $darkOpaColor: rgba(36, 36, 36, 0.47);
+$darkOpaColor2: #0200037a;
+$darkOpaColor3: #131313f8;
+$darkColor4: #202020;
 
 //themes.scss
 
@@ -32,6 +37,16 @@ html[data-theme="light"] {
   --textColor2: #{$lightColor2};
   --textColor3: #{$lightColor3};
   --boxColor: #{$lightOpaColor};
+  --boxColorGradient: #{linear-gradient(
+      180deg,
+      $lightOpaColor2,
+      $lightOpaColor3
+    )};
+  --textColor4: #{$lightColor2};
+  --textColor5: #{$lightGd2};
+  --btnColor: #{$lightOpaColor3};
+  --selectbgColor: #{$lightColor};
+  --selectColor: #{$darkColor4};
 }
 
 html[data-theme="dark"] {
@@ -46,4 +61,10 @@ html[data-theme="dark"] {
   --textColor: #{$darkColor};
   --textColor2: #{$darkColor};
   --boxColor: #{$darkOpaColor};
+  --boxColorGradient: #{linear-gradient(180deg, $darkOpaColor2, $darkOpaColor3)};
+  --textColor4: #{$darkGd2};
+  --textColor5: #{$lightColor};
+  --btnColor: #{$darkOpaColor3};
+  --selectbgColor: #{$darkColor4};
+  --selectColor: #{$lightColor};
 }

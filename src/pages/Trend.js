@@ -4,8 +4,8 @@ import style from "../scss/trend.module.scss";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import useIntersectionObsever from "./useIntersectionObsever";
-import { ContextGifData } from "./../App";
+import useIntersectionObsever from "./UseIntersectionObsever";
+import { gifDataContext } from "../stores/GifContext";
 
 const GifDiv = styled.div`
   width: 80%;
@@ -23,7 +23,7 @@ const GifDiv = styled.div`
 `;
 
 const Trend = () => {
-  let { trendData1 } = useContext(ContextGifData);
+  let { trendData1 } = useContext(gifDataContext);
   let navigate = useNavigate();
   const [trendData, setTrendData] = useState([]);
   const [loading, setLoading] = useState(true);

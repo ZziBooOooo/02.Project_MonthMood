@@ -22,7 +22,7 @@
     width: 90%;
     max-width: 1600px;
     margin-top: 200px;
-    background: linear-gradient(#0200037a, #131313f8);
+    background: var(--boxColor);
     border-radius: 24px;
     display: flex;
     flex-direction: column;

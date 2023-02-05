@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect, useRef } from "react";
 import style from "../scss/title.module.scss";
 import Header from "../components/Header";
 import { useNavigate } from "react-router-dom";
-import useIntersectionObsever from "./useIntersectionObsever";
+import useIntersectionObsever from "./UseIntersectionObsever";
 
 const Title = () => {
   let navigate = useNavigate();

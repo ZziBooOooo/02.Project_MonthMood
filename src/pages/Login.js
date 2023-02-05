@@ -4,7 +4,7 @@ import style from "../scss/login.module.scss";
 import pencil from "../assets/imgs/pencil.png";
 import thinking from "../assets/imgs/thinking.png";
 import novel from "../assets/imgs/novel.png";
-import useIntersectionObsever from "./useIntersectionObsever";
+import useIntersectionObsever from "./UseIntersectionObsever";
 
 const Login = () => {
   const [id, setId] = useState("");

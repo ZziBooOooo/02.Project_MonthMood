@@ -3,6 +3,7 @@
 .toggle {
   width: 34px;
   height: 34px;
+  position: relative;
   button {
     width: 34px;
     height: 34px;
@@ -11,10 +12,21 @@
     background-color: var(--darkToggleColor-btn);
     box-shadow: var(--box-shadow);
     transition: 0.3s;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
     &:hover {
       transform: scale(1.03) translateY(-3px);
     }
+  }
+  p {
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: invert(10%);
   }
 }
 

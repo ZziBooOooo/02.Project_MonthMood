@@ -48,6 +48,7 @@ html[data-theme=dark] {
 .toggle {
   width: 34px;
   height: 34px;
+  position: relative;
 }
 .toggle button {
   width: 34px;
@@ -57,9 +58,21 @@ html[data-theme=dark] {
   background-color: var(--darkToggleColor-btn);
   box-shadow: var(--box-shadow);
   transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .toggle button:hover {
   transform: scale(1.03) translateY(-3px);
+}
+.toggle p {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: invert(10%);
 }
 
 .FullContentBox {

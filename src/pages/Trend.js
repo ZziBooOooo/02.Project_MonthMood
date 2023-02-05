@@ -21,6 +21,7 @@ const GifDiv = styled.div`
   align-items: center;
   margin: 0px 10px;
   margin-bottom: 10%;
+  box-shadow: var(--box-shadow2);
 `;
 
 const Trend = () => {

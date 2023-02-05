@@ -3,6 +3,8 @@ import style from "../scss/Main.module.scss";
 import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
 import { gifDataContext } from "../stores/GifContext";
 import { darkStateContext } from "../stores/DarkContext";
+import sun from "../assets/imgs/sun.png";
+import moon from "../assets/imgs/moon.png";
 
 /* 
 *** 현재메뉴 활성화 로직
@@ -140,8 +142,12 @@ const Header = () => {
             LOGIN
           </button>
         )}
-        <div className={`${style.toggle}`}>
-          <button htmlFor="switch" onClick={onClick}></button>
+        <div className={`${style.toggle}`} htmlFor="switch" onClick={onClick}>
+          <button>
+            <p>
+              <img src={isDark ? `${sun}` : `${moon}`}></img>
+            </p>
+          </button>
         </div>
       </div>
     </div>

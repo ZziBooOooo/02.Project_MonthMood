@@ -19,6 +19,8 @@ const Diary_Modal = ({
   setIsShowModal,
   positiveImg,
   setPositiveImg,
+  modalBg,
+  setModalBg,
 }) => {
   let [HappyCount, setHappyCount] = useState(0);
   let [ExcitedCount, setExcitedCount] = useState(0);
@@ -109,6 +111,7 @@ const Diary_Modal = ({
   }
   function closeModal() {
     setIsShowModal(false);
+    setModalBg(false);
   }
   return (
     // <div className={`${style.modalBox} ${style.show}`}>

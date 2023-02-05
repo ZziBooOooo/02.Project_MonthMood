@@ -8,6 +8,15 @@
   flex-direction: column;
 }
 
+.fullModalBox {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 200;
+}
+
 .FullDiv {
   width: 100%;
   padding: 0;
@@ -341,7 +350,9 @@
   width: 60%;
   max-width: 1000px;
   height: 50vh;
-  background-color: #151515;
+  min-height: 450px;
+  padding: 10px;
+  background-color: var(--modalColor);
   position: absolute;
   top: 0;
   left: 50%;
@@ -354,6 +365,7 @@
   align-items: center;
   justify-content: center;
   visibility: hidden;
+  z-index: 300;
 }
 .FullDiv .modalBox.show {
   visibility: visible;
@@ -368,7 +380,7 @@
 .FullDiv .modalBox .closeBtn p {
   width: 28px;
   height: 28px;
-  color: rgb(126, 126, 126);
+  color: var(--hrColor);
   transition: 0.3s;
 }
 .FullDiv .modalBox .closeBtn p svg {
@@ -376,7 +388,7 @@
   height: 26px;
 }
 .FullDiv .modalBox .closeBtn p:hover {
-  color: white;
+  color: var(--modalTextColor);
 }
 .FullDiv .modalBox .siteDesimgBox {
   width: 90%;
@@ -424,7 +436,7 @@
   max-height: 300px;
 }
 .FullDiv .modalBox .TitleBox {
-  color: white;
+  color: var(--modalTextColor);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -438,27 +450,28 @@
 }
 .FullDiv .modalBox .TitleBox .titleDes {
   font-size: 22px;
-  color: gainsboro;
+  font-weight: 500;
+  color: var(--modalTextColor);
   transform: translateY(-10px);
 }
 .FullDiv .modalBox hr {
   width: 80%;
   height: 2px;
-  background-color: rgba(46, 46, 46, 0.76);
+  background-color: var(--hrColor);
   border: 0;
 }
 .FullDiv .modalBox .moodBox {
   width: 75%;
   display: flex;
   justify-content: space-between;
-  margin-top: 45px;
+  margin-top: 30px;
 }
 .FullDiv .modalBox .moodBox .moodContent {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--modalTextColor);
 }
 .FullDiv .modalBox .moodBox .moodContent .moodTitle {
   font-size: 22px;

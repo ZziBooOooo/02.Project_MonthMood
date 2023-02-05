@@ -16,6 +16,9 @@ import light4 from "../assets/imgs/light4.gif";
 import e from "../assets/imgs/e.jpg";
 import f from "../assets/imgs/f.png";
 import h from "../assets/imgs/h.jpg";
+import light5 from "../assets/imgs/light5.jpg";
+import light6 from "../assets/imgs/light6.jpg";
+import light7 from "../assets/imgs/light7.jpg";
 import write from "../assets/imgs/write.png";
 import choose from "../assets/imgs/choose.png";
 import complete from "../assets/imgs/complete.png";
@@ -171,7 +174,7 @@ const Main = () => {
           >
             <div className={`${style.howUseBox}`}>
               <div className={`${style.howUseImgBox}`}>
-                <img src={e}></img>
+                <img src={isDark ? `${e}` : `${light5}`}></img>
                 <img src={choose}></img>
               </div>
               <p>Choose GIF</p>
@@ -182,7 +185,7 @@ const Main = () => {
             </div>
             <div className={`${style.howUseBox}`}>
               <div className={`${style.howUseImgBox}`}>
-                <img src={f}></img>
+                <img src={isDark ? `${f}` : `${light6}`}></img>
                 <img src={write}></img>
               </div>
               <p>Write Title</p>
@@ -193,7 +196,7 @@ const Main = () => {
             </div>
             <div className={`${style.howUseBox}`}>
               <div className={`${style.howUseImgBox}`}>
-                <img src={h}></img>
+                <img src={isDark ? `${h}` : `${light7}`}></img>
                 <img src={complete}></img>
               </div>
               <p>Complete</p>

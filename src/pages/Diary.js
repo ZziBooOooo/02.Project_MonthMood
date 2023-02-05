@@ -12,6 +12,7 @@ const Diary = () => {
   const [mmData, setMMData] = useState("");
   const [currentMonth, setCurrentMonth] = useState("");
   const [isShowModal, setIsShowModal] = useState(false);
+  const [modalBg, setModalBg] = useState(false);
   const [positiveImg, setPositiveImg] = useState("");
   const [searchDatas, setSearchDatas] = useState([]);
   let navigate = useNavigate();
@@ -69,6 +70,8 @@ const Diary = () => {
       top: diaryBoxRefTop,
       behavior: "smooth",
     });
+
+    setModalBg(true);
   }
   function searchData(e) {
     let searchWord = e.target.value;
@@ -88,7 +91,8 @@ const Diary = () => {
   }
   return (
     <div className={`${style.fullBox}`}>
-      <div className={`${style.fullModalBox}`}></div>
+      {/* <div className={`${style.fullModalBox}`}></div> */}
+      <div className={modalBg ? `${style.fullModalBox}` : null}></div>
       <Header />
       <div className={`${style.FullDiv} ${style.bgOpacity}`}>
         {/* <div ref={diaryBoxRef} className={`${style.diaryBox}`}> */}
@@ -189,6 +193,8 @@ const Diary = () => {
             setIsShowModal={setIsShowModal}
             positiveImg={positiveImg}
             setPositiveImg={setPositiveImg}
+            modalBg={modalBg}
+            setModalBg={setModalBg}
           />
         </div>
       </div>

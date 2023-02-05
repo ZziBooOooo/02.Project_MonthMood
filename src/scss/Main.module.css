@@ -9,7 +9,7 @@ html[data-theme=light] {
   --border2: #fff2fe;
   --textColor: rgb(255, 255, 255);
   --textColor2: #af70f3;
-  --textColor3: #f370b2;
+  --textColor3: #ffa7d7;
   --boxColor: rgba(253, 253, 253, 0.4);
   --boxColorGradient: linear-gradient(180deg, rgba(233, 233, 233, 0.368627451), rgba(250, 250, 250, 0.6352941176));
   --textColor4: #af70f3;
@@ -17,6 +17,9 @@ html[data-theme=light] {
   --btnColor: rgba(250, 250, 250, 0.6352941176);
   --selectbgColor: rgb(255, 255, 255);
   --selectColor: #202020;
+  --modalColor: #f9f9f9;
+  --modalTextColor: #3a3a3a;
+  --hrColor: rgba(38, 37, 37, 0.152);
 }
 
 html[data-theme=dark] {
@@ -37,6 +40,9 @@ html[data-theme=dark] {
   --btnColor: rgba(19, 19, 19, 0.9725490196);
   --selectbgColor: #202020;
   --selectColor: rgb(255, 255, 255);
+  --modalColor: #151515;
+  --modalTextColor: #f9f9f9;
+  --hrColor: rgba(46, 46, 46, 0.76);
 }
 
 .toggle {
@@ -162,9 +168,11 @@ html[data-theme=dark] {
 .menubar .middleMenubar {
   display: flex;
   color: var(--textColor);
+  justify-content: center;
+  transform: translateX(5%);
 }
 .menubar .middleMenubar p {
-  margin: 0 35px;
+  margin: 0 40px;
   font-weight: 500;
   position: relative;
   font-size: 18px;
@@ -454,6 +462,8 @@ html[data-theme=dark] {
   border-radius: 50%;
   border: 15px solid white;
   z-index: 1000;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .siteDesBox .siteDesimgBox p .gif:hover {
   transition: 0.5s;
@@ -599,7 +609,7 @@ html[data-theme=dark] {
 .siteDesBox .siteDesimgBox .gifBox3 {
   width: 21.2765957447vw;
   height: 21.2765957447vw;
-  transform: translate(-50px, 0px);
+  transform: translate(-50px, -20px);
 }
 .siteDesBox .siteDesimgBox .gifBox4 {
   width: 16.6666666667vw;
@@ -632,7 +642,7 @@ html[data-theme=dark] {
 .howUseFullBox .howUseContentBox .howUseBox {
   width: 30%;
   max-width: 330px;
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(245, 245, 245);
   box-shadow: 2px 3px 5px rgba(115, 106, 117, 0.432);
   border-radius: 18px;
   padding: 30px 20px;

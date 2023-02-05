@@ -9,7 +9,7 @@ html[data-theme=light] {
   --border2: #fff2fe;
   --textColor: rgb(255, 255, 255);
   --textColor2: #af70f3;
-  --textColor3: #f370b2;
+  --textColor3: #ffa7d7;
   --boxColor: rgba(253, 253, 253, 0.4);
   --boxColorGradient: linear-gradient(180deg, rgba(233, 233, 233, 0.368627451), rgba(250, 250, 250, 0.6352941176));
   --textColor4: #af70f3;
@@ -17,6 +17,9 @@ html[data-theme=light] {
   --btnColor: rgba(250, 250, 250, 0.6352941176);
   --selectbgColor: rgb(255, 255, 255);
   --selectColor: #202020;
+  --modalColor: #f9f9f9;
+  --modalTextColor: #3a3a3a;
+  --hrColor: rgba(38, 37, 37, 0.152);
 }
 
 html[data-theme=dark] {
@@ -37,4 +40,7 @@ html[data-theme=dark] {
   --btnColor: rgba(19, 19, 19, 0.9725490196);
   --selectbgColor: #202020;
   --selectColor: rgb(255, 255, 255);
+  --modalColor: #151515;
+  --modalTextColor: #f9f9f9;
+  --hrColor: rgba(46, 46, 46, 0.76);
 }/*# sourceMappingURL=color.css.map */

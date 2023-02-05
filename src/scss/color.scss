@@ -11,7 +11,7 @@ $darkGd2: #8d33ee;
 $lightGd1: #f391d2;
 $lightGd2: #c697f8;
 $lightColor2: #af70f3;
-$lightColor3: #f370b2;
+$lightColor3: #ffa7d7;
 $morelight1: #fff2fe;
 $morelight2: #f0e6fd;
 $lightOpaColor: rgba(253, 253, 253, 0.4);
@@ -21,8 +21,11 @@ $darkOpaColor: rgba(36, 36, 36, 0.47);
 $darkOpaColor2: #0200037a;
 $darkOpaColor3: #131313f8;
 $darkColor4: #202020;
-
-//themes.scss
+$modalDarktextColor: #3a3a3a;
+$modalDarkColor: #151515;
+$modalLightColor: #f9f9f9;
+$hrDarkColor: rgba(46, 46, 46, 0.76);
+$hrLightColor: rgba(38, 37, 37, 0.152);
 
 html[data-theme="light"] {
   --darkToggleColor-btn: #{$lightBtn-color-1};
@@ -47,6 +50,9 @@ html[data-theme="light"] {
   --btnColor: #{$lightOpaColor3};
   --selectbgColor: #{$lightColor};
   --selectColor: #{$darkColor4};
+  --modalColor: #{$modalLightColor};
+  --modalTextColor: #{$modalDarktextColor};
+  --hrColor: #{$hrLightColor};
 }
 
 html[data-theme="dark"] {
@@ -67,4 +73,7 @@ html[data-theme="dark"] {
   --btnColor: #{$darkOpaColor3};
   --selectbgColor: #{$darkColor4};
   --selectColor: #{$lightColor};
+  --modalColor: #{$modalDarkColor};
+  --modalTextColor: #{$modalLightColor};
+  --hrColor: #{$hrDarkColor};
 }

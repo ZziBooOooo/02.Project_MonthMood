@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import useIntersectionObsever from "./UseIntersectionObsever";
 import { gifDataContext } from "../stores/GifContext";
+import { darkStateContext } from "../stores/DarkContext";
 
 const GifDiv = styled.div`
   width: 80%;
@@ -24,6 +25,7 @@ const GifDiv = styled.div`
 
 const Trend = () => {
   let { trendData1 } = useContext(gifDataContext);
+  const { isDark, setIsDark } = useContext(darkStateContext);
   let navigate = useNavigate();
   const [trendData, setTrendData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -36,6 +38,7 @@ const Trend = () => {
   const isInViewport = useIntersectionObsever(gifCardRef);
   // const isInViewport = useIntersectionObsever(gifRef);
 
+  console.log(isDark);
   let boxColor = [
     "#FAC642",
     "#9E42FA",
@@ -45,11 +48,26 @@ const Trend = () => {
     "#FA6342",
   ];
 
+  let lightBoxColor = [
+    "#FCD77C",
+    "#C998FA",
+    "#C4E381",
+    "#F995D0",
+    "#88D0E0",
+    "#F9A08D",
+  ];
+
   // 색깔이 6개 ->  받아온 데이터 개수를 같게해서 반복문으로 각각 다른 색을 넣음
   function addColor(arr) {
-    arr.map((item, key) => {
-      return (item.color = boxColor[key]);
-    });
+    if (isDark) {
+      arr.map((item, key) => {
+        return (item.color = boxColor[key]);
+      });
+    } else {
+      arr.map((item, key) => {
+        return (item.color = lightBoxColor[key]);
+      });
+    }
   }
 
   /* let arr1 = trendData1 && trendData1.slice(0, 6);

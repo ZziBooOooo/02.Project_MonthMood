@@ -5,11 +5,13 @@ import pencil from "../assets/imgs/pencil.png";
 import thinking from "../assets/imgs/thinking.png";
 import novel from "../assets/imgs/novel.png";
 import useIntersectionObsever from "./UseIntersectionObsever";
+import AccountModal from "./AccountModal";
 
 const Login = () => {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
   const [validShow, setValidShow] = useState(false);
+  const [loginModalShow, setLoginModalShow] = useState(false);
   const loginBoxRef = useRef();
 
   const isInViewport = useIntersectionObsever(loginBoxRef);
@@ -23,9 +25,14 @@ const Login = () => {
       if (password == localValue[0].password) {
         console.log("로그인성공");
         window.localStorage.setItem("login_Success", true);
-        /*         setTimeout(() => {
+        setLoginModalShow(true);
+
+        setTimeout(() => {
+          setLoginModalShow(false);
+        }, 4000);
+        setTimeout(() => {
           navigate("/");
-        }, 1000); */
+        }, 4500);
       } else {
         console.log("로그인실패");
         setValidShow(true);
@@ -132,6 +139,12 @@ const Login = () => {
         </div>
         <div className={`${style.accountModal}`}></div>
       </div>
+      {loginModalShow ? (
+        <AccountModal
+          loginModalShow={loginModalShow}
+          setLoginModalShow={setLoginModalShow}
+        />
+      ) : null}
     </div>
   );
 };

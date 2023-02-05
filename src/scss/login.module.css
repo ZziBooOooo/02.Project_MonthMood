@@ -39,13 +39,13 @@
   width: 80%;
   max-width: 1200px;
   height: 70vh;
-  background: linear-gradient(rgba(2, 0, 3, 0.4784313725), rgba(19, 19, 19, 0.9725490196));
+  box-shadow: var(--box-shadow3);
+  background: var(--boxColorGradient);
   border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
-  box-shadow: 2px 5px 8px rgb(14, 14, 14);
 }
 .loginFullDiv .loginBox .leftBox {
   display: flex;
@@ -96,8 +96,8 @@
 }
 .loginFullDiv .loginBox .leftBox .textBox p:nth-of-type(2) {
   font-size: 14px;
-  font-weight: 400;
-  color: rgb(211, 211, 211);
+  font-weight: 500;
+  color: var(--textColor5);
   margin-top: 10px;
 }
 .loginFullDiv .loginBox .rightBox {
@@ -131,7 +131,7 @@
   margin-bottom: 5px;
 }
 .loginFullDiv .loginBox .rightBox .loginForm input {
-  background-color: #1d1d1d;
+  background-color: var(--inputBgColor);
   border: none;
   border: 0;
   border-radius: 8px;
@@ -140,16 +140,18 @@
   margin-bottom: 20px;
   padding-left: 10px;
   width: 100%;
+  transition: 0.2s;
+  color: var(--selectColor);
 }
 .loginFullDiv .loginBox .rightBox .loginForm input:focus {
-  border: solid 2px transparent;
-  background-image: linear-gradient(#1d1d1d, #1d1d1d), linear-gradient(to right, #c42ddb, #7f20e2);
+  border: solid 2px var(--textColor4);
+  background-image: var(--inputBgColor);
   background-origin: border-box;
   background-clip: padding-box, border-box;
 }
 .loginFullDiv .loginBox .rightBox .loginForm button {
   width: 120px;
-  background: linear-gradient(90deg, #c42ddb, #7f20e2);
+  background: var(--gradient);
   font-size: 18px;
   padding: 5px 10px;
   border-radius: 30px;
@@ -169,20 +171,174 @@
 .loginFullDiv .loginBox .rightBox .signUpBox {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  width: 75%;
+  justify-content: space-between;
+  width: 85%;
   font-size: 14px;
   margin-top: 15px;
+  font-weight: 500;
 }
 .loginFullDiv .loginBox .rightBox .signUpBox p {
-  color: rgb(148, 147, 147);
-  max-width: 155px;
+  color: var(--textColor5);
+  max-width: 190px;
 }
 .loginFullDiv .loginBox .rightBox .signUpBox button {
-  font-size: 12px;
+  font-size: 13px;
   width: 60px;
   height: 30px;
+  color: white;
   background: none;
   margin: 0;
   padding: 0;
+}
+
+.accountModalBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  max-width: 280px;
+  height: 180px;
+  border-radius: 20px;
+  background: var(--accountGradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--box-shadow3);
+}
+.accountModalBox .confetti {
+  position: absolute;
+  -webkit-animation: grow 0.9s cubic-bezier(0.42, 0, 0.275, 1.155) both;
+          animation: grow 0.9s cubic-bezier(0.42, 0, 0.275, 1.155) both;
+}
+.accountModalBox .confetti:nth-child(1) {
+  width: 12px;
+  height: 12px;
+  left: 26px;
+  top: 36px;
+}
+.accountModalBox .confetti:nth-child(2) {
+  width: 18px;
+  height: 18px;
+  left: 120px;
+  top: 36px;
+}
+.accountModalBox .confetti:nth-child(3) {
+  width: 10px;
+  height: 10px;
+  left: 42px;
+  top: 152px;
+}
+.accountModalBox .confetti:nth-child(4) {
+  width: 20px;
+  height: 20px;
+  left: 62px;
+  top: 12px;
+}
+.accountModalBox .confetti:nth-child(5) {
+  width: 14px;
+  height: 14px;
+  left: 120px;
+  top: 100px;
+}
+.accountModalBox .confetti:nth-child(6) {
+  width: 10px;
+  height: 10px;
+  left: 6px;
+  top: 60px;
+}
+.accountModalBox .confetti:nth-child(1) {
+  -webkit-animation-delay: 0.45s;
+          animation-delay: 0.45s;
+}
+.accountModalBox .confetti:nth-child(2) {
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+}
+.accountModalBox .confetti:nth-child(3) {
+  -webkit-animation-delay: 1.35s;
+          animation-delay: 1.35s;
+}
+.accountModalBox .confetti:nth-child(4) {
+  -webkit-animation-delay: 1.8s;
+          animation-delay: 1.8s;
+}
+.accountModalBox .confetti:nth-child(5) {
+  -webkit-animation-delay: 2.25s;
+          animation-delay: 2.25s;
+}
+.accountModalBox .confetti:nth-child(6) {
+  -webkit-animation-delay: 2.7s;
+          animation-delay: 2.7s;
+}
+.accountModalBox .checkmark {
+  position: relative;
+  padding: 30px;
+  -webkit-animation: checkmark 4.2s cubic-bezier(0.42, 0, 0.275, 1.155) both;
+          animation: checkmark 4.2s cubic-bezier(0.42, 0, 0.275, 1.155) both;
+}
+.accountModalBox .checkmark__check {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  transform: translate3d(-50%, -50%, 0);
+  fill: #c180fb;
+}
+.accountModalBox .checkmark__back {
+  -webkit-animation: rotate 35s linear both infinite;
+          animation: rotate 35s linear both infinite;
+  transform: translateY(-100px);
+}
+@-webkit-keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes grow {
+  0%, 100% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+@keyframes grow {
+  0%, 100% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes checkmark {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  10%, 50%, 90% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes checkmark {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  10%, 50%, 90% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }/*# sourceMappingURL=login.module.css.map */

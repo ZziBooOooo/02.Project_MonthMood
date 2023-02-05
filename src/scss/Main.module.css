@@ -1,8 +1,9 @@
 html[data-theme=light] {
-  --darkToggleColor-btn: #fce8fc;
+  --darkToggleColor-btn: #bbb0f9;
   --bgimg: url("../assets/imgs/bg9.png");
   --box-shadow: 2px 2px 5px rgba(129, 104, 131, 0.377);
   --box-shadow2: 3px 3px 5px rgba(119, 90, 119, 0.562);
+  --box-shadow3: 3px 3px 5px rgba(106, 90, 119, 0.267);
   --gradient: linear-gradient(90deg, #f391d2, #c697f8);
   --moreGradient: linear-gradient(90deg, #fff2fe, #f0e6fd);
   --border: #fff2fe;
@@ -33,6 +34,7 @@ html[data-theme=dark] {
   --border2: #f3f3f3;
   --textColor: rgb(240, 240, 240);
   --textColor2: rgb(240, 240, 240);
+  --textColor3: #fc54b0;
   --boxColor: rgba(36, 36, 36, 0.47);
   --boxColorGradient: linear-gradient(180deg, rgba(2, 0, 3, 0.4784313725), rgba(19, 19, 19, 0.9725490196));
   --textColor4: #8d33ee;
@@ -46,17 +48,17 @@ html[data-theme=dark] {
 }
 
 .toggle {
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   position: relative;
 }
 .toggle button {
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   margin-left: 20px;
   background-color: var(--darkToggleColor-btn);
-  box-shadow: var(--box-shadow);
+  box-shadow: -2px -2px 5px rgba(117, 89, 109, 0.377) inset;
   transition: 0.3s;
   display: flex;
   align-items: center;
@@ -421,6 +423,7 @@ html[data-theme=dark] {
 
 .siteDesBox {
   background-color: var(--boxColor);
+  box-shadow: var(--box-shadow3);
   border-radius: 20px;
   height: 75vh;
   display: flex;
@@ -452,7 +455,7 @@ html[data-theme=dark] {
   margin: 0;
 }
 .siteDesBox .siteDes_pBox div p:nth-of-type(2) {
-  color: var(--textColor2);
+  color: var(--textColor4);
 }
 .siteDesBox .siteDes_pBox .siteDes_p2Box {
   width: 30%;
@@ -477,6 +480,7 @@ html[data-theme=dark] {
   z-index: 1000;
   -o-object-fit: cover;
      object-fit: cover;
+  box-shadow: 2px 3px 5px rgba(115, 106, 117, 0.432);
 }
 .siteDesBox .siteDesimgBox p .gif:hover {
   transition: 0.5s;

@@ -4,6 +4,7 @@ import style from "../scss/login.module.scss";
 import pencil from "../assets/imgs/pencil.png";
 import thinking from "../assets/imgs/thinking.png";
 import novel from "../assets/imgs/novel.png";
+import AccountModal from "./AccountModal";
 
 const SignUp = () => {
   const [id, setId] = useState("");
@@ -11,6 +12,7 @@ const SignUp = () => {
   const [user, setUser] = useState("");
   const [allUser, setAllUser] = useState([]);
   const [validShow, setValidShow] = useState(false);
+  const [loginModalShow, setLoginModalShow] = useState(false);
   let value;
 
   function saveUser() {
@@ -19,10 +21,19 @@ const SignUp = () => {
       setAllUser([...allUser, value]);
       setValidShow(false);
       window.localStorage.setItem("login_Success", true);
+      setLoginModalShow(true);
+
+      setTimeout(() => {
+        setLoginModalShow(false);
+      }, 4000);
       setTimeout(() => {
         navigate("/");
-      }, 1000);
+      }, 4500);
+    } else {
+      console.log("로그인실패");
+      setValidShow(true);
     }
+
     if (id.length < 5 || password.length < 5) {
       setValidShow(true);
     }
@@ -132,6 +143,12 @@ const SignUp = () => {
           </form>
         </div>
       </div>
+      {loginModalShow ? (
+        <AccountModal
+          loginModalShow={loginModalShow}
+          setLoginModalShow={setLoginModalShow}
+        />
+      ) : null}
     </div>
   );
 };

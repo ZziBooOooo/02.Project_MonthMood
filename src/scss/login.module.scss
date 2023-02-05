@@ -29,14 +29,15 @@
     max-width: 1200px;
     height: 70vh;
     // background-color: #131313ef;
-    background: linear-gradient(#0200037a, #131313f8);
+    box-shadow: var(--box-shadow3);
+    background: var(--boxColorGradient);
     border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     // border: 5px solid white;
-    box-shadow: 2px 5px 8px rgb(14, 14, 14);
+    // box-shadow: 2px 5px 8px rgb(14, 14, 14);
 
     .leftBox {
       display: flex;
@@ -98,8 +99,8 @@
 
           &:nth-of-type(2) {
             font-size: 14px;
-            font-weight: 400;
-            color: rgb(211, 211, 211);
+            font-weight: 500;
+            color: var(--textColor5);
             margin-top: 10px;
           }
         }
@@ -138,7 +139,7 @@
         }
 
         input {
-          background-color: #1d1d1d;
+          background-color: var(--inputBgColor);
           border: none;
           border: 0;
           border-radius: 8px;
@@ -147,12 +148,12 @@
           margin-bottom: 20px;
           padding-left: 10px;
           width: 100%;
+          transition: 0.2s;
+          color: var(--selectColor);
 
           &:focus {
-            border: solid 2px transparent;
-
-            background-image: linear-gradient(#1d1d1d, #1d1d1d),
-              linear-gradient(to right, #c42ddb, #7f20e2);
+            border: solid 2px var(--textColor4);
+            background-image: var(--inputBgColor);
             background-origin: border-box;
             background-clip: padding-box, border-box;
           }
@@ -160,7 +161,7 @@
 
         button {
           width: 120px;
-          background: linear-gradient(90deg, #c42ddb, #7f20e2);
+          background: var(--gradient);
           font-size: 18px;
           padding: 5px 10px;
           border-radius: 30px;
@@ -182,23 +183,156 @@
       .signUpBox {
         display: flex;
         align-items: center;
-        justify-content: flex-start;
-        width: 75%;
+        justify-content: space-between;
+        width: 85%;
         font-size: 14px;
         margin-top: 15px;
+        font-weight: 500;
         p {
-          color: rgb(148, 147, 147);
-          max-width: 155px;
+          color: var(--textColor5);
+          max-width: 190px;
         }
         button {
-          font-size: 12px;
+          font-size: 13px;
           width: 60px;
           height: 30px;
+          color: white;
           background: none;
           margin: 0;
           padding: 0;
         }
       }
+    }
+  }
+}
+
+.accountModalBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  max-width: 280px;
+  height: 180px;
+  border-radius: 20px;
+  // background-color: white;
+  background: var(--accountGradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--box-shadow3);
+
+  $blue: #c180fb;
+  $white: #c180fb;
+  $curve: cubic-bezier(0.42, 0, 0.275, 1.155);
+  $time: 0.9s;
+
+  @mixin size($size) {
+    width: $size;
+    height: $size;
+  }
+
+  .confetti {
+    position: absolute;
+    animation: grow $time $curve both;
+
+    &:nth-child(1) {
+      @include size(12px);
+      left: 26px;
+      top: 36px;
+    }
+
+    &:nth-child(2) {
+      @include size(18px);
+      left: 120px;
+      top: 36px;
+    }
+
+    &:nth-child(3) {
+      @include size(10px);
+      left: 42px;
+      top: 152px;
+    }
+
+    &:nth-child(4) {
+      @include size(20px);
+      left: 62px;
+      top: 12px;
+    }
+
+    &:nth-child(5) {
+      @include size(14px);
+      left: 120px;
+      top: 100px;
+    }
+
+    &:nth-child(6) {
+      @include size(10px);
+      left: 6px;
+      top: 60px;
+    }
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        animation-delay: $i * ($time/2);
+      }
+    }
+  }
+
+  .checkmark {
+    position: relative;
+    padding: 30px;
+    animation: checkmark 4.2s $curve both;
+    // transform: translateY(-10%);
+  }
+
+  .checkmark__check {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    transform: translate3d(-50%, -50%, 0);
+    fill: $white;
+  }
+
+  .checkmark__back {
+    animation: rotate 35s linear both infinite;
+    transform: translateY(-100px);
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes grow {
+    0%,
+    100% {
+      transform: scale(0);
+    }
+
+    50% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes checkmark {
+    0%,
+    100% {
+      opacity: 0;
+      transform: scale(0);
+    }
+
+    10%,
+    50%,
+    90% {
+      opacity: 1;
+      transform: scale(1);
     }
   }
 }

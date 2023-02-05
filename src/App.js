@@ -7,23 +7,28 @@ import Title from "./pages/Title";
 import Diary from "./pages/Diary";
 import Trend from "./pages/Trend";
 import AnimatedCursor from "react-animated-cursor";
+import { darkStateContext } from "./stores/DarkContext";
 
 import { Routes, Route, Link, useNavigate } from "react-router-dom";
-import { createContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 function App() {
   /* 노트북 기준 화면 -> 세로 사이즈 다시 적용 */
 
-  // console.log(trendData1)
-
-  let a = "227, 205, 247";
-  let b = "207, 305, 207";
+  const { isDark } = useContext(darkStateContext);
+  console.log(isDark);
+  let cursorColor;
+  if (isDark) {
+    cursorColor = "185, 144, 255";
+  } else {
+    cursorColor = "255, 255, 254";
+  }
   return (
     <div className={`${style.App}`}>
       <AnimatedCursor
         innerSize={20}
         outerSize={12}
-        color={a}
+        color={cursorColor}
         outerAlpha={0.2}
         innerScale={1}
         outerScale={5}

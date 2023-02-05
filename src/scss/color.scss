@@ -1,17 +1,23 @@
-$lightBtn-color-1: #fce8fc;
+$lightBtn-color-1: #bbb0f9;
 $darkBtn-color-2: #f3f3f3;
 $lightColor: rgb(255, 255, 255);
 $darkColor: rgb(240, 240, 240);
 $light-box-shadow: 2px 2px 5px rgba(129, 104, 131, 0.377);
 $light-box-shadow2: 3px 3px 5px rgba(119, 90, 119, 0.562);
+$light-box-shadow3: 0px 2px 6px rgba(99, 91, 96, 0.36);
 $dark-box-shadow: -2px -2px 5px rgba(117, 89, 109, 0.377) inset;
 $dark-box-shadow2: 2px 2px 5px rgba(0, 0, 0, 0.377);
 $darkGd1: #ff6fcf;
 $darkGd2: #8d33ee;
+$darkGd3: #f862d0;
+$darkGd4: #a95ff9;
 $lightGd1: #f391d2;
 $lightGd2: #c697f8;
 $lightColor2: #af70f3;
 $lightColor3: #ffa7d7;
+$lightColor3: #c696ee;
+$lightColor4: #af98fc;
+$darkColor3: #f63aa1;
 $morelight1: #fff2fe;
 $morelight2: #f0e6fd;
 $lightOpaColor: rgba(253, 253, 253, 0.4);
@@ -23,17 +29,21 @@ $darkOpaColor3: #131313f8;
 $darkColor4: #202020;
 $modalDarktextColor: #3a3a3a;
 $modalDarkColor: #151515;
-$modalLightColor: #f9f9f9;
+$modalLightColor: #f9f9f9f6;
 $hrDarkColor: rgba(46, 46, 46, 0.76);
 $hrLightColor: rgba(38, 37, 37, 0.152);
+$inputDarkColor: #1d1d1d;
+$inputLightColor: #f6f6f6;
 
 html[data-theme="light"] {
   --darkToggleColor-btn: #{$lightBtn-color-1};
   --bgimg: #{url("../assets/imgs/bg9.png")};
   --box-shadow: #{$light-box-shadow};
   --box-shadow2: #{$light-box-shadow2};
+  --box-shadow3: #{$light-box-shadow3};
   --gradient: #{linear-gradient(90deg, $lightGd1, $lightGd2)};
   --moreGradient: #{linear-gradient(90deg, $morelight1, $morelight2)};
+  --accountGradient: #{linear-gradient(10deg, $lightColor3, $lightColor4)};
   --border: #{$morelight1};
   --border2: #{$morelight1};
   --textColor: #{$lightColor};
@@ -53,6 +63,7 @@ html[data-theme="light"] {
   --modalColor: #{$modalLightColor};
   --modalTextColor: #{$modalDarktextColor};
   --hrColor: #{$hrLightColor};
+  --inputBgColor: #{$inputLightColor};
 }
 
 html[data-theme="dark"] {
@@ -61,11 +72,14 @@ html[data-theme="dark"] {
   --box-shadow: #{$dark-box-shadow};
   --box-shadow2: #{$dark-box-shadow2};
   --gradient: #{linear-gradient(50deg, $darkGd1, $darkGd2)};
+  --gradientsss: #{linear-gradient(to right, $darkGd1, $darkGd2)};
   --moreGradient: #{linear-gradient(90deg, $darkGd1, $darkGd2)};
+  --accountGradient: #{linear-gradient(30deg, $darkGd3, $darkGd4)};
   --border: #{$darkGd2};
   --border2: #{$darkBtn-color-2};
   --textColor: #{$darkColor};
   --textColor2: #{$darkColor};
+  --textColor3: #{$darkColor3};
   --boxColor: #{$darkOpaColor};
   --boxColorGradient: #{linear-gradient(180deg, $darkOpaColor2, $darkOpaColor3)};
   --textColor4: #{$darkGd2};
@@ -76,4 +90,5 @@ html[data-theme="dark"] {
   --modalColor: #{$modalDarkColor};
   --modalTextColor: #{$modalLightColor};
   --hrColor: #{$hrDarkColor};
+  --inputBgColor: #{$inputDarkColor};
 }

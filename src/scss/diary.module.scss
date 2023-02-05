@@ -31,6 +31,7 @@
     margin-top: 200px;
     min-height: 80vh;
     background: var(--boxColorGradient);
+    box-shadow: var(--box-shadow3);
     border-radius: 24px;
     display: flex;
     flex-direction: column;
@@ -481,7 +482,7 @@
 
       .titleDes {
         font-size: 22px;
-        font-weight: 500;
+        font-weight: 700;
         color: var(--modalTextColor);
         transform: translateY(-10px);
       }

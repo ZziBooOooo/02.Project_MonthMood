@@ -1,15 +1,17 @@
 html[data-theme=light] {
-  --darkToggleColor-btn: #fce8fc;
+  --darkToggleColor-btn: #bbb0f9;
   --bgimg: url("../assets/imgs/bg9.png");
   --box-shadow: 2px 2px 5px rgba(129, 104, 131, 0.377);
   --box-shadow2: 3px 3px 5px rgba(119, 90, 119, 0.562);
+  --box-shadow3: 0px 2px 6px rgba(99, 91, 96, 0.36);
   --gradient: linear-gradient(90deg, #f391d2, #c697f8);
   --moreGradient: linear-gradient(90deg, #fff2fe, #f0e6fd);
+  --accountGradient: linear-gradient(10deg, #c696ee, #af98fc);
   --border: #fff2fe;
   --border2: #fff2fe;
   --textColor: rgb(255, 255, 255);
   --textColor2: #af70f3;
-  --textColor3: #ffa7d7;
+  --textColor3: #c696ee;
   --boxColor: rgba(253, 253, 253, 0.4);
   --boxColorGradient: linear-gradient(180deg, rgba(233, 233, 233, 0.368627451), rgba(250, 250, 250, 0.6352941176));
   --textColor4: #af70f3;
@@ -17,9 +19,10 @@ html[data-theme=light] {
   --btnColor: rgba(250, 250, 250, 0.6352941176);
   --selectbgColor: rgb(255, 255, 255);
   --selectColor: #202020;
-  --modalColor: #f9f9f9;
+  --modalColor: rgba(249, 249, 249, 0.9647058824);
   --modalTextColor: #3a3a3a;
   --hrColor: rgba(38, 37, 37, 0.152);
+  --inputBgColor: #f6f6f6;
 }
 
 html[data-theme=dark] {
@@ -28,11 +31,14 @@ html[data-theme=dark] {
   --box-shadow: -2px -2px 5px rgba(117, 89, 109, 0.377) inset;
   --box-shadow2: 2px 2px 5px rgba(0, 0, 0, 0.377);
   --gradient: linear-gradient(50deg, #ff6fcf, #8d33ee);
+  --gradientsss: linear-gradient(to right, #ff6fcf, #8d33ee);
   --moreGradient: linear-gradient(90deg, #ff6fcf, #8d33ee);
+  --accountGradient: linear-gradient(30deg, #f862d0, #a95ff9);
   --border: #8d33ee;
   --border2: #f3f3f3;
   --textColor: rgb(240, 240, 240);
   --textColor2: rgb(240, 240, 240);
+  --textColor3: #f63aa1;
   --boxColor: rgba(36, 36, 36, 0.47);
   --boxColorGradient: linear-gradient(180deg, rgba(2, 0, 3, 0.4784313725), rgba(19, 19, 19, 0.9725490196));
   --textColor4: #8d33ee;
@@ -41,6 +47,7 @@ html[data-theme=dark] {
   --selectbgColor: #202020;
   --selectColor: rgb(255, 255, 255);
   --modalColor: #151515;
-  --modalTextColor: #f9f9f9;
+  --modalTextColor: rgba(249, 249, 249, 0.9647058824);
   --hrColor: rgba(46, 46, 46, 0.76);
+  --inputBgColor: #1d1d1d;
 }/*# sourceMappingURL=color.css.map */

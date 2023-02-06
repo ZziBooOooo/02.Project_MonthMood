@@ -6,15 +6,18 @@ import { BrowserRouter } from "react-router-dom";
 import "./scss/common.css";
 import GifDataContext from "./stores/GifContext";
 import DarkContext from "./stores/DarkContext";
+import AccountContext from "./stores/AccountContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter basename={process.env.PUBLIC_URL}>
-    <DarkContext>
-      <GifDataContext>
-        <App />
-      </GifDataContext>
-    </DarkContext>
+    <AccountContext>
+      <DarkContext>
+        <GifDataContext>
+          <App />
+        </GifDataContext>
+      </DarkContext>
+    </AccountContext>
   </BrowserRouter>
 );
 

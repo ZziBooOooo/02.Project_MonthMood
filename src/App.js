@@ -16,7 +16,6 @@ function App() {
   /* 노트북 기준 화면 -> 세로 사이즈 다시 적용 */
 
   const { isDark } = useContext(darkStateContext);
-  console.log(isDark);
   let cursorColor;
   if (isDark) {
     cursorColor = "185, 144, 255";

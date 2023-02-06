@@ -3,6 +3,7 @@ import style from "../scss/Main.module.scss";
 import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
 import { gifDataContext } from "../stores/GifContext";
 import { darkStateContext } from "../stores/DarkContext";
+import { accountStateContext } from "../stores/AccountContext";
 import sun from "../assets/imgs/sun.png";
 import moon from "../assets/imgs/moon.png";
 
@@ -16,15 +17,21 @@ const Header = () => {
   // const { test, setTest } = useContext(ContextGifData);
   const { currentMenu, setCurrentMenu } = useContext(gifDataContext);
   const { isDark, setIsDark } = useContext(darkStateContext);
+  const { isLogin, setIsLogin } = useContext(accountStateContext);
 
   let navigate = useNavigate();
-  let isLoginSuccess = window.localStorage.getItem("login_Success");
-  // console.log(isLoginSuccess);
-  const [islogin, setIsLogin] = useState(false);
 
   useEffect(() => {
-    let isLoginSuccess = window.localStorage.getItem("login_Success");
-    setIsLogin(isLoginSuccess);
+    let isLoginSuccess = JSON.parse(
+      window.localStorage.getItem("login_Success")
+    );
+    console.log(isLoginSuccess);
+
+    if (isLoginSuccess == null || !isLoginSuccess) {
+      setIsLogin(false);
+    } else if (isLoginSuccess) {
+      setIsLogin(true);
+    }
   }, []);
   function clickLogOut() {
     window.localStorage.setItem("login_Success", false);
@@ -37,8 +44,8 @@ const Header = () => {
     console.log(currentMenu);
   }
   function goGOMM() {
-    // console.log(islogin);
-    if (islogin) {
+    // console.log(isLogin);
+    if (isLogin) {
       navigate("/write");
     } else {
       navigate("/login");
@@ -46,7 +53,7 @@ const Header = () => {
     setCurrentMenu("");
   }
   function goDIARY() {
-    if (islogin) {
+    if (isLogin) {
       navigate("/diary");
     } else {
       navigate("/login");
@@ -128,7 +135,7 @@ const Header = () => {
         </p>
       </div>
       <div className={`${style.rightFullMenubar}`}>
-        {islogin ? (
+        {isLogin ? (
           <button className={`${style.rightMenubar}`} onClick={clickLogOut}>
             LOGOUT
           </button>

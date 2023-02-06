@@ -48,8 +48,6 @@ const Main = () => {
     });
   }
 
-  console.log(isDark);
-
   // console.log(happyData);
   return (
     <>

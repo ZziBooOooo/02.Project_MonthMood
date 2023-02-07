@@ -1,3 +1,5 @@
+@import "./_variable.scss";
+
 .writeFullDiv {
   width: 100%;
   height: 100vh;
@@ -18,12 +20,11 @@
     color: transparent; */
     p {
       color: #b380e9;
-      font-weight: 700;
+      font-weight: 900;
       min-width: 100px;
-      cursor: pointer;
       text-align: center;
       font-size: 22px;
-      background-image: linear-gradient(140deg, #8429fc 0%, #f764de 100%);
+      background-image: var(--moreGradient);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -308,4 +309,91 @@
 .end2 {
   opacity: 1;
   transition: 0.8s;
+}
+
+@include tablet {
+  .writeFullDiv {
+    .writeBox {
+      width: 90%;
+      .leftBox {
+        width: 50%;
+
+        .gifBox {
+          margin-top: 10px;
+        }
+        .title {
+          font-size: 28px;
+        }
+      }
+
+      .nullBox {
+        .selectText {
+          font-size: 26px;
+        }
+        .selectText2 {
+          font-size: 18px;
+        }
+      }
+
+      .rightBox {
+        .rightCardBox {
+          min-width: 250px;
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .writeFullDiv {
+    .writeBox {
+      padding: 30px;
+      width: 90%;
+      align-items: center;
+      height: 65vh;
+      .leftBox {
+        width: 100%;
+        height: 100%;
+
+        .gifBox {
+          margin-top: 10px;
+          justify-content: center;
+        }
+        .btnAndSelect {
+          width: 90%;
+          margin-top: 0px;
+        }
+        .title {
+          font-size: 26px;
+          transform: translateY(-20px);
+        }
+      }
+
+      .nullBox {
+        .selectText {
+          font-size: 24px;
+          margin-top: 20px;
+          width: 280px;
+        }
+        .selectText2 {
+          width: 200px;
+          font-size: 14px;
+        }
+      }
+
+      .rightBox {
+        width: 0%;
+        display: none;
+        .rightCardBox {
+        }
+      }
+
+      button {
+        margin: 20px;
+        width: 110px;
+        height: 36px;
+        font-size: 14px;
+      }
+    }
+  }
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef, useContext } from "react";
-import Header from "../components/Header";
+
 import style from "../scss/trend.module.scss";
+import Header from "../components/Header";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -158,6 +159,7 @@ const Trend = () => {
   return (
     <>
       <Header />
+
       <div ref={fullDivRef} className={`${style.writeFullDiv}`}>
         <div className={`${style.trendBox}`}>
           <div className={`${style.trendContentBox}`}>

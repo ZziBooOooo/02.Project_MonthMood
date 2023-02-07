@@ -64,7 +64,7 @@ const Diary = () => {
 
   function showModal() {
     setIsShowModal(true);
-    let diaryBoxRefTop = diaryBoxRef.current.offsetTop - 100;
+    let diaryBoxRefTop = diaryBoxRef.current.offsetTop - 200;
 
     window.scrollTo({
       top: diaryBoxRefTop,

@@ -1,26 +1,20 @@
 import React, { useState, useEffect, useContext } from "react";
 import style from "../scss/Main.module.scss";
-import Mobile_Header from "./Mobile_Header";
-import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { gifDataContext } from "../stores/GifContext";
 import { darkStateContext } from "../stores/DarkContext";
 import { accountStateContext } from "../stores/AccountContext";
+import { useNavigate } from "react-router-dom";
 import sun from "../assets/imgs/sun.png";
 import moon from "../assets/imgs/moon.png";
-
-/* 
-*** 현재메뉴 활성화 로직
-스테이트 변경함수와 다른 일을 실행할 때 스테이트변경함수는 먼저 적혀있어도 나중에 실행됨
- -> context를 사용해서 스테이트변경을 하면 동시에 렌더링됨 ?_?
-*/
-
-const Header = () => {
-  // const { test, setTest } = useContext(ContextGifData);
+const Mobile_Header = () => {
+  let navigate = useNavigate();
   const { currentMenu, setCurrentMenu } = useContext(gifDataContext);
   const { isDark, setIsDark } = useContext(darkStateContext);
   const { isLogin, setIsLogin } = useContext(accountStateContext);
-
-  let navigate = useNavigate();
+  const [isShow, setIsShow] = useState(false);
 
   useEffect(() => {
     let isLoginSuccess = JSON.parse(
@@ -38,7 +32,6 @@ const Header = () => {
     window.localStorage.setItem("login_Success", false);
     setIsLogin(false);
   }
-  // console.log(currentMenu);
   function goTREND() {
     navigate("/trend");
     setCurrentMenu("TREND");
@@ -86,22 +79,71 @@ const Header = () => {
     }
     setIsDark(!isDark);
   }
-
   return (
     <>
-      <Mobile_Header />
-      <div className={`${style.menubar}`}>
-        <div className={`${style.leftMenubar}`}>
-          <p
+      <div className={`${style.m_header_box}`}>
+        <p className={`${style.svgWrap}`}>
+          <FontAwesomeIcon
+            icon={faBars}
             onClick={() => {
-              setCurrentMenu("");
-              navigate("/");
+              setIsShow(true);
             }}
-          >
-            MONTH MOOD
-          </p>
+          />
+        </p>
+        <div className={`${style.rightFullMenubar}`}>
+          {isLogin ? (
+            <button
+              className={`${style.rightMenubar} ${style.accountBtn}`}
+              onClick={clickLogOut}
+            >
+              LOGOUT
+            </button>
+          ) : (
+            <button
+              className={`${style.rightMenubar} ${style.accountBtn}`}
+              onClick={() => {
+                navigate("/login");
+              }}
+            >
+              LOGIN
+            </button>
+          )}
+          <div className={`${style.toggle}`} htmlFor="switch" onClick={onClick}>
+            <button>
+              <p>
+                <img src={isDark ? `${sun}` : `${moon}`}></img>
+              </p>
+            </button>
+          </div>
         </div>
-        <div className={`${style.middleMenubar}`}>
+      </div>
+      <div className={`${style.sideOpaBox}`}></div>
+      {/* <div className={`${style.sideBarBox} ${style.showBar}`}> */}
+      <div
+        className={
+          isShow
+            ? `${style.sideBarBox} ${style.showBar}`
+            : `${style.sideBarBox}`
+        }
+      >
+        <button
+          onClick={() => {
+            setIsShow(false);
+          }}
+        >
+          <FontAwesomeIcon icon={faXmark} />
+        </button>
+        <p
+          className={style.logoText}
+          onClick={() => {
+            setCurrentMenu("");
+            navigate("/");
+          }}
+        >
+          MONTH MOOD
+        </p>
+
+        <div className={`${style.sideMenubar}`}>
           {}
           <p
             className={currentMenu == "HOME" ? `${style.currentMenu}` : null}
@@ -137,32 +179,9 @@ const Header = () => {
             DIARY
           </p>
         </div>
-        <div className={`${style.rightFullMenubar}`}>
-          {isLogin ? (
-            <button className={`${style.rightMenubar}`} onClick={clickLogOut}>
-              LOGOUT
-            </button>
-          ) : (
-            <button
-              className={`${style.rightMenubar}`}
-              onClick={() => {
-                navigate("/login");
-              }}
-            >
-              LOGIN
-            </button>
-          )}
-          <div className={`${style.toggle}`} htmlFor="switch" onClick={onClick}>
-            <button>
-              <p>
-                <img src={isDark ? `${sun}` : `${moon}`}></img>
-              </p>
-            </button>
-          </div>
-        </div>
       </div>
     </>
   );
 };
 
-export default Header;
+export default Mobile_Header;

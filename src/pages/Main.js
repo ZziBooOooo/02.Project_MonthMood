@@ -53,7 +53,6 @@ const Main = () => {
     <>
       <div className={`${style.FullContentBox}`}>
         <Header />
-
         <div
           // ref={titleBoxRef} className={` ${style.mainTitleBox}`}>
           ref={titleBoxRef}

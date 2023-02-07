@@ -1,16 +1,18 @@
+@charset "UTF-8";
 html[data-theme=light] {
   --darkToggleColor-btn: #bbb0f9;
   --bgimg: url("../assets/imgs/bg9.png");
   --box-shadow: 2px 2px 5px rgba(129, 104, 131, 0.377);
   --box-shadow2: 3px 3px 5px rgba(119, 90, 119, 0.562);
-  --box-shadow3: 3px 3px 5px rgba(106, 90, 119, 0.267);
+  --box-shadow3: 0px 2px 6px rgba(99, 91, 96, 0.36);
   --gradient: linear-gradient(90deg, #f391d2, #c697f8);
   --moreGradient: linear-gradient(90deg, #fff2fe, #f0e6fd);
+  --accountGradient: linear-gradient(10deg, #c696ee, #af98fc);
   --border: #fff2fe;
   --border2: #fff2fe;
   --textColor: rgb(255, 255, 255);
   --textColor2: #af70f3;
-  --textColor3: #ffa7d7;
+  --textColor3: #c696ee;
   --boxColor: rgba(253, 253, 253, 0.4);
   --boxColorGradient: linear-gradient(180deg, rgba(233, 233, 233, 0.368627451), rgba(250, 250, 250, 0.6352941176));
   --textColor4: #af70f3;
@@ -18,9 +20,10 @@ html[data-theme=light] {
   --btnColor: rgba(250, 250, 250, 0.6352941176);
   --selectbgColor: rgb(255, 255, 255);
   --selectColor: #202020;
-  --modalColor: #f9f9f9;
+  --modalColor: rgba(249, 249, 249, 0.9647058824);
   --modalTextColor: #3a3a3a;
   --hrColor: rgba(38, 37, 37, 0.152);
+  --inputBgColor: #f6f6f6;
 }
 
 html[data-theme=dark] {
@@ -29,12 +32,14 @@ html[data-theme=dark] {
   --box-shadow: -2px -2px 5px rgba(117, 89, 109, 0.377) inset;
   --box-shadow2: 2px 2px 5px rgba(0, 0, 0, 0.377);
   --gradient: linear-gradient(50deg, #ff6fcf, #8d33ee);
+  --gradientsss: linear-gradient(to right, #ff6fcf, #8d33ee);
   --moreGradient: linear-gradient(90deg, #ff6fcf, #8d33ee);
+  --accountGradient: linear-gradient(30deg, #f862d0, #a95ff9);
   --border: #8d33ee;
   --border2: #f3f3f3;
   --textColor: rgb(240, 240, 240);
   --textColor2: rgb(240, 240, 240);
-  --textColor3: #fc54b0;
+  --textColor3: #f63aa1;
   --boxColor: rgba(36, 36, 36, 0.47);
   --boxColorGradient: linear-gradient(180deg, rgba(2, 0, 3, 0.4784313725), rgba(19, 19, 19, 0.9725490196));
   --textColor4: #8d33ee;
@@ -43,10 +48,13 @@ html[data-theme=dark] {
   --selectbgColor: #202020;
   --selectColor: rgb(255, 255, 255);
   --modalColor: #151515;
-  --modalTextColor: #f9f9f9;
+  --modalTextColor: rgba(249, 249, 249, 0.9647058824);
   --hrColor: rgba(46, 46, 46, 0.76);
+  --inputBgColor: #1d1d1d;
 }
 
+/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+/*반응형, 브라우저 크기가 1024px 이상일때*/
 .toggle {
   width: 36px;
   height: 36px;
@@ -75,6 +83,10 @@ html[data-theme=dark] {
   justify-content: center;
   align-items: center;
   filter: invert(10%);
+}
+
+.sideBarBox {
+  display: none;
 }
 
 .FullContentBox {
@@ -631,7 +643,7 @@ html[data-theme=dark] {
 .siteDesBox .siteDesimgBox .gifBox4 {
   width: 16.6666666667vw;
   height: 16.6666666667vw;
-  transform: translate(-60px, -120px);
+  transform: translate(-40px, -120px);
 }
 
 .howUseFullBox {
@@ -857,4 +869,344 @@ html[data-theme=dark] {
 .FooterBox .footerContent .footerIconBox .wrapper .youtube:hover .tooltip::before {
   background: #cd201f;
   color: #ffffff;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .sideBarBox {
+    display: none;
+  }
+  .menubar {
+    width: 80%;
+  }
+  .menubar .middleMenubar p {
+    margin: 20px;
+  }
+  .siteDesBox {
+    height: 35vh;
+  }
+  .siteDesBox .siteDes_pBox div p {
+    font-size: 50px;
+  }
+  .siteDesBox .siteDes_pBox .siteDes_p2Box {
+    font-size: 16px;
+  }
+  .siteDesBox .siteDesimgBox {
+    height: 50%;
+    transform: translateY(-30px);
+  }
+  .siteDesBox .siteDesimgBox p img {
+    transform: scale(1.2);
+    border: 12px solid white;
+  }
+  .siteDesBox .siteDesimgBox .gifBox2 {
+    transform: translate(-80px, 30px);
+  }
+  .howUseFullBox {
+    width: 90%;
+  }
+  .howUseFullBox .howUseContentBox .howUseBox {
+    max-height: 430px;
+  }
+  .howUseFullBox .howUseContentBox .howUseBox .howUseImgBox {
+    height: 100px;
+  }
+  .howUseFullBox .howUseContentBox .howUseBox .howUseImgBox img {
+    max-height: 100%;
+  }
+  .howUseFullBox .howUseContentBox .howUseBox .howUseImgBox img:nth-of-type(2) {
+    width: 45px;
+    height: 45px;
+  }
+  .howUseFullBox .howUseContentBox .howUseBox p:nth-of-type(1) {
+    margin-top: 5px;
+    font-size: 24px;
+    min-width: 180px;
+  }
+  .howUseFullBox .howUseContentBox .howUseBox p:nth-of-type(2) {
+    margin-top: 0;
+    font-size: 16px;
+    min-height: 100px;
+  }
+  .FooterBox .footerContent p:nth-of-type(1) {
+    margin-right: 30px;
+  }
+}
+.m_header_box {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .menubar {
+    width: 80%;
+  }
+  .menubar .leftMenubar p {
+    font-size: 20px;
+  }
+  .menubar .middleMenubar p {
+    margin: 20px;
+  }
+  .FullContentBox {
+    padding-bottom: 350px;
+  }
+  .mainTitleBox .mainTitle {
+    font-size: 50px;
+    text-shadow: 0 1px 0 #cccccc, 0 1px 0 #cccccc, 0 2px 0 #cccccc, 0 3px 0 #cccccc, 0 4px 0 #cccccc, 0 5px 0 #cccccc, 0 6px 0 #cccccc, 0 6px 0 #cccccc, 0 7px 0 #cccccc, 0 40px 20px rgba(0, 0, 0, 0.3);
+  }
+  .siteDesBox {
+    height: 40vh;
+    min-height: 420px;
+  }
+  .siteDesBox .siteDes_pBox div p {
+    font-size: 36px;
+  }
+  .siteDesBox .siteDes_pBox .siteDes_p2Box {
+    font-size: 14px;
+    width: 45%;
+  }
+  .siteDesBox .siteDesimgBox {
+    height: 60%;
+  }
+  .siteDesBox .siteDesimgBox p img {
+    transform: scale(1.3);
+    border: 6px solid white;
+  }
+  .siteDesBox .siteDesimgBox .gifBox2 {
+    transform: translate(-30px, -10px);
+  }
+  .siteDesBox .siteDesimgBox .gifBox2 img {
+    transform: scale(1.5);
+  }
+  .siteDesBox .siteDesimgBox .gifBox3 {
+    transform: translate(-20px, -80px);
+  }
+  .siteDesBox .siteDesimgBox .gifBox4 {
+    transform: translate(0px, -60px);
+  }
+  .howUseFullBox .howUseTitle {
+    margin-bottom: 100px;
+    font-size: 45px;
+  }
+  .howUseFullBox .howUseContentBox {
+    flex-direction: column;
+  }
+  .howUseFullBox .howUseContentBox .howUseBox {
+    max-height: 220px;
+    width: 60%;
+    display: flex;
+    margin-bottom: 50px;
+    min-width: 280px;
+  }
+  .howUseFullBox .howUseContentBox .howUseBox .howUseImgBox {
+    height: 100px;
+    width: 50%;
+    transform: translateY(-10px);
+  }
+  .howUseFullBox .howUseContentBox .howUseBox .howUseImgBox img {
+    width: 100px;
+    height: 100px;
+    min-width: 100px;
+    border-radius: 50%;
+  }
+  .howUseFullBox .howUseContentBox .howUseBox .howUseImgBox img:nth-of-type(2) {
+    min-width: 45px;
+    width: 45px;
+    height: 45px;
+  }
+  .howUseFullBox .howUseContentBox .howUseBox p:nth-of-type(1) {
+    margin-top: 5px;
+    font-size: 24px;
+  }
+  .howUseFullBox .howUseContentBox .howUseBox p:nth-of-type(2) {
+    margin-top: 5px;
+    font-size: 16px;
+    min-height: 100px;
+  }
+  .howUseFullBox .howUseContentBox .howUseBox:nth-child(1) {
+    transform: rotate(3deg);
+  }
+  .howUseFullBox .howUseContentBox .howUseBox:nth-child(2) {
+    transform: rotate(-3deg);
+  }
+  .howUseFullBox .howUseContentBox .howUseBox:nth-child(3) {
+    transform: rotate(6deg);
+  }
+  .FooterBox .footerContent {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .FooterBox .footerContent .footerTextBox {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .FooterBox .footerContent .footerTextBox p:nth-of-type(1) {
+    font-size: 24px;
+  }
+  .FooterBox .footerContent .footerTextBox p:nth-of-type(2) {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .FooterBox .footerContent .footerIconBox {
+    margin-top: 10px;
+    transform: translateX(-10px);
+  }
+  .FooterBox .footerContent .footerIconBox .wrapper .icon {
+    width: 40px;
+    height: 40px;
+  }
+  .FooterBox .footerContent .footerIconBox .wrapper span {
+    display: block;
+    text-align: center;
+    width: 50px;
+  }
+  .FooterBox .footerContent .footerIconBox .wrapper span svg {
+    width: 20px;
+  }
+  .menubar {
+    display: none;
+  }
+  .m_header_box {
+    display: block;
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+  }
+  .m_header_box .svgWrap {
+    width: 28px;
+    height: 28px;
+  }
+  .m_header_box .svgWrap svg {
+    color: white;
+    width: 28px;
+    height: 28px;
+  }
+  .m_header_box .rightFullMenubar {
+    display: flex;
+  }
+  .m_header_box .rightFullMenubar .accountBtn {
+    background-color: transparent;
+    color: white;
+    border: 2px solid var(--border2);
+    border-radius: 8px;
+    padding: 4px 12px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+    font-size: 14px;
+  }
+  .m_header_box .rightFullMenubar .accountBtn:before {
+    position: absolute;
+    display: block;
+    content: "";
+    background: var(--gradient);
+    height: 40px;
+    width: 0%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: 0.5s;
+  }
+  .m_header_box .rightFullMenubar .accountBtn:hover {
+    transform: scale(1.03) translateY(-1px);
+  }
+  .m_header_box .rightFullMenubar .accountBtn:hover:before {
+    width: 100%;
+  }
+  .sideOpaBox {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(17, 17, 17, 0.65);
+    z-index: -1;
+  }
+  .sideBarBox {
+    width: 45%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    border-radius: 0px 18px 20px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 25px;
+    transform: translateX(-100%);
+    transition: 0.5s;
+  }
+  .sideBarBox .logoText {
+    max-width: 120px;
+    color: #b380e9;
+    font-weight: 900;
+    min-width: 100px;
+    font-size: 26px;
+    background-image: var(--gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 40px;
+  }
+  .sideBarBox .sideMenubar p {
+    color: white;
+    font-size: 24px;
+    margin: 15px 0px;
+    font-weight: 700;
+  }
+  .sideBarBox .sideMenubar p.currentMenu {
+    color: var(--textColor3);
+  }
+  .sideBarBox .sideMenubar p.currentMenu:after {
+    transform: scaleX(1);
+  }
+  .sideBarBox button {
+    position: absolute;
+    right: 0;
+    margin: 7px 10px;
+    width: 25px;
+    height: 25px;
+  }
+  .sideBarBox button svg {
+    color: white;
+    width: 25px;
+    height: 25px;
+  }
+  .sideBarBox.showBar {
+    transform: translateX(0%);
+  }
+  .mainTitleBox button {
+    width: 140px;
+    font-size: 20px;
+    padding: 6px 12px;
+    height: 45px;
+  }
+  .mainTitleBox button:before {
+    left: -40%;
+  }
+  .mainTitleBox button div {
+    transform: translate(0px);
+  }
+  .mainTitleBox button div p {
+    font-size: 22px;
+  }
+  .mainTitleBox button div .goTxt {
+    margin-top: 18px;
+  }
+  .mainTitleBox .scroll {
+    width: 45px;
+    height: 45px;
+  }
+  .mainTitleBox .scroll:before {
+    top: 9px;
+    left: 12px;
+    width: 15px;
+    height: 15px;
+  }
+  .mainTitleBox .scroll:after {
+    top: -95%;
+    left: -95%;
+  }
 }/*# sourceMappingURL=Main.module.css.map */

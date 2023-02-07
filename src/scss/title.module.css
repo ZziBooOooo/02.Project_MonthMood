@@ -1,3 +1,6 @@
+@charset "UTF-8";
+/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+/*반응형, 브라우저 크기가 1024px 이상일때*/
 .titleFullDiv {
   width: 100%;
   height: 100vh;
@@ -8,12 +11,11 @@
 }
 .titleFullDiv .logoBox p {
   color: #b380e9;
-  font-weight: 700;
+  font-weight: 900;
   min-width: 100px;
-  cursor: pointer;
   text-align: center;
   font-size: 22px;
-  background-image: linear-gradient(140deg, #8429fc 0%, #f764de 100%);
+  background-image: var(--moreGradient);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -177,5 +179,27 @@
   100% {
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  .titleFullDiv .titleBox {
+    padding: 30px;
+    width: 90%;
+    align-items: center;
+    height: 65vh;
+  }
+  .titleFullDiv .titleBox .title {
+    font-size: 26px;
+  }
+  .titleFullDiv .titleBox .form {
+    width: 100%;
+    margin-top: 150px;
+  }
+  .titleFullDiv .titleBox button {
+    margin: 20px;
+    width: 110px;
+    height: 36px;
+    font-size: 14px;
   }
 }/*# sourceMappingURL=title.module.css.map */

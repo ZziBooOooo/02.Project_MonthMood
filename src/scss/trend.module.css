@@ -1,12 +1,6 @@
-/* body {
-  height: 100%;
-}
-#root {
-  height: 100%;
-  .App {
-    height: 200vh;
-  }
-} */
+@charset "UTF-8";
+/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+/*반응형, 브라우저 크기가 1024px 이상일때*/
 .writeFullDiv {
   width: 100%;
   max-width: 1600px;
@@ -57,7 +51,6 @@
 .writeFullDiv .trendBox .trendContentBox .gifContentBox .gifWrapBox {
   width: 30%;
   transition: 0.3s;
-  cursor: pointer;
   display: flex;
   justify-content: center;
 }
@@ -178,7 +171,6 @@
   right: 0%;
   bottom: 0%;
   margin: 2%;
-  cursor: pointer;
   transition: 0.2s;
   background-color: transparent;
   overflow: hidden;
@@ -214,4 +206,66 @@
 }
 .scroll:hover::after {
   transform: scale(5, 5);
+}
+
+.FullContentBox .menubar {
+  width: 80%;
+}
+.FullContentBox .menubar .middleMenubar p {
+  margin: 20px;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .writeFullDiv .trendBox {
+    padding: 30px;
+  }
+  .writeFullDiv .trendBox .trendContentBox {
+    width: 100%;
+  }
+  .writeFullDiv .trendBox .trendContentBox .gifContentBox .gifWrapBox {
+    width: 33%;
+    margin-bottom: 10px;
+  }
+  .writeFullDiv .trendBox .trendContentBox .gifContentBox .gifWrapBox > div {
+    height: 340px;
+    width: 90%;
+  }
+  .writeFullDiv .trendBox .trendContentBox .gifContentBox .gifWrapBox p {
+    font-size: 16px;
+    margin-top: 0;
+    min-width: 160px;
+  }
+  .writeFullDiv .trendBox .trendContentBox .gifContentBox .gifWrapBox .gifBox {
+    padding: 30px 10px 0px 10px;
+  }
+}
+@media (max-width: 767px) {
+  .writeFullDiv .trendBox {
+    padding: 30px;
+    margin-top: 150px;
+  }
+  .writeFullDiv .trendBox .trendContentBox .trendTitle {
+    font-size: 36px;
+  }
+  .writeFullDiv .trendBox .trendContentBox .gifContentBox {
+    margin-top: 50px;
+  }
+  .writeFullDiv .trendBox .trendContentBox .gifContentBox .gifWrapBox {
+    width: 100%;
+  }
+  .writeFullDiv .trendBox .trendContentBox .gifContentBox .gifWrapBox > div {
+    height: 380px;
+  }
+  .writeFullDiv .trendBox .trendContentBox .gifContentBox .gifBox {
+    height: 300px;
+  }
+  .writeFullDiv .trendBox .trendContentBox .gifContentBox .gifBox p {
+    font-size: 16px;
+  }
+  .writeFullDiv .trendBox .trendContentBox .gifContentBox .on {
+    transform: translateY(0px);
+  }
+  .writeFullDiv .trendBox .trendContentBox .gifContentBox .on:hover {
+    transform: translateY(0px);
+  }
 }/*# sourceMappingURL=trend.module.css.map */

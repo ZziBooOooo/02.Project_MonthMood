@@ -1,3 +1,4 @@
+@import "./_variable.scss";
 .loginFullDiv {
   width: 100%;
   height: 100vh;
@@ -333,6 +334,21 @@
     90% {
       opacity: 1;
       transform: scale(1);
+    }
+  }
+}
+
+@include tablet {
+  .loginFullDiv {
+    .loginBox {
+      .rightBox {
+        .loginForm {
+          width: 80%;
+          p {
+            width: 90%;
+          }
+        }
+      }
     }
   }
 }

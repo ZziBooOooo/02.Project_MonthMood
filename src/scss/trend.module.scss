@@ -1,12 +1,4 @@
-/* body {
-  height: 100%;
-}
-#root {
-  height: 100%;
-  .App {
-    height: 200vh;
-  }
-} */
+@import "./_variable.scss";
 
 .writeFullDiv {
   width: 100%;
@@ -61,7 +53,6 @@
         .gifWrapBox {
           width: 30%;
           transition: 0.3s;
-          cursor: pointer;
           display: flex;
           justify-content: center;
           // margin-bottom: 25px;
@@ -169,7 +160,6 @@
   right: 0%;
   bottom: 0%;
   margin: 2%;
-  cursor: pointer;
   transition: 0.2s;
   background-color: transparent;
   overflow: hidden;
@@ -205,6 +195,83 @@
     transform: scale(1.05);
     &::after {
       transform: scale(5, 5);
+    }
+  }
+}
+
+.FullContentBox {
+  .menubar {
+    width: 80%;
+    .middleMenubar {
+      p {
+        margin: 20px;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .writeFullDiv {
+    .trendBox {
+      padding: 30px;
+      .trendContentBox {
+        width: 100%;
+        .gifContentBox {
+          .gifWrapBox {
+            width: 33%;
+            margin-bottom: 10px;
+            & > div {
+              height: 340px;
+              width: 90%;
+            }
+            p {
+              font-size: 16px;
+              margin-top: 0;
+              min-width: 160px;
+            }
+            .gifBox {
+              padding: 30px 10px 0px 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .writeFullDiv {
+    .trendBox {
+      padding: 30px;
+      margin-top: 150px;
+      .trendContentBox {
+        .trendTitle {
+          font-size: 36px;
+        }
+        .gifContentBox {
+          margin-top: 50px;
+
+          .gifWrapBox {
+            width: 100%;
+
+            & > div {
+              height: 380px;
+            }
+          }
+          .gifBox {
+            height: 300px;
+            p {
+              font-size: 16px;
+            }
+          }
+          .on {
+            transform: translateY(0px);
+            &:hover {
+              transform: translateY(0px);
+            }
+          }
+        }
+      }
     }
   }
 }

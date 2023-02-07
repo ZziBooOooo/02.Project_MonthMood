@@ -1,3 +1,6 @@
+@charset "UTF-8";
+/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+/*반응형, 브라우저 크기가 1024px 이상일때*/
 .fullBox {
   width: 100%;
   display: flex;
@@ -358,7 +361,6 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  margin-top: 150px;
   border-radius: 16px;
   z-index: 20;
   display: flex;
@@ -566,5 +568,133 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .FullDiv .modalBox {
+    height: 30vh;
+    margin-top: 50px;
+    min-height: 350px;
+  }
+  .FullDiv .modalBox .siteDesimgBox {
+    height: 30%;
+    transform: translate(0px);
+  }
+  .FullDiv .modalBox .siteDesimgBox .gifBox2 {
+    transform: translate(0px);
+  }
+  .FullDiv .modalBox .moodBox {
+    width: 90%;
+  }
+  .FullDiv .modalBox .moodBox .moodContent .moodTitle {
+    font-size: 18px;
+  }
+  .FullDiv .modalBox .moodBox .moodContent .moodCount {
+    font-size: 15px;
+  }
+}
+@media (max-width: 767px) {
+  .FullDiv .diaryBox {
+    width: 90%;
+    margin-top: 100px;
+    min-height: 65vh;
+    padding: 30px 20px;
+  }
+  .FullDiv .diaryBox .diaryTopBox {
+    align-items: flex-start;
+  }
+  .FullDiv .diaryBox .diaryTopBox .diaryTopBox_right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(-130%);
+    margin: 15px;
+  }
+  .FullDiv .diaryBox .diaryTopBox .diaryTopBox_right:hover {
+    transform: scale(1.05) translateY(-129%);
+  }
+  .FullDiv .diaryBox .diaryContentBox {
+    margin-top: 50px;
+    align-items: center;
+    width: 100%;
+  }
+  .FullDiv .diaryBox .diaryContentBox .contentBox {
+    margin: 0px 10px 20px 10px;
+    min-width: 115px;
+  }
+  .FullDiv .diaryBox .diaryContentBox .contentBox .imgBox {
+    min-width: 115px;
+  }
+  .FullDiv .diaryBox .diaryContentBox .contentBox .imgBox img {
+    min-width: 115px;
+    height: 125px;
+  }
+  .FullDiv .diaryBox .diaryContentBox .contentBox .textBox {
+    flex-direction: column;
+  }
+  .FullDiv .modalBox {
+    height: 30vh;
+    width: 75%;
+    margin-top: 50px;
+    min-height: 260px;
+  }
+  .FullDiv .modalBox .siteDesimgBox {
+    height: 30%;
+    transform: translateY(-30px);
+    width: 80%;
+    min-width: 300px;
+  }
+  .FullDiv .modalBox .siteDesimgBox .gifBox1 {
+    transform: translate(50px, 0px);
+    min-width: 92px;
+    min-height: 92px;
+  }
+  .FullDiv .modalBox .siteDesimgBox .gifBox1 img {
+    min-width: 85px;
+    min-height: 85px;
+  }
+  .FullDiv .modalBox .siteDesimgBox .gifBox2 {
+    transform: translate(0px, 30px);
+    min-width: 72px;
+    min-height: 72px;
+  }
+  .FullDiv .modalBox .siteDesimgBox .gifBox2 img {
+    min-width: 65px;
+    min-height: 65px;
+  }
+  .FullDiv .modalBox .siteDesimgBox .gifBox3 {
+    transform: translate(-60px, -20px);
+    min-width: 112px;
+    min-height: 112px;
+  }
+  .FullDiv .modalBox .siteDesimgBox .gifBox3 img {
+    min-width: 105px;
+    min-height: 105px;
+  }
+  .FullDiv .modalBox .siteDesimgBox p img {
+    border: 6px solid white;
+  }
+  .FullDiv .modalBox .TitleBox .moodTitle {
+    font-size: 24px;
+  }
+  .FullDiv .modalBox .TitleBox .titleDes {
+    font-size: 16px;
+    margin-top: 5px;
+  }
+  .FullDiv .modalBox .moodBox {
+    width: 90%;
+    margin-top: 10px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .FullDiv .modalBox .moodBox .moodContent .moodTitle {
+    font-size: 16px;
+  }
+  .FullDiv .modalBox .moodBox .moodContent .moodCount {
+    font-size: 14px;
+  }
+  .FullDiv .modalBox .closeBtn {
+    margin: 5px;
   }
 }/*# sourceMappingURL=diary.module.css.map */

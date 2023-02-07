@@ -6,6 +6,7 @@
   justify-content: center;
   align-items: center;
   background-image: var(--bgimg);
+  transition: 0.3s;
   background-repeat: repeat-y;
   position: relative;
 }/*# sourceMappingURL=App.module.css.map */

@@ -1,3 +1,4 @@
+@import "../scss/variable";
 .titleFullDiv {
   width: 100%;
   height: 100vh;
@@ -8,12 +9,11 @@
   .logoBox {
     p {
       color: #b380e9;
-      font-weight: 700;
+      font-weight: 900;
       min-width: 100px;
-      cursor: pointer;
       text-align: center;
       font-size: 22px;
-      background-image: linear-gradient(140deg, #8429fc 0%, #f764de 100%);
+      background-image: var(--moreGradient);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -181,6 +181,32 @@
       -webkit-transform: scale(1);
       transform: scale(1);
       opacity: 1;
+    }
+  }
+}
+
+@include mobile {
+  .titleFullDiv {
+    .titleBox {
+      padding: 30px;
+      width: 90%;
+      align-items: center;
+      height: 65vh;
+
+      .title {
+        font-size: 26px;
+      }
+      .form {
+        width: 100%;
+        margin-top: 150px;
+      }
+
+      button {
+        margin: 20px;
+        width: 110px;
+        height: 36px;
+        font-size: 14px;
+      }
     }
   }
 }

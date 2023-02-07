@@ -1,3 +1,5 @@
+@import "./_variable.scss";
+
 .fullBox {
   width: 100%;
   // min-height: 100vh;
@@ -380,7 +382,6 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    margin-top: 150px;
     border-radius: 16px;
     // border: 2px solid rgb(84, 84, 84);
     z-index: 20;
@@ -588,6 +589,152 @@
     }
     to {
       opacity: 1;
+    }
+  }
+}
+
+@include tablet {
+  .FullDiv {
+    .modalBox {
+      height: 30vh;
+      margin-top: 50px;
+      min-height: 350px;
+      .siteDesimgBox {
+        height: 30%;
+        transform: translate(0px);
+        .gifBox2 {
+          transform: translate(0px);
+        }
+      }
+      .moodBox {
+        width: 90%;
+        .moodContent {
+          .moodTitle {
+            font-size: 18px;
+          }
+          .moodCount {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .FullDiv {
+    .diaryBox {
+      width: 90%;
+      margin-top: 100px;
+      min-height: 65vh;
+      padding: 30px 20px;
+      .diaryTopBox {
+        // flex-direction: column;
+        align-items: flex-start;
+
+        .diaryTopBox_right {
+          position: absolute;
+          top: 0;
+          right: 0;
+          transform: translateY(-130%);
+          margin: 15px;
+
+          &:hover {
+            transform: scale(1.05) translateY(-129%);
+          }
+        }
+      }
+      .diaryContentBox {
+        margin-top: 50px;
+        align-items: center;
+        width: 100%;
+        .contentBox {
+          margin: 0px 10px 20px 10px;
+          min-width: 115px;
+          .imgBox {
+            min-width: 115px;
+            img {
+              min-width: 115px;
+              height: 125px;
+            }
+          }
+          .textBox {
+            flex-direction: column;
+          }
+        }
+      }
+    }
+
+    .modalBox {
+      height: 30vh;
+      width: 75%;
+      margin-top: 50px;
+      min-height: 260px;
+      .siteDesimgBox {
+        height: 30%;
+        transform: translateY(-30px);
+        width: 80%;
+        min-width: 300px;
+        .gifBox1 {
+          transform: translate(50px, 0px);
+          min-width: 92px;
+          min-height: 92px;
+          img {
+            min-width: 85px;
+            min-height: 85px;
+          }
+        }
+        .gifBox2 {
+          transform: translate(0px, 30px);
+          min-width: 72px;
+          min-height: 72px;
+          img {
+            min-width: 65px;
+            min-height: 65px;
+          }
+        }
+        .gifBox3 {
+          transform: translate(-60px, -20px);
+          min-width: 112px;
+          min-height: 112px;
+          img {
+            min-width: 105px;
+            min-height: 105px;
+          }
+        }
+
+        p {
+          img {
+            border: 6px solid white;
+          }
+        }
+      }
+      .TitleBox {
+        .moodTitle {
+          font-size: 24px;
+        }
+        .titleDes {
+          font-size: 16px;
+          margin-top: 5px;
+        }
+      }
+      .moodBox {
+        width: 90%;
+        margin-top: 10px;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        .moodContent {
+          .moodTitle {
+            font-size: 16px;
+          }
+          .moodCount {
+            font-size: 14px;
+          }
+        }
+      }
+      .closeBtn {
+        margin: 5px;
+      }
     }
   }
 }

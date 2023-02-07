@@ -1,3 +1,6 @@
+@charset "UTF-8";
+/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+/*반응형, 브라우저 크기가 1024px 이상일때*/
 .loginFullDiv {
   width: 100%;
   height: 100vh;
@@ -340,5 +343,14 @@
   10%, 50%, 90% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .loginFullDiv .loginBox .rightBox .loginForm {
+    width: 80%;
+  }
+  .loginFullDiv .loginBox .rightBox .loginForm p {
+    width: 90%;
   }
 }/*# sourceMappingURL=login.module.css.map */

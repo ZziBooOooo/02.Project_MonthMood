@@ -961,10 +961,12 @@ html[data-theme=dark] {
   }
   .siteDesBox .siteDes_pBox .siteDes_p2Box {
     font-size: 14px;
-    width: 45%;
+    width: 50%;
+    margin-top: 10px;
   }
   .siteDesBox .siteDesimgBox {
     height: 60%;
+    transform: translateY(20px);
   }
   .siteDesBox .siteDesimgBox p img {
     transform: scale(1.3);

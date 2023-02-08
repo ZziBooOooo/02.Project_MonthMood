@@ -925,12 +925,13 @@
       }
       .siteDes_p2Box {
         font-size: 14px;
-        width: 45%;
+        width: 50%;
+        margin-top: 10px;
       }
     }
     .siteDesimgBox {
       height: 60%;
-      // transform: translateY(-30px);
+      transform: translateY(20px);
 
       p {
         img {

@@ -20,7 +20,6 @@ const Mobile_Header = () => {
     let isLoginSuccess = JSON.parse(
       window.localStorage.getItem("login_Success")
     );
-    console.log(isLoginSuccess);
 
     if (isLoginSuccess == null || !isLoginSuccess) {
       setIsLogin(false);

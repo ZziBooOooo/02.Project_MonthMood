@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
 import { gifDataContext } from "../stores/GifContext";
 import useIntersectionObsever from "./UseIntersectionObsever";
+import { current } from "@reduxjs/toolkit";
 
 const Write = () => {
   let [selectValue, setSelectValue] = useState("");
@@ -16,6 +17,7 @@ const Write = () => {
   let [refreshCount, setrefreshCount] = useState(0);
   let [fullGif, setFullGif] = useState("");
   let [lastClick, setLastClick] = useState({});
+  const [currentIdx, setCurrentIdx] = useState(10);
   let navigate = useNavigate();
   let {
     happyData,
@@ -33,6 +35,7 @@ const Write = () => {
   function handleSelect(e) {
     setShowSelect(true);
     setSelectValue(e.target.value);
+    setCurrentIdx(10);
   }
 
   useEffect(() => {
@@ -145,9 +148,11 @@ const Write = () => {
 
   function refreshGif() {
     setrefreshCount(refreshCount + 1);
+    setCurrentIdx(10);
   }
+
   /* 
-     function saveImg(item) {
+    function saveImg(item) {
     let value = [{ selectValue, item }];
     let getItem = JSON.parse(window.localStorage.getItem("Datas"));
 
@@ -155,7 +160,8 @@ const Write = () => {
 
     let a = [...getItem, ...value];
     window.localStorage.setItem("Datas", [JSON.stringify(a)]);
-  } */
+  } 
+  */
 
   function lastClicks(item, gifId) {
     /*     console.log(item);
@@ -181,14 +187,9 @@ const Write = () => {
     console.log("실행"); */
 
     let localData = JSON.parse(window.localStorage.getItem("moodData"));
-    // console.log(localData.length);
-    // let count = localData.length;
     if (localData) {
-      // console.log(localData);
       let newData = [...localData];
-      // console.log(newData);
       newData.push(lastClick);
-      // console.log(newData);
       window.localStorage.setItem("moodData", JSON.stringify(newData));
     } else if (!localData) {
       window.localStorage.setItem("moodData", JSON.stringify([lastClick]));
@@ -215,6 +216,14 @@ const Write = () => {
       setFade2("");
     };
   }, [lastClick]);
+
+  function setImgCheck(itemId, idx) {
+    sliceArr.filter((item) => {
+      if (item.id == itemId) {
+        setCurrentIdx(idx);
+      }
+    });
+  }
   return (
     <div className={`${style.writeFullDiv}`}>
       <div className={`${style.logoBox}`}>
@@ -227,7 +236,6 @@ const Write = () => {
           <br /> MOOD
         </p>
       </div>
-      {/* <div ref={writeBoxRef}className={`${style.writeBox}`}> */}
       <div
         ref={writeBoxRef}
         className={
@@ -261,7 +269,18 @@ const Write = () => {
             <div className={`${style.gifBox}`}>
               {sliceArr.map((item, idx) => {
                 return (
-                  <p key={item.id} className={`${style.start} ${style[fade]}`}>
+                  <p
+                    key={idx}
+                    // className={`${style.start} ${style[fade]}`}
+                    className={
+                      idx == currentIdx
+                        ? `${style.start} ${style.checkOn} ${style[fade]}`
+                        : `${style.start} ${style[fade]}`
+                    }
+                    onClick={() => {
+                      setImgCheck(item.id, idx);
+                    }}
+                  >
                     <img
                       src={item.images.fixed_width_downsampled.url}
                       onClick={() => {

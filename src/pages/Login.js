@@ -12,6 +12,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [validShow, setValidShow] = useState(false);
   const [loginModalShow, setLoginModalShow] = useState(false);
+  const [isShake, setIsShake] = useState(false);
   const loginBoxRef = useRef();
 
   const isInViewport = useIntersectionObsever(loginBoxRef);
@@ -36,6 +37,11 @@ const Login = () => {
       } else {
         console.log("로그인실패");
         setValidShow(true);
+        setIsShake(true);
+
+        setTimeout(() => {
+          setIsShake(false);
+        }, 1600);
       }
     }
   }
@@ -86,14 +92,19 @@ const Login = () => {
           </div>
         </div>
 
-        <div className={`${style.rightBox}`}>
+        {/* <div className={`${style.rightBox}`}> */}
+        <div
+          className={
+            isShake ? `${style.rightBox} ${style.shake}` : style.rightBox
+          }
+        >
           <p className={`${style.loginTitle}`}>Login into MM</p>
 
           <form className={`${style.loginForm}`}>
             <p>
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email">Id</label>
               <input
-                placeholder="Enter your email"
+                placeholder="Enter your id"
                 id="email"
                 value={id}
                 onChange={(e) => {

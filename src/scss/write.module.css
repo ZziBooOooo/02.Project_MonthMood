@@ -155,6 +155,33 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+.writeFullDiv .writeBox .leftBox .gifBox p:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  display: inline-block;
+  height: 24px;
+  width: 12px;
+  border-bottom: 5px solid var(--border);
+  border-right: 5px solid var(--border);
+  display: none;
+  z-index: 10;
+}
+.writeFullDiv .writeBox .leftBox .gifBox p:after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  display: none;
+}
+.writeFullDiv .writeBox .leftBox .gifBox p.checkOn:before, .writeFullDiv .writeBox .leftBox .gifBox p.checkOn:after {
+  display: block;
 }
 .writeFullDiv .writeBox .leftBox .gifBox p img {
   border-radius: 12px;

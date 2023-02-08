@@ -112,6 +112,32 @@
   align-items: center;
   justify-content: center;
 }
+.loginFullDiv .loginBox .rightBox.shake {
+  -webkit-animation: shake 150ms 2 linear;
+          animation: shake 150ms 2 linear;
+}
+@-webkit-keyframes shake {
+  0% {
+    transform: translate(3px, 0);
+  }
+  50% {
+    transform: translate(-3px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes shake {
+  0% {
+    transform: translate(3px, 0);
+  }
+  50% {
+    transform: translate(-3px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
 .loginFullDiv .loginBox .rightBox .loginTitle {
   font-size: 36px;
   font-weight: 700;
@@ -158,6 +184,13 @@
   font-size: 18px;
   padding: 5px 10px;
   border-radius: 30px;
+  transition: 0.2s;
+}
+.loginFullDiv .loginBox .rightBox .loginForm button:hover {
+  transform: scale(1.02);
+}
+.loginFullDiv .loginBox .rightBox .loginForm button:active {
+  transform: translateY(2px);
 }
 .loginFullDiv .loginBox .rightBox .loginForm .showText {
   font-size: 14px;
@@ -207,7 +240,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--box-shadow3);
+  box-shadow: var(--box-shadow2);
 }
 .accountModalBox .confetti {
   position: absolute;
@@ -347,6 +380,23 @@
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
+  .loginFullDiv .loginBox .rightBox .loginForm {
+    width: 80%;
+  }
+  .loginFullDiv .loginBox .rightBox .loginForm p {
+    width: 90%;
+  }
+}
+@media (max-width: 767px) {
+  .loginFullDiv .loginBox .leftBox {
+    display: none;
+  }
+  .loginFullDiv .loginBox .rightBox {
+    width: 80%;
+  }
+  .loginFullDiv .loginBox .rightBox .loginTitle {
+    font-size: 32px;
+  }
   .loginFullDiv .loginBox .rightBox .loginForm {
     width: 80%;
   }

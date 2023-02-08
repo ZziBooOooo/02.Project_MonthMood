@@ -138,20 +138,48 @@
         height: 65%;
         margin-top: 0px;
         flex-wrap: wrap;
-        // justify-content: center;
         align-items: center;
         margin-bottom: 20px;
-        // min-width: 400px;
 
         p {
           width: 27%;
           max-width: 150px;
           min-width: 100px;
-
           margin-right: 25px;
           display: flex;
           align-items: center;
           justify-content: center;
+          position: relative;
+          &:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            display: inline-block;
+            height: 24px;
+            width: 12px;
+            border-bottom: 5px solid var(--border);
+            border-right: 5px solid var(--border);
+            display: none;
+            z-index: 10;
+          }
+          &:after {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 12px;
+            display: none;
+          }
+
+          &.checkOn {
+            &:before,
+            &:after {
+              display: block;
+            }
+          }
 
           img {
             border-radius: 12px;

@@ -1,5 +1,6 @@
 import React, { useContext, useRef } from "react";
-import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { accountStateContext } from "../stores/AccountContext";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -35,7 +36,9 @@ const Main = () => {
   const isInViewport2 = useIntersectionObsever(titleRef);
   const isInViewport3 = useIntersectionObsever(cardRef);
   const isInViewport4 = useIntersectionObsever(titleBoxRef);
+
   const { isDark, setIsDark } = useContext(darkStateContext);
+  const { isLogin, setIsLogin } = useContext(accountStateContext);
 
   function scrollDown() {
     let desBoxTop = desRef.current.offsetTop;
@@ -84,7 +87,11 @@ const Main = () => {
           </p>
           <button
             onClick={() => {
-              navigate("/write");
+              if (isLogin) {
+                navigate("/write");
+              } else {
+                navigate("/login");
+              }
             }}
           >
             <div>

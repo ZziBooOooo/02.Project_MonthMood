@@ -10,6 +10,7 @@ import useIntersectionObsever from "./UseIntersectionObsever";
 
 const Diary = () => {
   const [mmData, setMMData] = useState("");
+  const [originalData, setOriginalData] = useState("");
   const [currentMonth, setCurrentMonth] = useState("");
   const [isShowModal, setIsShowModal] = useState(false);
   const [modalBg, setModalBg] = useState(false);
@@ -38,6 +39,9 @@ const Diary = () => {
     setMMData(
       localData && localData.filter((item) => item.date.slice(5, 7) == month)
     );
+    setOriginalData(
+      localData && localData.filter((item) => item.date.slice(5, 7) == month)
+    );
   }, []);
 
   // 월 선택시 데이터 필터링 & 표시
@@ -53,14 +57,12 @@ const Diary = () => {
     // console.log(mmData);
     let removeItemId = e.target.parentElement.parentElement.parentElement.id;
     let noRemoveItem = mmData.filter((item) => item.gifId != removeItemId);
-    console.log(removeItemId);
-    console.log(noRemoveItem);
-
+    window.localStorage.setItem("moodData", JSON.stringify(noRemoveItem));
     setMMData(noRemoveItem);
   }
-  useEffect(() => {
+  /*   useEffect(() => {
     window.localStorage.setItem("moodData", JSON.stringify(mmData));
-  }, [mmData]);
+  }, [mmData]); */
 
   function showModal() {
     setIsShowModal(true);
@@ -83,6 +85,10 @@ const Diary = () => {
       }
       setMMData(searchResult);
     });
+
+    if (searchWord.length == 0) {
+      setMMData(localData);
+    }
   }
 
   function getData() {

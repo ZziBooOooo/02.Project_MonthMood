@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import style from "../scss/Main.module.scss";
 import Mobile_Header from "./Mobile_Header";
-import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { gifDataContext } from "../stores/GifContext";
 import { darkStateContext } from "../stores/DarkContext";
 import { accountStateContext } from "../stores/AccountContext";

@@ -10,8 +10,14 @@ const Title = () => {
   const [inputValue, setInputValue] = useState("");
   const [alertOn, setAlertOn] = useState(false);
   const titleBoxRef = useRef();
+  const inputRef = useRef();
   const isInViewport = useIntersectionObsever(titleBoxRef);
 
+  useEffect(() => {
+    setTimeout(() => {
+      inputRef.current.focus();
+    }, 500);
+  }, []);
   useEffect(() => {
     if (inputValue) {
       setIsComplete(true);
@@ -79,6 +85,7 @@ const Title = () => {
               setInputValue(e.target.value);
               setCharLimit(e);
             }}
+            ref={inputRef}
           />
           <label htmlFor="text" className={`${style.label_name}`}>
             <span className={`${style.content_name}`}>Your Title</span>

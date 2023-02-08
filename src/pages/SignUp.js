@@ -98,9 +98,9 @@ const SignUp = () => {
             <p>
               <label htmlFor="email">Email</label>
               <input
-                placeholder="Enter your email"
-                id="email"
-                type="email"
+                placeholder="Enter your id"
+                id="id"
+                type="text"
                 value={id}
                 onChange={(e) => {
                   setId(e.target.value);

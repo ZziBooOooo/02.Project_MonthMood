@@ -49,7 +49,7 @@ html[data-theme=dark] {
   --selectColor: rgb(255, 255, 255);
   --modalColor: #151515;
   --modalTextColor: rgba(249, 249, 249, 0.9647058824);
-  --hrColor: rgba(46, 46, 46, 0.76);
+  --hrColor: rgba(153, 153, 153, 0.76);
   --inputBgColor: #1d1d1d;
 }
 
@@ -103,19 +103,8 @@ html[data-theme=dark] {
 }
 
 .animation {
-  -webkit-animation-name: opacity;
-          animation-name: opacity;
-  -webkit-animation-duration: 1500ms;
-          animation-duration: 1500ms;
-}
-@-webkit-keyframes opacity {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-  }
+  animation-name: opacity;
+  animation-duration: 1500ms;
 }
 @keyframes opacity {
   from {
@@ -128,10 +117,8 @@ html[data-theme=dark] {
 }
 
 .animation2 {
-  -webkit-animation-name: text-pop-up-top;
-          animation-name: text-pop-up-top;
-  -webkit-animation-duration: 1000ms;
-          animation-duration: 1000ms;
+  animation-name: text-pop-up-top;
+  animation-duration: 1000ms;
   /*   @keyframes trans {
     from {
       opacity: 0;
@@ -141,18 +128,6 @@ html[data-theme=dark] {
       opacity: 1;
     }
   } */
-}
-@-webkit-keyframes text-pop-up-top {
-  0% {
-    transform: translateY(50px);
-    transform-origin: 50% 50%;
-    text-shadow: none;
-  }
-  100% {
-    transform: translateY(0);
-    transform-origin: 50% 50%;
-    text-shadow: 0 1px 0 #a3a3a3, 0 2px 0 #a3a3a3, 0 3px 0 #a3a3a3, 0 4px 0 #a3a3a3, 0 5px 0 #a3a3a3, 0 6px 0 #a3a3a3, 0 7px 0 #a3a3a3, 0 8px 0 #a3a3a3, 0 9px 0 #a3a3a3, 0 50px 30px rgba(0, 0, 0, 0.3);
-  }
 }
 @keyframes text-pop-up-top {
   0% {
@@ -293,14 +268,6 @@ html[data-theme=dark] {
   display: flex;
   justify-content: center;
 }
-@-webkit-keyframes aitf {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
 @keyframes aitf {
   0% {
     background-position: 0% 50%;
@@ -371,8 +338,7 @@ html[data-theme=dark] {
   border: 3px solid rgb(240, 240, 240);
   border-radius: 50%;
   position: absolute;
-  -webkit-animation: down 2s infinite;
-          animation: down 2s infinite;
+  animation: down 2s infinite;
   bottom: 5%;
   transition: 0.5s;
   background-color: transparent;
@@ -409,17 +375,6 @@ html[data-theme=dark] {
 }
 .mainTitleBox .scroll:hover::after {
   transform: scale(7, 7);
-}
-@-webkit-keyframes down {
-  0%, 100%, 20%, 50%, 80% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
-  }
 }
 @keyframes down {
   0%, 100%, 20%, 50%, 80% {
@@ -496,43 +451,17 @@ html[data-theme=dark] {
 }
 .siteDesBox .siteDesimgBox p .gif:hover {
   transition: 0.5s;
-  -webkit-animation: jello-diagonal-1 0.8s;
-          animation: jello-diagonal-1 0.8s;
+  animation: jello-diagonal-1 0.8s;
 }
 .siteDesBox .siteDesimgBox p .gif1:hover {
   transition: 0.5s;
   transform: scale(1.1);
 }
 .siteDesBox .siteDesimgBox p .gif2:hover {
-  -webkit-animation: jello-horizontal 1s;
-          animation: jello-horizontal 1s;
+  animation: jello-horizontal 1s;
 }
 .siteDesBox .siteDesimgBox p .gif3:hover {
-  -webkit-animation: rotate-center 1s;
-          animation: rotate-center 1s;
-}
-@-webkit-keyframes jello-diagonal-1 {
-  0% {
-    transform: skew(0deg 0deg);
-  }
-  30% {
-    transform: skew(20deg 20deg);
-  }
-  40% {
-    transform: skew(-12deg, -12deg);
-  }
-  50% {
-    transform: skew(12deg, 12deg);
-  }
-  65% {
-    transform: skew(-5deg, -5deg);
-  }
-  75% {
-    transform: skew(5deg, 5deg);
-  }
-  100% {
-    transform: skew(0deg 0deg);
-  }
+  animation: rotate-center 1s;
 }
 @keyframes jello-diagonal-1 {
   0% {
@@ -557,17 +486,6 @@ html[data-theme=dark] {
     transform: skew(0deg 0deg);
   }
 }
-@-webkit-keyframes rotate-center {
-  0% {
-    transform: rotate(0);
-  }
-  50% {
-    transform: rotate(360deg) scale(1.05);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 @keyframes rotate-center {
   0% {
     transform: rotate(0);
@@ -577,29 +495,6 @@ html[data-theme=dark] {
   }
   100% {
     transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes jello-horizontal {
-  0% {
-    transform: scale3d(1, 1, 1);
-  }
-  30% {
-    transform: scale3d(1.25, 0.75, 1);
-  }
-  40% {
-    transform: scale3d(0.75, 1.25, 1);
-  }
-  50% {
-    transform: scale3d(1.15, 0.85, 1);
-  }
-  65% {
-    transform: scale3d(0.95, 1.05, 1);
-  }
-  75% {
-    transform: scale3d(1.05, 0.95, 1);
-  }
-  100% {
-    transform: scale3d(1, 1, 1);
   }
 }
 @keyframes jello-horizontal {
@@ -1137,7 +1032,7 @@ html[data-theme=dark] {
     flex-direction: column;
     align-items: flex-start;
     padding: 25px;
-    transform: translateX(-100%);
+    transform: translateX(-101%);
     transition: 0.5s;
   }
   .sideBarBox .logoText {

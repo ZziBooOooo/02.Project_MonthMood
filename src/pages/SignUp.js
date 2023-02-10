@@ -96,7 +96,7 @@ const SignUp = () => {
             }}
           >
             <p>
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email">Id</label>
               <input
                 placeholder="Enter your id"
                 id="id"

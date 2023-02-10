@@ -168,7 +168,7 @@ const Mobile_Header = () => {
             className={currentMenu == "GOMM" ? `${style.currentMenu}` : null}
             onClick={goGOMM}
           >
-            GOMM
+            WRITE
           </p>
 
           <p

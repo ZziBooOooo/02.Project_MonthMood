@@ -13,20 +13,8 @@
   opacity: 0;
 }
 .loginFullDiv .animation {
-  -webkit-animation-name: opacity;
-          animation-name: opacity;
-  -webkit-animation-duration: 1500ms;
-          animation-duration: 1500ms;
-}
-@-webkit-keyframes opacity {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0px);
-  }
+  animation-name: opacity;
+  animation-duration: 1500ms;
 }
 @keyframes opacity {
   from {
@@ -113,19 +101,7 @@
   justify-content: center;
 }
 .loginFullDiv .loginBox .rightBox.shake {
-  -webkit-animation: shake 150ms 2 linear;
-          animation: shake 150ms 2 linear;
-}
-@-webkit-keyframes shake {
-  0% {
-    transform: translate(3px, 0);
-  }
-  50% {
-    transform: translate(-3px, 0);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
+  animation: shake 150ms 2 linear;
 }
 @keyframes shake {
   0% {
@@ -244,8 +220,7 @@
 }
 .accountModalBox .confetti {
   position: absolute;
-  -webkit-animation: grow 0.9s cubic-bezier(0.42, 0, 0.275, 1.155) both;
-          animation: grow 0.9s cubic-bezier(0.42, 0, 0.275, 1.155) both;
+  animation: grow 0.9s cubic-bezier(0.42, 0, 0.275, 1.155) both;
 }
 .accountModalBox .confetti:nth-child(1) {
   width: 12px;
@@ -284,34 +259,27 @@
   top: 60px;
 }
 .accountModalBox .confetti:nth-child(1) {
-  -webkit-animation-delay: 0.45s;
-          animation-delay: 0.45s;
+  animation-delay: 0.45s;
 }
 .accountModalBox .confetti:nth-child(2) {
-  -webkit-animation-delay: 0.9s;
-          animation-delay: 0.9s;
+  animation-delay: 0.9s;
 }
 .accountModalBox .confetti:nth-child(3) {
-  -webkit-animation-delay: 1.35s;
-          animation-delay: 1.35s;
+  animation-delay: 1.35s;
 }
 .accountModalBox .confetti:nth-child(4) {
-  -webkit-animation-delay: 1.8s;
-          animation-delay: 1.8s;
+  animation-delay: 1.8s;
 }
 .accountModalBox .confetti:nth-child(5) {
-  -webkit-animation-delay: 2.25s;
-          animation-delay: 2.25s;
+  animation-delay: 2.25s;
 }
 .accountModalBox .confetti:nth-child(6) {
-  -webkit-animation-delay: 2.7s;
-          animation-delay: 2.7s;
+  animation-delay: 2.7s;
 }
 .accountModalBox .checkmark {
   position: relative;
   padding: 30px;
-  -webkit-animation: checkmark 4.2s cubic-bezier(0.42, 0, 0.275, 1.155) both;
-          animation: checkmark 4.2s cubic-bezier(0.42, 0, 0.275, 1.155) both;
+  animation: checkmark 4.2s cubic-bezier(0.42, 0, 0.275, 1.155) both;
 }
 .accountModalBox .checkmark__check {
   position: absolute;
@@ -322,17 +290,8 @@
   fill: #c180fb;
 }
 .accountModalBox .checkmark__back {
-  -webkit-animation: rotate 35s linear both infinite;
-          animation: rotate 35s linear both infinite;
+  animation: rotate 35s linear both infinite;
   transform: translateY(-100px);
-}
-@-webkit-keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
 @keyframes rotate {
   0% {
@@ -342,29 +301,11 @@
     transform: rotate(360deg);
   }
 }
-@-webkit-keyframes grow {
-  0%, 100% {
-    transform: scale(0);
-  }
-  50% {
-    transform: scale(1);
-  }
-}
 @keyframes grow {
   0%, 100% {
     transform: scale(0);
   }
   50% {
-    transform: scale(1);
-  }
-}
-@-webkit-keyframes checkmark {
-  0%, 100% {
-    opacity: 0;
-    transform: scale(0);
-  }
-  10%, 50%, 90% {
-    opacity: 1;
     transform: scale(1);
   }
 }

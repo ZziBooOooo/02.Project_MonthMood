@@ -143,17 +143,6 @@
   width: 40px;
   height: 40px;
 }
-@-webkit-keyframes floating {
-  0% {
-    transform: translate(-5px, 0px);
-  }
-  50% {
-    transform: translate(-5px, 4px);
-  }
-  100% {
-    transform: translate(-5px, 0px);
-  }
-}
 @keyframes floating {
   0% {
     transform: translate(-5px, 0px);
@@ -216,8 +205,7 @@
   justify-content: center;
   width: 90px;
   margin-left: 10px;
-  -webkit-animation: 2s floating ease-in-out infinite;
-          animation: 2s floating ease-in-out infinite;
+  animation: 2s floating ease-in-out infinite;
 }
 .FullDiv .diaryBox .diaryTopBox .wrapper .tooltip::before {
   position: absolute;
@@ -520,20 +508,8 @@
 }
 
 .animation {
-  -webkit-animation-name: opacity;
-          animation-name: opacity;
-  -webkit-animation-duration: 300ms;
-          animation-duration: 300ms;
-}
-@-webkit-keyframes opacity {
-  from {
-    opacity: 0;
-    transform: translateX(-50%) scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(-50%) scale(1);
-  }
+  animation-name: opacity;
+  animation-duration: 300ms;
 }
 @keyframes opacity {
   from {
@@ -547,19 +523,8 @@
 }
 
 .animation2 {
-  -webkit-animation-name: opacity2;
-          animation-name: opacity2;
-  -webkit-animation-duration: 1500ms;
-          animation-duration: 1500ms;
-}
-@-webkit-keyframes opacity2 {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  to {
-    opacity: 1;
-  }
+  animation-name: opacity2;
+  animation-duration: 1500ms;
 }
 @keyframes opacity2 {
   from {

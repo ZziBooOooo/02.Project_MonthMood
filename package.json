@@ -32,7 +32,7 @@
     "deploy": "gh-pages -d build",
     "predeploy": "npm run build"
   },
-  "homepage": "https://zziboooooo.github.io/Project_MonthMood/",
+  "homepage": "https://zziboooooo.github.io/02.Project_MonthMood/",
   "eslintConfig": {
     "extends": [
       "react-app",

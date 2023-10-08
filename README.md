@@ -3,7 +3,7 @@
 
 
 <br/>
-- 배포 URL: [https://zziboooooo.github.io/04.Project_Portfolio/](https://zziboooooo.github.io/02.Project_MonthMood/)
+- 배포 URL: https://zziboooooo.github.io/02.Project_MonthMood/
 
   <br/>
   <br/>
